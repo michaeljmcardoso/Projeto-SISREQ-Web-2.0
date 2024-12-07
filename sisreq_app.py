@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import sqlite3
 import hashlib
+import constantes
 import seaborn as sns
 import matplotlib.pyplot as plt
 import plotly.express as px
@@ -18,7 +19,7 @@ def iniciar_banco_de_dados():
     #Tabela para registros
     cursor.execute(
         '''
-        CREATE TABLE IF NOT EXISTS sisreq (
+        CREATE TABLE IF NOT EXISTS processos (
             ID INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
             Numero TEXT,
             Data_Abertura DATE,
@@ -71,14 +72,14 @@ def iniciar_banco_de_dados():
 
 def obter_todos_os_registros():
     conn = sqlite3.connect('sisreq.db')
-    df = pd.read_sql_query('SELECT * FROM sisreq', conn)
+    df = pd.read_sql_query('SELECT * FROM processos', conn)
     conn.close()
     return df
 
 def obter_registro_por_id(item_id):
     conn = sqlite3.connect('sisreq.db')
     cursor = conn.cursor()
-    cursor.execute("SELECT * FROM sisreq WHERE id = ?", (item_id,))
+    cursor.execute("SELECT * FROM processos WHERE id = ?", (item_id,))
     registro = cursor.fetchone()
     conn.close()
     return registro
@@ -112,51 +113,79 @@ def tela_login():
 # Página inicial (após login)
 def pagina_inicial():
     st.markdown('<h1 style="color: "#1f77b4";">Sistema de Banco de Dados</h1>', unsafe_allow_html=True)
-    col1, col2 = st.columns(2)
+    col1, col2, col3, col4, col5 = st.columns(5)
 
     with col1:
-        atendente = st.text_input("Nome do Atendente", max_chars=50, key="atendente", help="Preencha os campos")
-        interessado = st.text_input("Nome do Interessado", max_chars=50, key="nome_interessado")
-        telefone = st.text_input("Telefone", max_chars=13, key="fone", placeholder="DDD + numero do telefone")
-        protocolo = st.text_input("Protocolo SEI", max_chars=22, key="protocolo", placeholder="Nº do Documento ou Processo SEI")
+        numero_processo = st.text_input("Número do Processo:")
+        data_abertura = st.date_input("Data de Abertura:")
+        nome_comunidade = st.text_input("Comunidade:")
+        municipio = st.text_input("Municípios:")
+        numero_familias = st.number_input("Número de Famílias:", min_value=0)
 
     with col2:
-        comunidade = st.text_input("Comunidade")
-        municipio = st.text_input("Município")
-        email = st.text_input("Email", placeholder="exemplo@email.com")
-        data = st.date_input("Data", datetime.today())
+        fase_processo = st.selectbox("Fase:", constantes.FASE_PROCESSO)
+        etapa_rtid = st.selectbox("Etapa RTID:", constantes.ETAPA_RTID)
+        antropologico = st.selectbox("Antropológico:", constantes.RELATORIO_ANTROPOLOGICO)
+        certidao_fcp = st.selectbox("Certidão FCP:", constantes.CERTIFICACAO_FCP)
+        data_certificacao = st.date_input("Data de Certificação:")
 
-    motivo = st.text_area("Motivo do Atendimento", height=100, help="Digite o motivo do atendimento")
+    with col3:
+        area_identificada = st.text_input("Área Identificada (ha):")
+        area_titulada = st.text_input("Área Titulada (ha):")
+        titulo = st.selectbox("Título:", constantes.FORMA_TITULO)
+        pnra = st.selectbox("PNRA:", constantes.PNRA)
+        latitude = st.text_input("Latitude:")
+        longitude = st.text_input("Longitude:")
+    
+    with col4:
+        edital_dou = st.text_input("Edital DOU:")
+        edital_doe = st.text_input("Edital DOE:")
+        portaria_dou = st.date_input("Portaria DOU:")
+        decreto_dou = st.date_input("Decreto DOU:")
+        sobreposicao_territorial = st.selectbox("Sobreposição Territorial:", constantes.TIPO_SOBREPOSICAO)
+
+    with col5:
+        detalhes_sobreposicao = st.text_input("Detalhes de Sobreposição:")
+        acao_civil_publica = st.selectbox("Ação Civil Pública:", constantes.ACAO_CIVIL_PUBLICA)
+        data_sentenca = st.date_input("Data da Sentença:")
+        teor_sentenca = st.text_input("Teor/Prazo da Sentença:")      
+        outras_informacoes = st.text_area("Outras Informações:", height=50)
 
     if st.button("Salvar"):
         conn = sqlite3.connect('sisreq.db')
         cursor = conn.cursor()
-        if atendente:
-            cursor.execute('''INSERT INTO sisreq (atendente, interessado, comunidade, municipio, telefone, email, protocolo, data, motivo)
-                              VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)''',
-                           (atendente, interessado, comunidade, municipio, telefone, email, protocolo, data, motivo))
+        if numero_processo:
+            cursor.execute('''INSERT INTO processos ('Numero', 'Data_Abertura', 'Comunidade', 'Municipio', 'Area_ha','Num_familias', 
+                           'Fase_Processo', 'Etapa_RTID', 'Edital_DOU', 'Edital_DOE', 'Portaria_DOU', 'Decreto_DOU', 'Area_ha_Titulada',
+                           'Titulo', 'PNRA', 'Relatorio_Antropologico', 'Latitude', 'Longitude', 'Certidao_FCP', 'Data_Certificacao', 
+                           'Sobreposicao', 'Analise_de_Sobreposicao', 'Acao_Civil_Publica', 'Data_Decisao', 'Teor_Decisao_Prazo_Sentença', 
+                           'Outras_Informacoes') 
+                           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)''',
+                           (numero_processo, data_abertura, nome_comunidade, municipio, area_identificada, numero_familias, fase_processo, etapa_rtid,
+                            edital_dou, edital_doe, portaria_dou, decreto_dou, area_titulada, titulo, pnra, antropologico, latitude, longitude, certidao_fcp, 
+                            data_certificacao, sobreposicao_territorial, detalhes_sobreposicao, acao_civil_publica, data_sentenca, teor_sentenca, outras_informacoes))
             conn.commit()
-            st.success(f"Obrigado, {atendente}. Os dados foram salvos com sucesso!")
+            st.success(f"Os dados foram salvos com sucesso!")
         else:
-            st.error("Por favor, preencha o campo 'Nome'.")
+            st.error("Por favor, preencha o campo 'Número do processo.")
         conn.close()
 
     st.subheader("Registros Salvos")
     df = obter_todos_os_registros()
     if not df.empty:
-        if 'id' in df.columns:
-            df = df.drop(columns=['id'])
+        if 'ID' in df.columns:
+            df = df.drop(columns=['ID'])
             df.index = df.index + 1
             st.dataframe(df)
 
     if st.button("Exportar para Excel"):
-        df.to_excel('sisreq.xlsx', index=False)
+        df.to_excel('processos.xlsx', index=False)
         st.success("Dados exportados com sucesso para sisreq.xlsx")
-        with open("sisreq.xlsx", "rb") as file:
+        with open("processos.xlsx", "rb") as file:
             st.download_button(
                 label="Baixar Excel",
                 data=file,
-                file_name="sisreq.xlsx",
+                file_name="processos.xlsx",
                 mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
             )
 
@@ -215,7 +244,7 @@ else:
                 st.warning("Por favor, preencha todos os campos.")
 
         st.subheader("Usuários Cadastrados")
-        conn = sqlite3.connect('database.db')
+        conn = sqlite3.connect('sisreq.db')
         usuarios = pd.read_sql_query("SELECT id, usuario FROM usuarios", conn)
         conn.close()
 
