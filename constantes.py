@@ -1,61 +1,47 @@
-import datetime
-
-"""CONSTANTES DE JANELA"""
-
-ANO_ATUAL = datetime.datetime.now().year
-
-BOTOES = button_color='#ac4e04'
-
-"""CONSTANTES DE FONTES"""
-
-FONTE = font='Helvetica 10 bold'
-
-FONTE_DE_AVSIO = font='Any 10 bold'
-
-
 """CONSTANTES DE LISTAS"""
 
 TIPO_SOBREPOSICAO = [
+    'SEM INFORMAÇÃO',
     'PA INCRA', 
-    'PA ESTADUAL', 
+    'PA ITERMA', 
     'AREA PARTICULAR', 
     'OUTRO TQ', 
     'TERRAS DE MARINHA', 
     'TERRAS DEVOLUTAS', 
     'TERRAS INDÍGENAS', 
     'TERRAS DAUNIÃO', 
-    'SEM SOBREPOSIÇÃO',  
-    'SEM INFORMAÇÃO'                      
+    'SEM SOBREPOSIÇÃO'
     ]
 
 ETAPA_RTID = [
     'Sem_RTID', 
-    'RTID_Concluído', 
-    'Antropológico_concluído', 
     'Antropológico_andamento', 
-    'Cadastro_família_concluído', 
+    'Antropológico_concluído', 
     'Cadastro_família_andamento', 
-    'Fundiário_concluído',
-    'Fundiário_andamento', 
-    'Cartorial_concluído', 
+    'Cadastro_família_concluído', 
+    'Fundiário_andamento',
+    'Fundiário_concluído', 
     'Cartorial_andamento', 
+    'Cartorial_concluído', 
+    'RTID_Concluído',
     'Parecer_Técnico',
     'Parecer_Jurídico', 
-    'CDR'
+    'CDR',
+    'Publicação',
+    'RTID_Publicado',
+    'Notificação'
     ]
 
 FASE_PROCESSO = [ 
     'Inicial', 
     'Estudo de Identificação',
-    'Publicação', 
-    'Notificação', 
     'Contestação', 
     'Recurso', 
     'Portaria',  
     'Decreto', 
     'Desapropriação', 
-    'Titulação', 
-    'Desintrusão'
+    'Desintrusão',
+    'Titulação',
     ]  
 
 CERTIFICACAO_FCP = [
@@ -64,26 +50,26 @@ CERTIFICACAO_FCP = [
     ]
 
 ACAO_CIVIL_PUBLICA = [
+    'Sem ACP',
     'Com Sentença', 
     'Sem Sentença', 
     'Decisão Liminar', 
     'Sentença Cumprida', 
-    'Sem ACP', 
     'Corte InterAmericana'
     ] 
 
 RELATORIO_ANTROPOLOGICO = [
+    'Sem_Relatório', 
     'Execução_Direta',
     'Contrato',
     'Acordo_Coop_Técnica',
     'Doação',
-    'Termo_Execução_Descentralizada',
-    'Sem_Relatório'
+    'Termo_Execução_Descentralizada'
     ]
 
-FORMA_TITULO = ['CCDRU', 'TITULO DEFINITIVO']  
+FORMA_TITULO = ['SEM TITULO', 'CCDRU', 'TITULO DEFINITIVO']  
 
-PNRA = ['ANDAMENTO','CONCLUIDO','NAO-INICIADO']
+PNRA = ['NAO-INICIADO', 'ANDAMENTO','CONCLUIDO']
 
 MUNICIPIOS = [
     'Açailândia',
@@ -303,13 +289,4 @@ MUNICIPIOS = [
     'Vitória do Mearim',
     'Vitorino Freire',
     'Zé Doca'
-    ]
-
-headings=[
-        'ID ', '    Numero   ', 'Data_Abertura', '  Comunidade  ', '  Municipio  ', ' Area_ha ',
-        'Num_familias', 'Fase_Processo', ' Etapa_RTID ', ' Edital_DOU ', 'Edital_DOE',
-        'Portaria_DOU', 'Decreto_DOU', 'Area_ha_Titulada', ' Titulo ', '  PNRA   ', 'Relatorio_Antropologico',
-        'Latitude', 'Longitude', 'Certidao_FCP', 'Data_Certificacao', '  Sobreposicao  ',
-        'Analise_de_Sobreposicao', 'Acao_Civil_Publica', 'Data_Decisao', 'Teor_Decisao_Prazo_Sentença',
-        '          Outras_Informacoes'
     ]

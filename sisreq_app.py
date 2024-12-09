@@ -2,11 +2,13 @@ import streamlit as st
 import pandas as pd
 import sqlite3
 import hashlib
-import constantes
 import seaborn as sns
 import matplotlib.pyplot as plt
 import plotly.express as px
 from datetime import datetime
+from obter_todos_registros import obter_todos_os_registros
+from tela_cadastro import tela_de_cadastro
+from editar import pagina_editar
 
 # Função para hash de senha 
 def hash_senha(senha):
@@ -70,20 +72,6 @@ def iniciar_banco_de_dados():
     conn.commit()
     conn.close()
 
-def obter_todos_os_registros():
-    conn = sqlite3.connect('sisreq.db')
-    df = pd.read_sql_query('SELECT * FROM processos', conn)
-    conn.close()
-    return df
-
-def obter_registro_por_id(item_id):
-    conn = sqlite3.connect('sisreq.db')
-    cursor = conn.cursor()
-    cursor.execute("SELECT * FROM processos WHERE id = ?", (item_id,))
-    registro = cursor.fetchone()
-    conn.close()
-    return registro
-
 # Verificar credenciais
 def verificar_credenciais(usuario, senha):
     conn = sqlite3.connect('sisreq.db')  # Corrigido para usar o mesmo banco de dados
@@ -112,71 +100,14 @@ def tela_login():
 
 # Página inicial (após login)
 def pagina_inicial():
-    st.markdown('<h1 style="color: "#1f77b4";">Sistema de Banco de Dados</h1>', unsafe_allow_html=True)
-    col1, col2, col3, col4, col5 = st.columns(5)
-
-    with col1:
-        numero_processo = st.text_input("Número do Processo:")
-        data_abertura = st.date_input("Data de Abertura:")
-        nome_comunidade = st.text_input("Comunidade:")
-        municipio = st.text_input("Municípios:")
-        numero_familias = st.number_input("Número de Famílias:", min_value=0)
-
-    with col2:
-        fase_processo = st.selectbox("Fase:", constantes.FASE_PROCESSO)
-        etapa_rtid = st.selectbox("Etapa RTID:", constantes.ETAPA_RTID)
-        antropologico = st.selectbox("Antropológico:", constantes.RELATORIO_ANTROPOLOGICO)
-        certidao_fcp = st.selectbox("Certidão FCP:", constantes.CERTIFICACAO_FCP)
-        data_certificacao = st.date_input("Data de Certificação:")
-
-    with col3:
-        area_identificada = st.text_input("Área Identificada (ha):")
-        area_titulada = st.text_input("Área Titulada (ha):")
-        titulo = st.selectbox("Título:", constantes.FORMA_TITULO)
-        pnra = st.selectbox("PNRA:", constantes.PNRA)
-        latitude = st.text_input("Latitude:")
-        longitude = st.text_input("Longitude:")
-    
-    with col4:
-        edital_dou = st.text_input("Edital DOU:")
-        edital_doe = st.text_input("Edital DOE:")
-        portaria_dou = st.date_input("Portaria DOU:")
-        decreto_dou = st.date_input("Decreto DOU:")
-        sobreposicao_territorial = st.selectbox("Sobreposição Territorial:", constantes.TIPO_SOBREPOSICAO)
-
-    with col5:
-        detalhes_sobreposicao = st.text_input("Detalhes de Sobreposição:")
-        acao_civil_publica = st.selectbox("Ação Civil Pública:", constantes.ACAO_CIVIL_PUBLICA)
-        data_sentenca = st.date_input("Data da Sentença:")
-        teor_sentenca = st.text_input("Teor/Prazo da Sentença:")      
-        outras_informacoes = st.text_area("Outras Informações:", height=50)
-
-    if st.button("Salvar"):
-        conn = sqlite3.connect('sisreq.db')
-        cursor = conn.cursor()
-        if numero_processo:
-            cursor.execute('''INSERT INTO processos ('Numero', 'Data_Abertura', 'Comunidade', 'Municipio', 'Area_ha','Num_familias', 
-                           'Fase_Processo', 'Etapa_RTID', 'Edital_DOU', 'Edital_DOE', 'Portaria_DOU', 'Decreto_DOU', 'Area_ha_Titulada',
-                           'Titulo', 'PNRA', 'Relatorio_Antropologico', 'Latitude', 'Longitude', 'Certidao_FCP', 'Data_Certificacao', 
-                           'Sobreposicao', 'Analise_de_Sobreposicao', 'Acao_Civil_Publica', 'Data_Decisao', 'Teor_Decisao_Prazo_Sentença', 
-                           'Outras_Informacoes') 
-                           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)''',
-                           (numero_processo, data_abertura, nome_comunidade, municipio, area_identificada, numero_familias, fase_processo, etapa_rtid,
-                            edital_dou, edital_doe, portaria_dou, decreto_dou, area_titulada, titulo, pnra, antropologico, latitude, longitude, certidao_fcp, 
-                            data_certificacao, sobreposicao_territorial, detalhes_sobreposicao, acao_civil_publica, data_sentenca, teor_sentenca, outras_informacoes))
-            conn.commit()
-            st.success(f"Os dados foram salvos com sucesso!")
-        else:
-            st.error("Por favor, preencha o campo 'Número do processo.")
-        conn.close()
-
+    st.markdown('<h1 style="color: "#1f77b4";">SISREQ - Sistema de Regularização Quilombola</h1>', unsafe_allow_html=True)
     st.subheader("Registros Salvos")
     df = obter_todos_os_registros()
     if not df.empty:
         if 'ID' in df.columns:
             df = df.drop(columns=['ID'])
             df.index = df.index + 1
-            st.dataframe(df)
+            st.dataframe(df, height=600)
 
     if st.button("Exportar para Excel"):
         df.to_excel('processos.xlsx', index=False)
@@ -188,6 +119,14 @@ def pagina_inicial():
                 file_name="processos.xlsx",
                 mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
             )
+# Função para Página Sobre
+def pagina_about():
+    st.subheader("Sobre o Projeto")
+    st.write("""
+        Sistema de registro de processos.
+        Projeto experimental focado em otimizar o registro, visualização e consulta dos processos cadastrados.
+        Desenvolvido por **Michael JM Cardoso**.
+    """)
 
 # Adicionar novos usuários ao banco de dados
 def adicionar_usuario(usuario, senha):
@@ -216,7 +155,7 @@ else:
         st.experimental_rerun()
     
     # Adicionar "Gerenciar Usuários" apenas para o admin
-    opcoes_paginas = ["Página Inicial", "Editar Registro", "Visualizações", "Sobre"]
+    opcoes_paginas = ["Página Inicial", "Editar Registro", "Tela de Cadastro", "Visualizações", "Sobre"]
     if st.session_state['usuario_logado'] == "admin":
         opcoes_paginas.insert(3, "Gerenciar Usuários")  # Insere antes da página "Sobre"
 
@@ -255,14 +194,16 @@ else:
     # Redirecionamento de páginas
     if pagina_selecionada == "Página Inicial":
         pagina_inicial()
-    # elif pagina_selecionada == "Editar Registro":
-    #     pagina_editar()
+    elif pagina_selecionada == "Tela de Cadastro":
+        tela_de_cadastro()
+    elif pagina_selecionada == "Editar Registro":
+        pagina_editar()
     # elif pagina_selecionada == "Visualizações":
     #     pagina_visualizacoes()
-    # elif pagina_selecionada == "Gerenciar Usuários":
-    #     if st.session_state['usuario_logado'] == "admin":
-    #         gerenciar_usuarios()
-    #     else:
-    #         st.error("Você não tem permissão para acessar esta página.")
-    # elif pagina_selecionada == "Sobre":
-    #     pagina_about()
+    elif pagina_selecionada == "Gerenciar Usuários":
+        if st.session_state['usuario_logado'] == "admin":
+            gerenciar_usuarios()
+        else:
+            st.error("Você não tem permissão para acessar esta página.")
+    elif pagina_selecionada == "Sobre":
+        pagina_about()
