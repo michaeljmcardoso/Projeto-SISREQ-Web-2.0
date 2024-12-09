@@ -65,7 +65,7 @@ def pagina_editar():
                 new_acao_civil_publica = st.selectbox("Ação Civil Pública:", constantes.ACAO_CIVIL_PUBLICA, index=constantes.ACAO_CIVIL_PUBLICA.index(registro[23]))
                 new_data_sentenca = st.date_input("Data da Sentença:", value=datetime.strptime(registro[24], '%d-%m-%Y') if registro[24] else None)
                 new_teor_sentenca = st.text_input("Teor/Prazo da Sentença:", value=registro[25])
-                new_outras_informacoes = st.text_area("Outras Informações:", value=registro[26], height=50)
+                new_outras_informacoes = st.text_area("Outras Informações:", value=registro[26], height=100)
 
             # Botão para atualizar o registro
             if st.button("Atualizar"):
