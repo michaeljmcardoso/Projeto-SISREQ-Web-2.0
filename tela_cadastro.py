@@ -16,7 +16,7 @@ def tela_de_cadastro():
 
     with col2:
         fase_processo = st.selectbox("Fase:", constantes.FASE_PROCESSO)
-        etapa_rtid = st.multiselect("Etapa RTID:", constantes.ETAPA_RTID)
+        etapa_rtid = st.selectbox("Etapa RTID:", constantes.ETAPA_RTID)
         antropologico = st.selectbox("Antropológico:", constantes.RELATORIO_ANTROPOLOGICO)
         certidao_fcp = st.selectbox("Certidão FCP:", constantes.CERTIFICACAO_FCP)
         data_certificacao = st.date_input("Data de Certificação:")
@@ -34,7 +34,7 @@ def tela_de_cadastro():
         edital_doe = st.text_input("Edital DOE:")
         portaria_dou = st.date_input("Portaria DOU:")
         decreto_dou = st.date_input("Decreto DOU:")
-        sobreposicao_territorial = st.selectbox("Sobreposição Territorial:", constantes.TIPO_SOBREPOSICAO)
+        sobreposicao_territorial = st.multiselect("Sobreposição Territorial:", constantes.TIPO_SOBREPOSICAO)
 
     with col5:
         detalhes_sobreposicao = st.text_input("Detalhes de Sobreposição:")
@@ -55,6 +55,10 @@ def tela_de_cadastro():
             decreto_dou_formatada = decreto_dou.strftime('%d-%m-%Y') if decreto_dou else None
             data_sentenca_formatada = data_sentenca.strftime('%d-%m-%Y') if data_sentenca else None
 
+            # Convertendo a lista do multiselect para uma string
+            #etapa_rtid_formatada = ", ".join(etapa_rtid) if etapa_rtid else None
+            sobreposicao_territorial_formatada = ", ".join(sobreposicao_territorial) if sobreposicao_territorial else None
+
             # Executando o comando SQL com as datas formatadas
             cursor.execute('''INSERT INTO processos ('Numero', 'Data_Abertura', 'Comunidade', 'Municipio', 'Area_ha','Num_familias', 
                         'Fase_Processo', 'Etapa_RTID', 'Edital_DOU', 'Edital_DOE', 'Portaria_DOU', 'Decreto_DOU', 'Area_ha_Titulada',
@@ -65,7 +69,7 @@ def tela_de_cadastro():
                         (numero_processo, data_abertura_formatada, nome_comunidade, municipio, area_identificada, numero_familias,
                         fase_processo, etapa_rtid, edital_dou, edital_doe, portaria_dou_formatada, decreto_dou_formatada,
                         area_titulada, titulo, pnra, antropologico, latitude, longitude, certidao_fcp, data_certificacao_formatada,
-                        sobreposicao_territorial, detalhes_sobreposicao, acao_civil_publica, data_sentenca_formatada,
+                        sobreposicao_territorial_formatada, detalhes_sobreposicao, acao_civil_publica, data_sentenca_formatada,
                         teor_sentenca, outras_informacoes))
             conn.commit()
             st.success(f"Os dados foram salvos com sucesso!")

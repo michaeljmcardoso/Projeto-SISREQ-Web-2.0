@@ -21,15 +21,12 @@ ETAPA_RTID = [
     'Cadastro_família_concluído', 
     'Fundiário_andamento',
     'Fundiário_concluído', 
-    'Cartorial_andamento', 
-    'Cartorial_concluído', 
     'RTID_Concluído',
     'Parecer_Técnico',
     'Parecer_Jurídico', 
     'CDR',
     'Publicação',
     'RTID_Publicado',
-    'Notificação'
     ]
 
 FASE_PROCESSO = [ 

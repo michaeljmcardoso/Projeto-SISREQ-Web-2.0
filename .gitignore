@@ -164,7 +164,7 @@ cython_debug/
 #.idea/
 
 # Arquivos de banco de dados
-sisreq.db
+#sisreq.db
 banco_de_dados.db
 sisreqBackup.db
 
