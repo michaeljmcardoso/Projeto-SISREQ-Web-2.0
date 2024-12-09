@@ -41,7 +41,7 @@ def tela_de_cadastro():
         acao_civil_publica = st.selectbox("Ação Civil Pública:", constantes.ACAO_CIVIL_PUBLICA)
         data_sentenca = st.date_input("Data da Sentença:")
         teor_sentenca = st.text_input("Teor/Prazo da Sentença:")      
-        outras_informacoes = st.text_area("Outras Informações:", height=68)
+        outras_informacoes = st.text_area("Outras Informações:", height=100)
 
     if st.button("Salvar"):
         conn = sqlite3.connect('sisreq.db')
