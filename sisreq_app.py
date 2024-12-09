@@ -124,8 +124,10 @@ def pagina_about():
     st.subheader("Sobre o Projeto")
     st.write("""
         Sistema de registro de processos.
-        Projeto experimental focado em otimizar o registro, visualização e consulta dos processos cadastrados.
-        Desenvolvido por **Michael JM Cardoso**.
+        Projeto experimental em desenvolvimento. Focado em otimizar o registro, 
+        visualização e consulta dos processos cadastrados.
+        Durante a fase de desenvolvimento, algumas funcionalidades podem não responder corretamente.
+        Desenvolvido por **Michael JM Cardoso** - Antropólogo e Programador.
     """)
 
 # Adicionar novos usuários ao banco de dados
