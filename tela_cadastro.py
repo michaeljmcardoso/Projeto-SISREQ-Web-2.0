@@ -3,8 +3,7 @@ import constantes
 import sqlite3
 
 def tela_de_cadastro():
-    st.markdown('<h2 style="color: "#1f77b4";">Atualizar Registros</h2>', unsafe_allow_html=True)
-    st.subheader("Cadastro de Processos")
+    st.markdown('<h2 style="color: "#1f77b4";">Cadastrar Processo</h2>', unsafe_allow_html=True)
     col1, col2, col3, col4, col5 = st.columns(5)
 
     with col1:
