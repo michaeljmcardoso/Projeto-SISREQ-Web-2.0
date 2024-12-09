@@ -94,7 +94,7 @@ def tela_login():
         if verificar_credenciais(usuario, senha):
             st.session_state['usuario_logado'] = usuario
             st.success(f"Bem-vindo, {usuario}!")
-            st.rerun()
+            st.experimental_rerun()
         else:
             st.error("Credenciais inválidas.")
 
@@ -123,7 +123,7 @@ def pagina_inicial():
 def pagina_about():
     st.subheader("Sobre o Projeto")
     st.write("""
-        Sistema de registro de processos.
+        Sistema de registro dos processos de regularização quilombola.
         Projeto experimental em desenvolvimento. Focado em otimizar o registro, 
         visualização e consulta dos processos cadastrados.
         Durante a fase de desenvolvimento, algumas funcionalidades podem não responder corretamente.
