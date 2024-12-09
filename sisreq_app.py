@@ -100,7 +100,7 @@ def tela_login():
 
 # Página inicial (após login)
 def pagina_inicial():
-    st.markdown('<h1 style="color: "#1f77b4";">SISREQ - Sistema de Regularização Quilombola</h1>', unsafe_allow_html=True)
+    st.markdown('<h2 style="color: "#1f77b4";">SISREQ - Sistema de Regularização Quilombola</h2>', unsafe_allow_html=True)
     st.subheader("Registros Salvos")
     df = obter_todos_os_registros()
     if not df.empty:
