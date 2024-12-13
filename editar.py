@@ -24,7 +24,7 @@ def pagina_editar():
             #st.subheader("Atualizar Processo")
 
             # Divisão em colunas para entrada de dados
-            col1, col2, col3, col4, col5 = st.columns(5)
+            col1, col2, col3, col4 = st.columns(4)
             
             # Coluna 1
             with col1:
@@ -33,20 +33,20 @@ def pagina_editar():
                 new_nome_comunidade = st.text_input("Comunidade:", value=registro[3])
                 new_municipio = st.text_input("Município:", value=registro[4])
                 new_numero_familias = st.number_input("Número de Famílias:", min_value=0, value=int(registro[6]) if registro[6] else 0,)
+                new_area_identificada = st.text_input("Área Identificada (ha):", value=str(registro[5]))
 
             # Coluna 2
             with col2:
                 new_fase_processo = st.select_slider("Fase:", options=constantes.FASE_PROCESSO, value=registro[7] if registro[7] in constantes.FASE_PROCESSO else constantes.FASE_PROCESSO[0])
-                etapa_rtid = st.select_slider("Etapa RTID:", constantes.ETAPA_RTID)
+                etapa_rtid = st.select_slider("Etapa RTID:", options=constantes.ETAPA_RTID, value=registro[8] if registro[8] in constantes.ETAPA_RTID else constantes.ETAPA_RTID[0])
                 new_antropologico = st.selectbox("Antropológico:", constantes.RELATORIO_ANTROPOLOGICO, index=constantes.RELATORIO_ANTROPOLOGICO.index(registro[16]))
                 new_certidao_fcp = st.selectbox("Certidão FCP:", constantes.CERTIFICACAO_FCP, index=constantes.CERTIFICACAO_FCP.index(registro[19]))
                 new_data_certificacao = st.date_input("Data de Certificação:", value=datetime.strptime(registro[11], '%d-%m-%Y') if registro[11] else None)
 
             # Coluna 3
             with col3:
-                new_area_identificada = st.text_input("Área Identificada (ha):", value=str(registro[5]))
                 new_area_titulada = st.text_input("Área Titulada (ha):", value=str(registro[13]))
-                titulo = st.select_slider("Titulo:", constantes.FORMA_TITULO)
+                titulo = st.select_slider("Titulo:", options=constantes.FORMA_TITULO, value=registro[14] if registro[14] in constantes.FORMA_TITULO else constantes.FORMA_TITULO[0])
                 new_pnra = st.selectbox("PNRA:", constantes.PNRA, index=constantes.PNRA.index(registro[15]) if registro[15] in constantes.PNRA else 0)
                 new_latitude = st.text_input("Latitude:", value=registro[17])
                 new_longitude = st.text_input("Longitude:", value=registro[18])
@@ -58,14 +58,14 @@ def pagina_editar():
                 new_portaria_dou = st.date_input("Portaria DOU:", value=datetime.strptime(registro[11], '%d-%m-%Y') if registro[11] else None)
                 new_decreto_dou = st.date_input("Decreto DOU:", value=datetime.strptime(registro[12], '%d-%m-%Y') if registro[12] else None)
                 sobreposicao_territorial = st.multiselect("Sobreposição Territorial:", constantes.TIPO_SOBREPOSICAO)
-
-            # Coluna 5
-            with col5:
                 new_detalhes_sobreposicao = st.text_input("Detalhes de Sobreposição:", value=registro[22])
-                new_acao_civil_publica = st.selectbox("Ação Civil Pública:", constantes.ACAO_CIVIL_PUBLICA, index=constantes.ACAO_CIVIL_PUBLICA.index(registro[23]))
-                new_data_sentenca = st.date_input("Data da Sentença:", value=datetime.strptime(registro[24], '%d-%m-%Y') if registro[24] else None)
-                new_teor_sentenca = st.text_input("Teor/Prazo da Sentença:", value=registro[25])
-                new_outras_informacoes = st.text_area("Outras Informações:", value=registro[26], height=100)
+            # Coluna 5
+            st.markdown("---")
+                
+            new_acao_civil_publica = st.selectbox("Ação Civil Pública:", constantes.ACAO_CIVIL_PUBLICA, index=constantes.ACAO_CIVIL_PUBLICA.index(registro[23]))
+            new_data_sentenca = st.date_input("Data da Sentença:", value=datetime.strptime(registro[24], '%d-%m-%Y') if registro[24] else None)
+            new_teor_sentenca = st.text_input("Teor/Prazo da Sentença:", value=registro[25])
+            new_outras_informacoes = st.text_area("Outras Informações:", value=registro[26], height=100)
 
             # Botão para atualizar o registro
             if st.button("Atualizar"):
@@ -75,9 +75,8 @@ def pagina_editar():
                 portaria_dou_formatada = new_portaria_dou.strftime('%d-%m-%Y') if new_portaria_dou else None
                 decreto_dou_formatada = new_decreto_dou.strftime('%d-%m-%Y') if new_decreto_dou else None
 
-                etapa_rtid_formatada = ", ".join(etapa_rtid) if etapa_rtid else None
+                #etapa_rtid_formatada = ", ".join(etapa_rtid) if etapa_rtid else None
                 sobreposicao_territorial_formatada = ", ".join(sobreposicao_territorial) if sobreposicao_territorial else None
-                titulo_formatado = ", ".join(titulo) if titulo else None
 
                 # Conexão e atualização no banco
                 conn = sqlite3.connect('sisreq.db')
@@ -88,7 +87,7 @@ def pagina_editar():
                     Etapa_RTID = ?, Data_Certificacao = ?, Sobreposicao = ?,Portaria_DOU = ?, Decreto_DOU = ?, Titulo = ?
                     WHERE id = ?
                 ''', (new_numero_processo, data_abertura_formatada, new_nome_comunidade, new_municipio, new_numero_familias, 
-                      new_fase_processo, etapa_rtid_formatada, data_certificacao_formatada, sobreposicao_territorial_formatada, portaria_dou_formatada, decreto_dou_formatada, titulo_formatado, item_id))
+                      new_fase_processo, etapa_rtid, data_certificacao_formatada, sobreposicao_territorial_formatada, portaria_dou_formatada, decreto_dou_formatada, titulo, item_id))
                 conn.commit()
                 st.success(f"Registro {new_numero_processo} atualizado com sucesso!")
                 conn.close()

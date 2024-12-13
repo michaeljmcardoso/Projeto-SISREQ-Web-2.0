@@ -4,7 +4,8 @@ import sqlite3
 
 def tela_de_cadastro():
     st.markdown('<h2 style="color: "#1f77b4";">Cadastrar Processo</h2>', unsafe_allow_html=True)
-    col1, col2, col3, col4, col5 = st.columns(5)
+# Ajustando para 4 colunas
+    col1, col2, col3, col4 = st.columns(4)
 
     with col1:
         numero_processo = st.text_input("Número do Processo:")
@@ -12,35 +13,38 @@ def tela_de_cadastro():
         nome_comunidade = st.text_input("Comunidade:")
         municipio = st.selectbox("Municípios:", constantes.MUNICIPIOS)
         numero_familias = st.number_input("Número de Famílias:", min_value=0)
+        area_identificada = st.text_input("Área Identificada (ha):")
 
     with col2:
         fase_processo = st.selectbox("Fase:", constantes.FASE_PROCESSO)
-        etapa_rtid = st.selectbox("Etapa RTID:", constantes.ETAPA_RTID)
+        etapa_rtid = st.multiselect("Etapa RTID:", constantes.ETAPA_RTID)
         antropologico = st.selectbox("Antropológico:", constantes.RELATORIO_ANTROPOLOGICO)
         certidao_fcp = st.selectbox("Certidão FCP:", constantes.CERTIFICACAO_FCP)
         data_certificacao = st.date_input("Data de Certificação:")
 
     with col3:
-        area_identificada = st.text_input("Área Identificada (ha):")
+        
         area_titulada = st.text_input("Área Titulada (ha):")
         titulo = st.selectbox("Título:", constantes.FORMA_TITULO)
         pnra = st.selectbox("PNRA:", constantes.PNRA)
         latitude = st.text_input("Latitude:")
         longitude = st.text_input("Longitude:")
-    
+
     with col4:
         edital_dou = st.text_input("Edital DOU:")
         edital_doe = st.text_input("Edital DOE:")
         portaria_dou = st.date_input("Portaria DOU:")
         decreto_dou = st.date_input("Decreto DOU:")
         sobreposicao_territorial = st.multiselect("Sobreposição Territorial:", constantes.TIPO_SOBREPOSICAO)
-
-    with col5:
         detalhes_sobreposicao = st.text_input("Detalhes de Sobreposição:")
+
+    # Nova linha para campos adicionais, caso necessário
+    col5 = st.columns(1)[0]
+    with col5:
         acao_civil_publica = st.selectbox("Ação Civil Pública:", constantes.ACAO_CIVIL_PUBLICA)
         data_sentenca = st.date_input("Data da Sentença:")
-        teor_sentenca = st.text_input("Teor/Prazo da Sentença:")      
-        outras_informacoes = st.text_area("Outras Informações:", height=100)
+        teor_sentenca = st.text_input("Teor/Prazo da Sentença:")
+        outras_informacoes = st.text_area("Outras Informações:", height=100)\
 
     if st.button("Salvar"):
         conn = sqlite3.connect('sisreq.db')
