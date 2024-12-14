@@ -89,7 +89,7 @@ def pagina_editar():
                 ''', (new_numero_processo, data_abertura_formatada, new_nome_comunidade, new_municipio, new_numero_familias, 
                       new_fase_processo, etapa_rtid, data_certificacao_formatada, sobreposicao_territorial_formatada, portaria_dou_formatada, decreto_dou_formatada, titulo, item_id))
                 conn.commit()
-                st.success(f"Registro {new_numero_processo} atualizado com sucesso!")
+                st.success(f"Registro {new_nome_comunidade} atualizado com sucesso!")
                 conn.close()
 
         else:
