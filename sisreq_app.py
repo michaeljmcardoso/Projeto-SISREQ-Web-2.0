@@ -94,8 +94,8 @@ def tela_login():
         if verificar_credenciais(usuario, senha):
             st.session_state['usuario_logado'] = usuario
             st.success(f"Bem-vindo, {usuario}!")
-            st.rerun()
-            #st.experimental_rerun()
+            #st.rerun()
+            st.experimental_rerun()
         else:
             st.error("Credenciais inválidas.")
 
@@ -155,8 +155,8 @@ else:
     st.sidebar.title(f"Bem-vindo, {st.session_state['usuario_logado']}")
     if st.sidebar.button("Sair"):
         del st.session_state['usuario_logado']
-        st.rerun()
-        #st.experimental_rerun()
+        #st.rerun()
+        st.experimental_rerun()
     
     # Adicionar "Gerenciar Usuários" apenas para o admin
     opcoes_paginas = ["Página Inicial", "Editar Registro", "Tela de Cadastro", "Visualizações", "Sobre"]
