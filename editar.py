@@ -132,11 +132,6 @@ def pagina_editar():
                 else:
                     # Convertendo as datas para o formato DD-MM-YYYY
                     data_abertura_formatada = new_data_abertura.strftime('%d-%m-%Y') if new_data_abertura else None
-                    #data_certificacao_formatada = new_data_certificacao.strftime('%d-%m-%Y') if new_data_certificacao else None
-                    #portaria_dou_formatada = new_portaria_dou.strftime('%d-%m-%Y') if new_portaria_dou else None
-                    #decreto_dou_formatada = new_decreto_dou.strftime('%d-%m-%Y') if new_decreto_dou else None
-                    #data_sentenca_formatada = new_data_sentenca.strftime('%d-%m-%Y') if new_data_sentenca else None
-
                     sobreposicao_territorial_formatada = ", ".join(sobreposicao_territorial) if sobreposicao_territorial else None
                     
                     # Conexão e atualização no banco
