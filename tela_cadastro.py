@@ -13,7 +13,7 @@ def tela_de_cadastro():
         nome_comunidade = st.text_input("Comunidade:")
         municipio = st.selectbox("Municípios:", constantes.MUNICIPIOS)
         numero_familias = st.number_input("Número de Famílias:", min_value=0)
-        area_identificada = st.text_input("Área Identificada (ha):")
+        area_identificada = st.number_input("Área Identificada (ha):", min_value=0.0,  step=0.01, format="%.2f")
 
     with col2:
         fase_processo = st.selectbox("Fase:", constantes.FASE_PROCESSO)
@@ -24,7 +24,7 @@ def tela_de_cadastro():
 
     with col3:
         
-        area_titulada = st.text_input("Área Titulada (ha):")
+        area_titulada = st.number_input("Área Titulada (ha):", min_value=0.0,  step=0.01, format="%.2f")
         titulo = st.selectbox("Título:", constantes.FORMA_TITULO)
         pnra = st.selectbox("PNRA:", constantes.PNRA)
         latitude = st.text_input("Latitude:")
@@ -75,7 +75,7 @@ def tela_de_cadastro():
                         sobreposicao_territorial_formatada, detalhes_sobreposicao, acao_civil_publica, data_sentenca_formatada,
                         teor_sentenca, outras_informacoes))
             conn.commit()
-            st.success(f"Os dados foram salvos com sucesso!")
+            st.success(f"Os dados de comunidade {nome_comunidade} foram salvos com sucesso!")
         else:
             st.error("Por favor, preencha o campo 'Número do processo.")
         conn.close()

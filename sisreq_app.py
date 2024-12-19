@@ -23,7 +23,7 @@ def iniciar_banco_de_dados():
         '''
         CREATE TABLE IF NOT EXISTS processos (
             ID INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
-            Numero TEXT,
+            Numero TEXT, 
             Data_Abertura DATE,
             Comunidade TEXT,
             Municipio TEXT,
@@ -84,6 +84,106 @@ def verificar_credenciais(usuario, senha):
 # Inicializar banco de dados
 iniciar_banco_de_dados()
 
+# Carregar dados do banco
+conn = sqlite3.connect('sisreq.db')
+df = pd.read_sql_query("SELECT * FROM processos", conn)
+
+# Garantir que todos os valores sejam strings antes de usar `.str.replace()`
+df['Area_ha'] = df['Area_ha'].astype(str).str.replace(',', '.', regex=False)
+
+# Converter para valores numéricos, substituindo valores inválidos por 0
+df['Area_ha'] = pd.to_numeric(df['Area_ha'], errors='coerce').fillna(0)
+
+# Atualizar os valores diretamente no banco
+for index, row in df.iterrows():
+    conn.execute(
+        "UPDATE processos SET Area_ha = ? WHERE ID = ?",
+        (row['Area_ha'], row['ID'])  # Substitua 'id' pela chave primária real da sua tabela
+    )
+
+conn.commit()
+conn.close()
+
+# Carregar dados do banco
+conn = sqlite3.connect('sisreq.db')
+df = pd.read_sql_query("SELECT * FROM processos", conn)
+
+# Garantir que todos os valores sejam strings antes de usar `.str.replace()`
+df['Area_ha_Titulada'] = df['Area_ha_Titulada'].astype(str).str.replace(',', '.', regex=False)
+
+# Converter para valores numéricos, substituindo valores inválidos por 0
+df['Area_ha_Titulada'] = pd.to_numeric(df['Area_ha_Titulada'], errors='coerce').fillna(0)
+
+# Atualizar os valores diretamente no banco
+for index, row in df.iterrows():
+    conn.execute(
+        "UPDATE processos SET Area_ha_Titulada = ? WHERE ID = ?",
+        (row['Area_ha_Titulada'], row['ID'])  # Substitua 'id' pela chave primária real da sua tabela
+    )
+
+conn.commit()
+conn.close()
+
+# Carregar dados do banco
+conn = sqlite3.connect('sisreq.db')
+df = pd.read_sql_query("SELECT * FROM processos", conn)
+
+# Garantir que todos os valores sejam strings antes de usar `.str.replace()`
+df['Num_familias'] = df['Num_familias'].astype(str).str.replace(',', '.', regex=False)
+
+# Converter para valores numéricos, substituindo valores inválidos por 0
+df['Num_familias'] = pd.to_numeric(df['Num_familias'], errors='coerce').fillna(0)
+
+# Atualizar os valores diretamente no banco
+for index, row in df.iterrows():
+    conn.execute(
+        "UPDATE processos SET Num_familias = ? WHERE ID = ?",
+        (row['Num_familias'], row['ID'])  # Substitua 'id' pela chave primária real da sua tabela
+    )
+
+conn.commit()
+conn.close()
+
+# Carregar dados do banco
+conn = sqlite3.connect('sisreq.db')
+df = pd.read_sql_query("SELECT * FROM processos", conn)
+
+# Garantir que todos os valores sejam strings antes de usar `.str.replace()`
+df['Latitude'] = df['Latitude'].astype(str).str.replace(',', '.', regex=False)
+
+# Converter para valores numéricos, substituindo valores inválidos por 0
+df['Latitude'] = pd.to_numeric(df['Latitude'], errors='coerce').fillna(0)
+
+# Atualizar os valores diretamente no banco
+for index, row in df.iterrows():
+    conn.execute(
+        "UPDATE processos SET Latitude = ? WHERE ID = ?",
+        (row['Latitude'], row['ID'])  # Substitua 'id' pela chave primária real da sua tabela
+    )
+
+conn.commit()
+conn.close()
+
+# Carregar dados do banco
+conn = sqlite3.connect('sisreq.db')
+df = pd.read_sql_query("SELECT * FROM processos", conn)
+
+# Garantir que todos os valores sejam strings antes de usar `.str.replace()`
+df['Longitude'] = df['Longitude'].astype(str).str.replace(',', '.', regex=False)
+
+# Converter para valores numéricos, substituindo valores inválidos por 0
+df['Longitude'] = pd.to_numeric(df['Longitude'], errors='coerce').fillna(0)
+
+# Atualizar os valores diretamente no banco
+for index, row in df.iterrows():
+    conn.execute(
+        "UPDATE processos SET Longitude = ? WHERE ID = ?",
+        (row['Longitude'], row['ID'])  # Substitua 'id' pela chave primária real da sua tabela
+    )
+
+conn.commit()
+conn.close()
+
 # Tela de login
 def tela_login():
     st.markdown('<h2 style="color: "#1f77b4";">Login</h2>', unsafe_allow_html=True)
@@ -94,15 +194,15 @@ def tela_login():
         if verificar_credenciais(usuario, senha):
             st.session_state['usuario_logado'] = usuario
             st.success(f"Bem-vindo, {usuario}!")
-            st.rerun()
-            #st.experimental_rerun()
+            #st.rerun()
+            st.experimental_rerun()
         else:
             st.error("Credenciais inválidas.")
 
 # Página inicial (após login)
 def pagina_inicial():
     st.markdown('<h2 style="color: "#1f77b4";">SISREQ - Sistema de Regularização Quilombola</h2>', unsafe_allow_html=True)
-    st.subheader("Registros Salvos")
+    st.subheader("Relacão de Processos")
     df = obter_todos_os_registros()
     if not df.empty:
         if 'ID' in df.columns:
@@ -112,7 +212,7 @@ def pagina_inicial():
 
     if st.button("Exportar para Excel"):
         df.to_excel('processos.xlsx', index=False)
-        st.success("Dados exportados com sucesso para sisreq.xlsx")
+        st.success("Dados exportados com sucesso para processos.xlsx")
         with open("processos.xlsx", "rb") as file:
             st.download_button(
                 label="Baixar Excel",
@@ -155,8 +255,8 @@ else:
     st.sidebar.title(f"Bem-vindo, {st.session_state['usuario_logado']}")
     if st.sidebar.button("Sair"):
         del st.session_state['usuario_logado']
-        st.rerun()
-        #st.experimental_rerun()
+        #st.rerun()
+        st.experimental_rerun()
     
     # Adicionar "Gerenciar Usuários" apenas para o admin
     opcoes_paginas = ["Página Inicial", "Editar Registro", "Tela de Cadastro", "Visualizações", "Sobre"]
