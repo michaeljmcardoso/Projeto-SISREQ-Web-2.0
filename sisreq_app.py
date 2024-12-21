@@ -224,8 +224,8 @@ def pagina_inicial():
 def pagina_about():
     st.subheader("Sobre o Projeto")
     st.write("""
-        Sistema de registro dos processos de regularização quilombola.
-        Projeto experimental em desenvolvimento. Focado em otimizar o registro, 
+        Sistema de registro de processos de regularização quilombola.
+        Projeto experimental, em desenvolvimento. Focado em otimizar o registro, 
         visualização e consulta dos processos cadastrados.
         Durante a fase de desenvolvimento, algumas funcionalidades podem não responder corretamente.
         Desenvolvido por **Michael JM Cardoso** - Antropólogo e Programador.
@@ -262,6 +262,9 @@ else:
     opcoes_paginas = ["Página Inicial", "Editar Registro", "Tela de Cadastro", "Visualizações", "Sobre"]
     if st.session_state['usuario_logado'] == "admin":
         opcoes_paginas.insert(3, "Gerenciar Usuários")  # Insere antes da página "Sobre"
+    elif st.session_state['usuario_logado'] == "visitante":
+        opcoes_paginas.remove("Editar Registro")
+        opcoes_paginas.remove("Tela de Cadastro")
 
     pagina_selecionada = st.sidebar.radio("Selecione uma Página", opcoes_paginas)
 
