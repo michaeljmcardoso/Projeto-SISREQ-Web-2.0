@@ -1,30 +1,46 @@
 import streamlit as st
 import constantes
 import sqlite3
+import re
 
 def tela_de_cadastro():
-    st.markdown('<h2 style="color: "#1f77b4";">Cadastrar Processo</h2>', unsafe_allow_html=True)
+    st.markdown('<h4 style="color: "#1f77b4";">Cadastrar Processo</h4df3>', unsafe_allow_html=True)
 # Ajustando para 4 colunas
     col1, col2, col3, col4 = st.columns(4)
 
     with col1:
-        numero_processo = st.text_input("Número do Processo:")
+        numero_processo = st.text_input("Nº do Processo: (formato: 54000.000000/2000-00)")
         data_abertura = st.date_input("Data de Abertura:")
         nome_comunidade = st.text_input("Comunidade:")
         municipio = st.selectbox("Municípios:", constantes.MUNICIPIOS)
         numero_familias = st.number_input("Número de Famílias:", min_value=0)
-        area_identificada = st.number_input("Área Identificada (ha):", min_value=0.0,  step=0.01, format="%.2f")
+        area_identificada = st.number_input("Área Identificada (ha):", min_value=0.0,  step=0.01, format="%.4f")
+
+        if numero_processo.strip():
+            if re.match(r'^\d{5}.\d{6}/\d{4}-\d{2}', numero_processo.strip()):
+                st.info("Número válido.")
+            else:
+                st.error("Número inválido! Por favor, use o formato 54000.000000/2000-00.")   
 
     with col2:
         fase_processo = st.selectbox("Fase:", constantes.FASE_PROCESSO)
         etapa_rtid = st.multiselect("Etapa RTID:", constantes.ETAPA_RTID)
         antropologico = st.selectbox("Antropológico:", constantes.RELATORIO_ANTROPOLOGICO)
         certidao_fcp = st.selectbox("Certidão FCP:", constantes.CERTIFICACAO_FCP)
-        data_certificacao = st.date_input("Data de Certificação:")
+        data_certificacao = st.text_input("Data de Certificação (formato: DD-MM-YYYY):")
+
+        # Validar a data de certificação
+        if data_certificacao.strip():  # Verifica se a entrada não está vazia
+            if re.match(r'^\d{2}-\d{2}-\d{4}$', data_certificacao.strip()):
+                data_certificacao_formatada = data_certificacao.strip()
+            else:
+                st.error("Data de Certificação inválida! Por favor, use o formato DD-MM-YYYY.")
+        else:
+            data_certificacao_formatada = None  # Caso esteja vazia
 
     with col3:
         
-        area_titulada = st.number_input("Área Titulada (ha):", min_value=0.0,  step=0.01, format="%.2f")
+        area_titulada = st.number_input("Área Titulada (ha):", min_value=0.0,  step=0.01, format="%.4f")
         titulo = st.selectbox("Título:", constantes.FORMA_TITULO)
         pnra = st.selectbox("PNRA:", constantes.PNRA)
         latitude = st.text_input("Latitude:")
@@ -33,18 +49,38 @@ def tela_de_cadastro():
     with col4:
         edital_dou = st.text_input("Edital DOU:")
         edital_doe = st.text_input("Edital DOE:")
-        portaria_dou = st.date_input("Portaria DOU:")
-        decreto_dou = st.date_input("Decreto DOU:")
+        portaria_dou = st.text_input("Portaria DOU: (formato: DD-MM-YYYY)")
+        decreto_dou = st.text_input("Decreto DOU: (formato: DD-MM-YYYY)")
         sobreposicao_territorial = st.multiselect("Sobreposição Territorial:", constantes.TIPO_SOBREPOSICAO)
         detalhes_sobreposicao = st.text_input("Detalhes de Sobreposição:")
+
+        # Validação do campo Portaria DOU
+        if portaria_dou.strip():
+            if re.match(r'^\d{2}-\d{2}-\d{4}$', portaria_dou.strip()):
+                st.info("Data da Portaria DOU válida.")
+            else:
+                st.error("Portaria DOU inválida! Por favor, use o formato DD-MM-YYYY.")
+
+        # Validação do campo Decreto DOU
+        if decreto_dou.strip():
+            if re.match(r'^\d{2}-\d{2}-\d{4}$', decreto_dou.strip()):
+                st.info("Data do Decreto DOU válida.")
+            else:
+                st.error("Decreto DOU inválido! Por favor, use o formato DD-MM-YYYY.")
 
     # Nova linha para campos adicionais, caso necessário
     col5 = st.columns(1)[0]
     with col5:
         acao_civil_publica = st.selectbox("Ação Civil Pública:", constantes.ACAO_CIVIL_PUBLICA)
-        data_sentenca = st.date_input("Data da Sentença:")
+        data_sentenca = st.text_input("Data da Sentença: (formato: DD-MM-YYYY)")
         teor_sentenca = st.text_input("Teor/Prazo da Sentença:")
-        outras_informacoes = st.text_area("Outras Informações:", height=100)\
+        outras_informacoes = st.text_area("Outras Informações:", height=100)
+
+        if data_sentenca.strip():
+            if re.match(r'^\d{2}-\d{2}-\d{4}$', data_sentenca.strip()):
+                st.info("Data da Sentença válida.")
+            else:
+                st.error("Data da Sentença inválida! Por favor, use o formato DD-MM-YYYY.")
 
     if st.button("Salvar"):
         conn = sqlite3.connect('sisreq.db')
@@ -77,5 +113,5 @@ def tela_de_cadastro():
             conn.commit()
             st.success(f"Os dados de comunidade {nome_comunidade} foram salvos com sucesso!")
         else:
-            st.error("Por favor, preencha o campo 'Número do processo.")
+            st.error("Por favor, preencha o campo 'Número do processo'.")
         conn.close()

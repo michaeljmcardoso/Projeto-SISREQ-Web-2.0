@@ -69,6 +69,7 @@ FORMA_TITULO = ['SEM TITULO', 'CCDRU', 'TITULO DEFINITIVO']
 PNRA = ['NAO-INICIADO', 'ANDAMENTO','CONCLUIDO']
 
 MUNICIPIOS = [
+    '',
     'Açailândia',
     'Afonso Cunha',
     'Água Doce do Maranhão',

@@ -7,9 +7,9 @@ from obter_todos_registros import obter_todos_os_registros, obter_registro_por_i
 
 # Página de Edição: Atualização de registros existentes
 def pagina_editar():
-    st.header("Editar Registros")
+    st.markdown('<h3 style="color: "#1f77b4";">Editar Processo</h3>', unsafe_allow_html=True)
+    #st.header("Editar Registros")
 
-    st.subheader("Processos Salvos")
     df = obter_todos_os_registros()  # Função que busca todos os registros no banco
     if not df.empty:
         if 'ID' in df.columns:
@@ -34,7 +34,7 @@ def pagina_editar():
                 new_nome_comunidade = st.text_input("Comunidade:", value=registro[3])
                 new_municipio = st.text_input("Município:", value=registro[4])
                 new_numero_familias = st.number_input("Número de Famílias:", min_value=0, value=int(registro[6]) if registro[6] else 0,)
-                new_area_identificada = st.number_input("Área Identificada (ha):", min_value=0.0, step=0.01, format="%.2f", value=float(registro[5]) if registro[5] else 0.0)
+                new_area_identificada = st.number_input("Área Identificada (ha):", min_value=0.0, step=0.01, format="%.4f", value=float(registro[5]) if registro[5] else 0.0)
 
             # Coluna 2
             with col2:
@@ -58,7 +58,7 @@ def pagina_editar():
 
             # Coluna 3
             with col3:
-                new_area_titulada = st.number_input("Área Titulada (ha):", min_value=0.0, step=0.01, format="%.2f", value=float(registro[13] if registro[13] else 0.0))
+                new_area_titulada = st.number_input("Área Titulada (ha):", min_value=0.0, step=0.01, format="%.4f", value=float(registro[13] if registro[13] else 0.0))
                 titulo = st.select_slider("Titulo:", options=constantes.FORMA_TITULO, value=registro[14] if registro[14] in constantes.FORMA_TITULO else constantes.FORMA_TITULO[0])
                 new_pnra = st.selectbox("PNRA:", constantes.PNRA, index=constantes.PNRA.index(registro[15]) if registro[15] in constantes.PNRA else 0)
                 new_latitude = st.text_input("Latitude:", value=registro[17])
