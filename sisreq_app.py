@@ -10,7 +10,7 @@ from datetime import datetime
 from obter_todos_registros import obter_todos_os_registros
 from pagina_cadastro import tela_de_cadastro
 from pagina_editar import pagina_editar
-from pagina_visualizacoes import filtrar_por_municipio
+from pagina_dashboard import filtrar_por_municipio
 from filtrar_processos import criar_submenu
 
 # Função para hash de senha 
