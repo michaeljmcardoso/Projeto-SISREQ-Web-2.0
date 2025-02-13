@@ -77,7 +77,7 @@ def iniciar_banco_de_dados():
 
 # Verificar credenciais
 def verificar_credenciais(usuario, senha):
-    conn = sqlite3.connect('sisreq.db')  # Corrigido para usar o mesmo banco de dados
+    conn = sqlite3.connect('sisreq.db')
     cursor = conn.cursor()
     cursor.execute('SELECT * FROM usuarios WHERE usuario = ? AND senha = ?', (usuario, hash_senha(senha)))
     dados = cursor.fetchone()
@@ -101,7 +101,7 @@ df['Area_ha'] = pd.to_numeric(df['Area_ha'], errors='coerce').fillna(0)
 for index, row in df.iterrows():
     conn.execute(
         "UPDATE processos SET Area_ha = ? WHERE ID = ?",
-        (row['Area_ha'], row['ID'])  # Substitua 'id' pela chave primária real da sua tabela
+        (row['Area_ha'], row['ID'])
     )
 
 conn.commit()
@@ -121,7 +121,7 @@ df['Area_ha_Titulada'] = pd.to_numeric(df['Area_ha_Titulada'], errors='coerce').
 for index, row in df.iterrows():
     conn.execute(
         "UPDATE processos SET Area_ha_Titulada = ? WHERE ID = ?",
-        (row['Area_ha_Titulada'], row['ID'])  # Substitua 'id' pela chave primária real da sua tabela
+        (row['Area_ha_Titulada'], row['ID'])
     )
 
 conn.commit()
@@ -141,7 +141,7 @@ df['Num_familias'] = pd.to_numeric(df['Num_familias'], errors='coerce').fillna(0
 for index, row in df.iterrows():
     conn.execute(
         "UPDATE processos SET Num_familias = ? WHERE ID = ?",
-        (row['Num_familias'], row['ID'])  # Substitua 'id' pela chave primária real da sua tabela
+        (row['Num_familias'], row['ID'])
     )
 
 conn.commit()
@@ -161,7 +161,7 @@ df['Latitude'] = pd.to_numeric(df['Latitude'], errors='coerce').fillna(0)
 for index, row in df.iterrows():
     conn.execute(
         "UPDATE processos SET Latitude = ? WHERE ID = ?",
-        (row['Latitude'], row['ID'])  # Substitua 'id' pela chave primária real da sua tabela
+        (row['Latitude'], row['ID'])
     )
 
 conn.commit()
@@ -181,7 +181,7 @@ df['Longitude'] = pd.to_numeric(df['Longitude'], errors='coerce').fillna(0)
 for index, row in df.iterrows():
     conn.execute(
         "UPDATE processos SET Longitude = ? WHERE ID = ?",
-        (row['Longitude'], row['ID'])  # Substitua 'id' pela chave primária real da sua tabela
+        (row['Longitude'], row['ID'])
     )
 
 conn.commit()
@@ -204,7 +204,7 @@ def tela_login():
 
 # Página inicial (após login)
 def pagina_inicial():
-    st.markdown('<h5 style="color: #1f77b4;">Relação de Processos</h5>', unsafe_allow_html=True)
+    st.markdown('<h5 style="color: #1f77b4;">Controle de Processos</h5>', unsafe_allow_html=True)
     #st.write("__Relação de Processos__")
     df = obter_todos_os_registros()
     if not df.empty:
@@ -352,19 +352,18 @@ else:
         #st.experimental_rerun()
 
     # Definir páginas disponíveis com base no tipo de usuário
-    opcoes_paginas = ["Página Inicial", "Pesquisar", "Editar Registro", "Tela de Cadastro", "Visualizações", "Sobre"]
+    opcoes_paginas = ["Controle de Processos", "Iniciar Processo", "Editar Processo", "Pesquisa", "Dashboard", "Sobre"]
     
     if st.session_state['usuario_logado'] == "admin":
-        opcoes_paginas.insert(3, "Gerenciar Usuários")  # Adicionar "Gerenciar Usuários" antes de "Visualizações"
+        opcoes_paginas.insert(5, "Gerenciar Usuários")  # Adicionar "Gerenciar Usuários" antes de "Sobre"
     elif st.session_state['usuario_logado'] == "visitante":
-        opcoes_paginas = [pagina for pagina in opcoes_paginas if pagina not in ["Editar Registro", "Tela de Cadastro"]]
+        opcoes_paginas = [pagina for pagina in opcoes_paginas if pagina not in ["Editar Processo", "Iniciar Processo"]]
 
     # Navegação principal
     pagina_selecionada = st.sidebar.radio("Selecione uma Página", opcoes_paginas)
 
     # Função para gerenciar usuários (apenas para admin)
     def gerenciar_usuarios():
-        st.header("Gerenciar Usuários")
         st.subheader("Adicionar Novo Usuário")
 
         col1, col2 = st.columns(2)
@@ -383,27 +382,27 @@ else:
             else:
                 st.warning("Por favor, preencha todos os campos.")
 
-        st.subheader("Usuários Cadastrados")
+        st.subheader("Controle de Usuários")
         conn = sqlite3.connect('sisreq.db')
         usuarios = pd.read_sql_query("SELECT id, usuario FROM usuarios", conn)
         conn.close()
 
         if not usuarios.empty:
             usuarios = usuarios.rename(columns={"id": "ID", "usuario": "Usuário"})
-            st.dataframe(usuarios, use_container_width=True)
+            st.dataframe(usuarios, use_container_width=True, height=490)
 
     # Redirecionamento de páginas
-    if pagina_selecionada == "Página Inicial":
+    if pagina_selecionada == "Controle de Processos":
         pagina_inicial()
         
-    elif pagina_selecionada == "Pesquisar":
+    elif pagina_selecionada == "Pesquisa":
         criar_submenu()
                
-    elif pagina_selecionada == "Tela de Cadastro":
+    elif pagina_selecionada == "Iniciar Processo":
         tela_de_cadastro()
-    elif pagina_selecionada == "Editar Registro":
+    elif pagina_selecionada == "Editar Processo":
         pagina_editar()
-    elif pagina_selecionada == "Visualizações":
+    elif pagina_selecionada == "Dashboard":
         filtrar_por_municipio()  # Você pode adicionar outras opções aqui
     elif pagina_selecionada == "Gerenciar Usuários":
         if st.session_state['usuario_logado'] == "admin":

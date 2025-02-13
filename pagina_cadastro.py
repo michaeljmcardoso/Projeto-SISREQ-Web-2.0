@@ -4,7 +4,7 @@ import sqlite3
 import re
 
 def tela_de_cadastro():
-    st.markdown('<h4 style="color: "#1f77b4";">Cadastrar Processo</h4df3>', unsafe_allow_html=True)
+    st.markdown('<h4 style="color: "#1f77b4";">Iniciar Processo</h4df3>', unsafe_allow_html=True)
 # Ajustando para 4 colunas
     col1, col2, col3, col4 = st.columns(4)
 

@@ -1,12 +1,3 @@
-/database.db
-/processos.xlsx
-/grafico.py
-/pag_relatorios.py
-/pag_visualizacoes.py
-/relatorio.py
-/sisreq (Cópia).db
-/menu_lateral_esquerdo.py 
-
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -172,8 +163,6 @@ cython_debug/
 
 # Arquivos de banco de dados
 #sisreq.db
-banco_de_dados.db
-sisreqBackup.db
 
 # mapas
 mapa_interativo.html
@@ -186,13 +175,4 @@ xlsx_to_sqlite.py
 cria_bd_municipios.py
 
 # planilhas
-SISREQ.xlsx
 municipios.csv
-
-# pastas
-Backup
-
-# filtro de teste
-filtro.py
-
-conversor_de_planilha.py
