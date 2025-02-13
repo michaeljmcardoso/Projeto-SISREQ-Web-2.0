@@ -162,7 +162,7 @@ cython_debug/
 #.idea/
 
 # Arquivos de banco de dados
-#sisreq.db
+sisreq.db
 
 # mapas
 mapa_interativo.html
