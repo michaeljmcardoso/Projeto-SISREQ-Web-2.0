@@ -12,6 +12,7 @@ from pagina_cadastro import tela_de_cadastro
 from pagina_editar import pagina_editar
 from pagina_dashboard import filtrar_por_municipio
 from filtrar_processos import criar_submenu
+from pagina_chat import iniciar_chat
 
 # Função para hash de senha 
 def hash_senha(senha):
@@ -296,7 +297,7 @@ def pagina_about():
     st.write("""
         Sistema de registro de processos de regularização quilombola.
         Projeto experimental, em desenvolvimento. Focado em otimizar o registro, 
-        visualização e consulta dos processos cadastrados.
+        visualização e consulta dos processos cadastrados. Inclui o Assistente Virtual, SISREQ_IA. 
     """)
     # Rodapé
     st.markdown(
@@ -352,10 +353,10 @@ else:
         #st.experimental_rerun()
 
     # Definir páginas disponíveis com base no tipo de usuário
-    opcoes_paginas = ["Controle de Processos", "Iniciar Processo", "Editar Processo", "Pesquisa", "Dashboard", "Sobre"]
+    opcoes_paginas = ["Controle de Processos", "Iniciar Processo", "Editar Processo", "Pesquisa", "Dashboard", "SISREQ_IA", "Sobre"]
     
     if st.session_state['usuario_logado'] == "admin":
-        opcoes_paginas.insert(5, "Gerenciar Usuários")  # Adicionar "Gerenciar Usuários" antes de "Sobre"
+        opcoes_paginas.insert(6, "Gerenciar Usuários")  # Adicionar "Gerenciar Usuários" antes de "Sobre"
     elif st.session_state['usuario_logado'] == "visitante":
         opcoes_paginas = [pagina for pagina in opcoes_paginas if pagina not in ["Editar Processo", "Iniciar Processo"]]
 
@@ -409,5 +410,7 @@ else:
             gerenciar_usuarios()
         else:
             st.error("Você não tem permissão para acessar esta página.")
+    elif pagina_selecionada == "SISREQ_IA":
+        iniciar_chat()
     elif pagina_selecionada == "Sobre":
         pagina_about()

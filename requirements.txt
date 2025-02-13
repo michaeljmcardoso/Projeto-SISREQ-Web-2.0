@@ -1,6 +1,8 @@
+pandas
+plotly
+seaborn
+openpyxl
 streamlit
 matplotlib
-openpyxl
-seaborn
-plotly
-pandas
+python-dotenv
+google-generativeai
