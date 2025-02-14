@@ -33,7 +33,7 @@ def buscar_registros_por_fase(fase):
     return total, registros, colunas
 
 # Função principal
-def main():
+def mestre():
     st.subheader("Visualização de Processos por Fase")
 
     # Lista de fases disponíveis
@@ -66,5 +66,5 @@ def main():
     else:
         st.warning(f"Não há registros para a fase '{fase_selecionada}'.")
 
-if __name__ == "__main__":
-    main()
+#if __name__ == "__main__":
+#    main()

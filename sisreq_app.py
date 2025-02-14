@@ -10,7 +10,7 @@ from datetime import datetime
 from obter_todos_registros import obter_todos_os_registros
 from pagina_cadastro import tela_de_cadastro
 from pagina_editar import pagina_editar
-from pagina_dashboard import main
+from pagina_dashboard import mestre
 from pagina_pesquisa import criar_submenu
 from pagina_chat import iniciar_chat
 
@@ -410,7 +410,7 @@ else:
     elif pagina_selecionada == "Editar Processo":
         pagina_editar()
     elif pagina_selecionada == "Dashboard":
-        main()  # Você pode adicionar outras opções aqui
+        mestre()  # Você pode adicionar outras opções aqui
     elif pagina_selecionada == "Gerenciar Usuários":
         if st.session_state['usuario_logado'] == "admin":
             gerenciar_usuarios()
