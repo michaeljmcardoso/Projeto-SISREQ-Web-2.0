@@ -10,8 +10,8 @@ from datetime import datetime
 from obter_todos_registros import obter_todos_os_registros
 from pagina_cadastro import tela_de_cadastro
 from pagina_editar import pagina_editar
-from pagina_dashboard import filtrar_por_municipio
-from filtrar_processos import criar_submenu
+from pagina_dashboard import main
+from pagina_pesquisa import criar_submenu
 from pagina_chat import iniciar_chat
 
 # Função para hash de senha 
@@ -190,18 +190,26 @@ conn.close()
 
 # Tela de login
 def tela_login():
-    st.markdown('<h2 style="color: "#1f77b4";">Login</h2>', unsafe_allow_html=True)
-    usuario = st.text_input("Usuário")
-    senha = st.text_input("Senha", type="password")
+    st.markdown(f"""
+            <div style='display: flex; justify-content: center; align-items: center; margin-bottom: 20px;'>
+                <h1 style='margin-right: -40px;'>Bem-vindo</h1>
+                <img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" style='vertical-align: middle;' width="45">
+            </div>
+        """, unsafe_allow_html=True)
+    col1, col2, col3 = st.columns(3)
+    with col2:
+        st.markdown('<h2 style="color: "#1f77b4";">Login</h2>', unsafe_allow_html=True)
+        usuario = st.text_input("Usuário", placeholder="Digite seu usuário")
+        senha = st.text_input("Senha", placeholder="Digite sua senha", type="password")
     
-    if st.button("Entrar"):
-        if verificar_credenciais(usuario, senha):
-            st.session_state['usuario_logado'] = usuario
-            st.success(f"Bem-vindo, {usuario}!")
-            st.rerun()
-            #st.experimental_rerun()
-        else:
-            st.error("Credenciais inválidas.")
+        if st.button("Entrar"):
+            if verificar_credenciais(usuario, senha):
+                st.session_state['usuario_logado'] = usuario
+                st.success(f"Bem-vindo, {usuario}!")
+                st.rerun()
+                #st.experimental_rerun()
+            else:
+                st.error("Credenciais inválidas.")
 
 # Página inicial (após login)
 def pagina_inicial():
@@ -230,7 +238,7 @@ def pagina_inicial():
     comunidades_disponiveis = df['Comunidade_Municipio'].unique().tolist()
 
     # Caixa de seleção para escolha da comunidade
-    comunidade_selecionada = st.selectbox("Selecione uma Comunidade para Consultar:", options=comunidades_disponiveis)
+    comunidade_selecionada = st.selectbox("Selecione uma Comunidade ou Município para Consultar:", options=comunidades_disponiveis)
 
     # Validar a seleção da comunidade
     if comunidade_selecionada:
@@ -290,7 +298,7 @@ def pagina_inicial():
             st.markdown(f"<p><strong>Outras Informações:</strong> {registro['Outras_Informacoes']}</p>", unsafe_allow_html=True)
         else:
             st.warning("Comunidade não encontrada. Por favor, verifique o nome informado.")
-   
+
 # Função para Página Sobre
 def pagina_about():
     st.subheader("Sobre o Projeto")
@@ -395,16 +403,14 @@ else:
     # Redirecionamento de páginas
     if pagina_selecionada == "Controle de Processos":
         pagina_inicial()
-        
     elif pagina_selecionada == "Pesquisa":
         criar_submenu()
-               
     elif pagina_selecionada == "Iniciar Processo":
         tela_de_cadastro()
     elif pagina_selecionada == "Editar Processo":
         pagina_editar()
     elif pagina_selecionada == "Dashboard":
-        filtrar_por_municipio()  # Você pode adicionar outras opções aqui
+        main()  # Você pode adicionar outras opções aqui
     elif pagina_selecionada == "Gerenciar Usuários":
         if st.session_state['usuario_logado'] == "admin":
             gerenciar_usuarios()
@@ -414,3 +420,8 @@ else:
         iniciar_chat()
     elif pagina_selecionada == "Sobre":
         pagina_about()
+
+    st.sidebar.markdown('''
+    ---
+    Created with ❤️ by [Michael](https://github.com/michaeljmcardoso).
+    ''')  
