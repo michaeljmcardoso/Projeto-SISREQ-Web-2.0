@@ -149,7 +149,7 @@ O SISREQ foi projetado para:
 
 Para mais informações, sugestões ou colaborações, entre em contato:
 - **E-mail:** [michaeljmc@outlook.com.br]
-- **Repositório:** [link-do-repositorio]
+- **Repositório:** [(https://github.com/michaeljmcardoso/Projeto-SISREQ-Web-2.0)]
 
 ---
 
