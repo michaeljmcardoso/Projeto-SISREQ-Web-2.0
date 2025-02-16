@@ -33,7 +33,7 @@ def buscar_registros_por_fase(fase):
     return total, registros, colunas
 
 # Função principal
-def mestre():
+def proc_por_fase():
     st.subheader("Visualização de Processos por Fase")
 
     # Lista de fases disponíveis
