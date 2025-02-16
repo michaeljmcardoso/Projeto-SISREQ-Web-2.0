@@ -122,7 +122,7 @@ celerybeat.pid
 *.sage.py
 
 # Environments
-#.env
+.env
 .venv
 env/
 venv/
@@ -162,17 +162,10 @@ cython_debug/
 #.idea/
 
 # Arquivos de banco de dados
-sisreq.db
+sisreq.db/
 
 # mapas
-mapa_interativo.html
+mapa_interativo.html/
 
-# arquivo de saída
-output
+temp_data.csv/
 
-# arquivo de conversão
-xlsx_to_sqlite.py
-cria_bd_municipios.py
-
-# planilhas
-municipios.csv
