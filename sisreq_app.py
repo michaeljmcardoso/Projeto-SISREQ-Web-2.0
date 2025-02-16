@@ -410,7 +410,7 @@ else:
     elif pagina_selecionada == "Editar Processo":
         pagina_editar()
     elif pagina_selecionada == "Dashboard":
-        dashboard(fase=False)
+        dashboard(False)
     elif pagina_selecionada == "Gerenciar Usuários":
         if st.session_state['usuario_logado'] == "admin":
             gerenciar_usuarios()
