@@ -30,7 +30,6 @@ ETAPA_RTID = [
     ]
 
 FASE_PROCESSO = [ 
-    '',
     'Inicial', 
     'Estudo de Identificação',
     'Contestação', 
@@ -40,6 +39,7 @@ FASE_PROCESSO = [
     'Desapropriação', 
     'Desintrusão',
     'Titulação',
+    'Arquivado'
     ]  
 
 CERTIFICACAO_FCP = [

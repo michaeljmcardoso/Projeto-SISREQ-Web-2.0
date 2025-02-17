@@ -1,10 +1,8 @@
 import streamlit as st
-import proc_por_fase
-from graficos import exibir_grafico_fases_processo
-from proc_por_municipio import exibir_processos_por_municipio
+from dashboard import processos_por_fase, processos_por_municipio, grafico_processos_por_fase
 
 def dashboard(fase):
-    st.title("Dashboard SISREQ")
-    exibir_processos_por_municipio()
-    proc_por_fase.processso_por_fase()
-    exibir_grafico_fases_processo()
+    st.markdown('<h2 style="color: #1f77b4;">Dashboard SISREQ</h2>', unsafe_allow_html=True)
+    processos_por_municipio()
+    processos_por_fase()
+    grafico_processos_por_fase()
