@@ -56,10 +56,21 @@ def processos_por_fase():
             df.index = df.index + 1
             st.dataframe(df)
 
-        # Botão para salvar extrato
-        if st.button('Salvar Extrato'):
-            df.to_excel(f"extrato_{fase_selecionada}.xlsx", index=False)
-            st.success(f"Extrato salvo como 'extrato_{fase_selecionada}.xlsx'")
+        # Botão para salvar e baixar extrato
+        if st.button("Salvar e Baixar Extrato"):
+            # Salvar o DataFrame em um arquivo Excel
+            file_name = f"Extrato_fase_{fase_selecionada}.xlsx"
+            df.to_excel(file_name, index=False)
+            st.success(f"Extrato salvo como '{file_name}'")
+
+            # Oferecer o arquivo para download
+            with open(file_name, "rb") as file:
+                st.download_button(
+                    label="Baixar Excel",
+                    data=file,
+                    file_name=file_name,
+                    mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+                )
     else:
         st.warning(f"Não há registros para a fase '{fase_selecionada}'.")
 
