@@ -49,12 +49,12 @@ def exibir_processos_por_municipio():
         data.index = data.index + 1  
 
         # Exibir o DataFrame no Streamlit
-        st.write("### Número de Processos por Município")
+        #st.write("### Número de Processos por Município")
         st.dataframe(data)  # Exibe a tabela de dados
 
         # Plot do gráfico
         st.write("### Gráfico de Processos por Município")
-        fig, ax = plt.subplots(figsize=(10, 10))
+        fig, ax = plt.subplots(figsize=(10, 12))
         num_cores = len(municipios)
         palette = sns.color_palette("viridis", num_cores)
         sns.barplot(x=num_processos, y=municipios, data=data, palette=palette)
