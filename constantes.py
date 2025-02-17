@@ -29,7 +29,8 @@ ETAPA_RTID = [
     'RTID_Publicado',
     ]
 
-FASE_PROCESSO = [ 
+FASE_PROCESSO = [
+    '',
     'Inicial', 
     'Estudo de Identificação',
     'Contestação', 
