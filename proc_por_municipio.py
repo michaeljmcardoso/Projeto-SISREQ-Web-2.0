@@ -41,8 +41,12 @@ def exibir_processos_por_municipio():
 
         # Arredondar a coluna 'Porcentagem (%)' para uma casa decimal
         data['Porcentagem (%)'] = data['Porcentagem (%)'].round(1)
+
+        # Ordenar os dados por porcentagem (do maior para o menor)
+        data = data.sort_values(by='Porcentagem (%)', ascending=False)
+
         # Ajustar o índice para começar em 1
-        data.index = data.index + 1     
+        data.index = data.index + 1  
 
         # Exibir o DataFrame no Streamlit
         st.write("### Número de Processos por Município")
@@ -50,13 +54,13 @@ def exibir_processos_por_municipio():
 
         # Plot do gráfico
         st.write("### Gráfico de Processos por Município")
-        fig, ax = plt.subplots(figsize=(10, 6))
+        fig, ax = plt.subplots(figsize=(10, 10))
         num_cores = len(municipios)
         palette = sns.color_palette("viridis", num_cores)
         sns.barplot(x=num_processos, y=municipios, data=data, palette=palette)
 
         # Configurações do gráfico
-        ax.set(title='Número de Processos por Município')  # Título
+        #ax.set(title='Número de Processos por Município')  # Título
         sns.set_style("white")
         sns.despine(right=True, top=True, bottom=True, left=True)
         plt.tick_params(bottom=False, labelbottom=False)
