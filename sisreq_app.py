@@ -156,13 +156,15 @@ df = pd.read_sql_query("SELECT * FROM processos", conn)
 df['Latitude'] = df['Latitude'].astype(str).str.replace(',', '.', regex=False)
 
 # Converter para valores numéricos, substituindo valores inválidos por 0
-df['Latitude'] = pd.to_numeric(df['Latitude'], errors='coerce').fillna(0)
+df['Latitude'] = pd.to_numeric(df['Latitude'], errors='coerce')
 
 # Atualizar os valores diretamente no banco
 for index, row in df.iterrows():
+    # Se a latitude for NaN, atualize com NULL no banco de dados
+    latitude_value = row['Latitude'] if not pd.isna(row['Latitude']) else None
     conn.execute(
         "UPDATE processos SET Latitude = ? WHERE ID = ?",
-        (row['Latitude'], row['ID'])
+        (latitude_value, row['ID'])
     )
 
 conn.commit()
@@ -176,13 +178,15 @@ df = pd.read_sql_query("SELECT * FROM processos", conn)
 df['Longitude'] = df['Longitude'].astype(str).str.replace(',', '.', regex=False)
 
 # Converter para valores numéricos, substituindo valores inválidos por 0
-df['Longitude'] = pd.to_numeric(df['Longitude'], errors='coerce').fillna(0)
+df['Longitude'] = pd.to_numeric(df['Longitude'], errors='coerce')
 
 # Atualizar os valores diretamente no banco
 for index, row in df.iterrows():
+    # Se a lotude for NaN, atualize com NULL no banco de dados
+    longitude_value = row['Longitude'] if not pd.isna(row['Longitude']) else None
     conn.execute(
-        "UPDATE processos SET Longitude = ? WHERE ID = ?",
-        (row['Longitude'], row['ID'])
+        "UPDATE processos SET longitude = ? WHERE ID = ?",
+        (longitude_value, row['ID'])
     )
 
 conn.commit()

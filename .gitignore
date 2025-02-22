@@ -161,11 +161,8 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 
-# Arquivos de banco de dados
-sisreq.db/
-
-# mapas
-mapa_interativo.html/
-
-temp_data.csv/
+#sisreq.db
+mapa_interativo.html
+temp_data.csv
+processos.xlsx
 
