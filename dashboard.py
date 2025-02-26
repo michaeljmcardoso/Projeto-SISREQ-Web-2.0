@@ -216,7 +216,7 @@ def exibir_processos_por_data_abertura():
         st.warning('Não há registros para exibir.', title='Erro')
 
 def plotar_mapa_interativo():
-    st.write("### Geolocalização das Comunidades")
+    st.write("### Geolocalização das Comunidades Quilombolas")
     if st.button("Plotar Mapa"):
         conn = conectar_banco_de_dados()
         cursor = conn.cursor()
