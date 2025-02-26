@@ -2,7 +2,6 @@ pandas
 plotly
 seaborn
 openpyxl
-webbrowser
 streamlit
 matplotlib
 python-dotenv
