@@ -106,7 +106,7 @@ def pagina_editar():
                     SET Numero = ?, Data_Abertura = ?, Comunidade = ?, Municipio = ?, Area_ha = ?, Num_familias = ?, Fase_Processo = ?, 
                     Etapa_RTID = ?, Edital_DOU = ?, Edital_DOE = ?, Portaria_DOU = ?, Decreto_DOU = ?, Area_ha_Titulada = ?, Titulo = ?, 
                     PNRA = ?, Relatorio_Antropologico = ?, Latitude = ?, Longitude = ?, Certidao_FCP = ?, Data_Certificacao = ?, 
-                    Sobreposicao = ?, Analise_de_Sobreposicao = ?, Acao_Civil_Publica = ?, Data_Decisao = ?, Teor_Decisao_Prazo_Sentença = ?, Outras_Informacoes = ?
+                    Sobreposicao = ?, Analise_de_Sobreposicao = ?, Acao_Civil_Publica = ?, Data_Decisao = ?, Teor_Decisao_Prazo_Sentenca = ?, Outras_Informacoes = ?
                     WHERE id = ?
                 ''', (new_numero_processo, data_abertura_formatada, new_nome_comunidade, new_municipio, new_area_identificada, new_numero_familias, 
                     new_fase_processo, etapa_rtid, new_edital_dou, new_edital_doe, portaria_dou_formatada, decreto_dou_formatada, 
