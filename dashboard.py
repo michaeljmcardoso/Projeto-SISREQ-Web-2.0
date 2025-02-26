@@ -274,9 +274,9 @@ def plotar_mapa_interativo():
 
                 fig.update_layout(mapbox_style="streets")
                 fig.update_layout(margin={"r": 0, "t": 0, "l": 0, "b": 0})
-                fig.write_html('mapa_interativo.html')
+                st.plotly_chart(fig)
 
-                webbrowser.open('mapa_interativo.html')
+                #webbrowser.open('mapa_interativo.html')
 
             else:
                 st.warning('Não há registros válidos para exibir.', title='Erro')
