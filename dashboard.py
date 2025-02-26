@@ -266,19 +266,20 @@ def plotar_mapa_interativo():
                     color=df['Municipio'],
                     color_discrete_sequence=["fuchsia"],
                     size_max=15,
-                    zoom=10,
+                    zoom=6,
                     hover_name='Comunidade',
                     hover_data='Num_Familias',
                     height=700,
                 )
 
                 fig.update_layout(mapbox_style="streets")
-                fig.update_layout(margin={"r": 0, "t": 0, "l": 0, "b": 0})
-                st.plotly_chart(fig)
+                fig.update_layout(margin={"r": 0, "t": 0, "l": 0, "b": 0},
+                )
 
-                #webbrowser.open('mapa_interativo.html')
+                with st.spinner("Gerando o mapa..."):
+                    st.plotly_chart(fig)
 
             else:
-                st.warning('Não há registros válidos para exibir.', title='Erro')
+                st.warning('Não há registros válidos para exibir.', icon="⚠️")
         else:
-            st.warning('Não há registros para exibir.', title='Erro')
+            st.warning('Não há registros para exibir.', icon="⚠️")
