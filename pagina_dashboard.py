@@ -13,4 +13,3 @@ def dashboard(fase):
     processos_por_fase()
     grafico_processos_por_fase()
     data_abertura()
-    
