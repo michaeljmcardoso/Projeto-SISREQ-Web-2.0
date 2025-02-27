@@ -162,7 +162,7 @@ cython_debug/
 #.idea/
 
 #sisreq.db
-mapa_interativo.html
+#mapa_interativo.html
 temp_data.csv
 processos.xlsx
 

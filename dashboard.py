@@ -1,7 +1,7 @@
 import pandas as pd
 import streamlit as st
 import sqlite3
-import webbrowser
+import sweetviz as sv
 import matplotlib.pyplot as plt
 import plotly.express as px
 import seaborn as sns
@@ -34,10 +34,9 @@ def buscar_registros_por_fase(fase):
     conn.close()
     return total, registros, colunas
 
-# Função principal
 def processos_por_fase():
     conectar_banco_de_dados()
-    st.subheader("Visualização de Processos por Fase")
+    st.subheader("Processos por Fase")
 
     # Selectbox para selecionar a fase
     fase_selecionada = st.selectbox(
@@ -45,39 +44,47 @@ def processos_por_fase():
         options=FASE_PROCESSO
     )
 
-    # Buscar registros com base na fase selecionada
-    total, registros, colunas = buscar_registros_por_fase(fase_selecionada)
+    # Verificar se uma fase foi selecionada (ignorar opção vazia)
+    if fase_selecionada:  # Só prossegue se uma fase for selecionada (não vazia)
+        # Buscar registros com base na fase selecionada
+        total, registros, colunas = buscar_registros_por_fase(fase_selecionada)
 
-    if registros:
-        st.write(f"Total de processos na fase '{fase_selecionada}': {total}")
+        if registros:
+            st.write(f"Total de processos na fase '{fase_selecionada}': {total}")
 
-        # Exibir os registros em uma tabela
-        df = pd.DataFrame(registros, columns=colunas)
-        if 'ID' in df.columns:
-            df = df.drop(columns=['ID'])
-            df.index = df.index + 1
-            st.dataframe(df)
+            # Exibir os registros em uma tabela
+            df = pd.DataFrame(registros, columns=colunas)
+            if 'ID' in df.columns:
+                df = df.drop(columns=['ID'])
+                df.index = df.index + 1
+                st.dataframe(df)
 
-        # Botão para salvar e baixar extrato
-        if st.button("Salvar e Baixar Extrato"):
-            # Salvar o DataFrame em um arquivo Excel
-            file_name = f"Extrato_fase_{fase_selecionada}.xlsx"
-            df.to_excel(file_name, index=False)
-            st.success(f"Extrato salvo como '{file_name}'")
+            # Botão para salvar e baixar extrato
+            if st.button("Salvar e Baixar Extrato"):
+                # Salvar o DataFrame em um arquivo Excel
+                file_name = f"Extrato_fase_{fase_selecionada}.xlsx"
+                df.to_excel(file_name, index=False)
+                st.success(f"Extrato salvo como '{file_name}'")
 
-            # Oferecer o arquivo para download
-            with open(file_name, "rb") as file:
-                st.download_button(
-                    label="Baixar Excel",
-                    data=file,
-                    file_name=file_name,
-                    mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
-                )
+                # Oferecer o arquivo para download
+                with open(file_name, "rb") as file:
+                    st.download_button(
+                        label="Baixar Excel",
+                        data=file,
+                        file_name=file_name,
+                        mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+                    )
+        else:
+            st.warning(f"Não há registros para a fase '{fase_selecionada}'.")
     else:
-        st.warning(f"Não há registros para a fase '{fase_selecionada}'.")
+        st.warning("Selecione uma fase para visualizar os processos.")
+
+    st.markdown(
+                    f"<p style='color: #FFFFFF; background-color: #1f77b4; padding: 1px; border-radius: 1px;'>",
+                    unsafe_allow_html=True
+                )
 
 def grafico_processos_por_fase():
-    st.subheader("Gráfico de Processos por Fase")
     conn = conectar_banco_de_dados()
     cursor = conn.cursor()
 
@@ -88,30 +95,37 @@ def grafico_processos_por_fase():
         # Extrair os dados das fases e suas contagens
         fases = [registro[0] for registro in registros]
         contagens = [registro[1] for registro in registros]
-
-        # criar um DataFrame
         data = pd.DataFrame({'Fase': fases, 'Contagem': contagens})
 
-        # Criar o gráfico de barras
-        fig, ax = plt.subplots(figsize=(10, 6))
-        sns.barplot(x=contagens, y=fases, data=data, palette="Set1")
+        col1, col2 = st.columns(2)
 
-        # Configurações do gráfico
-        ax.set(title='Processos por Fase')
-        sns.despine(right=True, top=True, bottom=True, left=True)
-        plt.tick_params(bottom=False, labelbottom=False)
+        with col2:
+            st.write(" ")
+        with col1:
+            fig, ax = plt.subplots(figsize=(8, 6))
+            sns.barplot(x=contagens, y=fases, data=data, palette="Set1")
 
-        # Adicionar rótulos (quantidades) ao lado de cada barra
-        for i, contagens in enumerate(contagens):
-            ax.text(contagens + 0.1, i, str(contagens), ha='left', va='center', weight='bold', fontsize='10')
+            # Configurações do gráfico
+            ax.set_title('Processos por Fase', fontsize=16)
+            sns.despine(right=True, top=True, bottom=True, left=True)
+            plt.tick_params(bottom=False, labelbottom=False)
 
-        plt.tight_layout()
-        st.pyplot(fig)
+            # Adicionar rótulos (quantidades) ao lado de cada barra
+            for i, contagens in enumerate(contagens):
+                ax.text(contagens + 0.1, i, str(contagens), ha='left', va='center', weight='bold', fontsize='10')
+
+            plt.tight_layout()
+            st.pyplot(fig)
     else:
         st.warning('Não há registros para exibir.', title='Erro')
+    
+    st.markdown(
+                    f"<p style='color: #FFFFFF; background-color: #1f77b4; padding: 1px; border-radius: 1px;'>",
+                    unsafe_allow_html=True
+                )
 
 def processos_por_municipio():
-    # Conectar ao banco de dados
+    st.write("### Processos por Município")
     conn = conectar_banco_de_dados()
     cursor = conn.cursor()
 
@@ -134,39 +148,41 @@ def processos_por_municipio():
         })
        
         # Ajustar o índice para começar em 1
-        data.index = data.index + 1  
-
-        # Exibir o DataFrame no Streamlit
-        st.write("### Número de Processos por Município")
-        st.dataframe(data)
+        data.index = data.index + 1
         
-        # Ordenar os dados por número de processos (decrescente)
-        data = data.sort_values(by='Número de Processos', ascending=False)
+        col1, col2 = st.columns(2)
 
-        # Plot do gráfico
-        st.write("### Gráfico de Processos por Município")
-        fig, ax = plt.subplots(figsize=(10, 18))
-        num_cores = len(municipios)
-        palette = sns.color_palette("viridis", num_cores)
-        sns.barplot(x='Número de Processos', y='Municípios', data=data, palette='viridis')
+        with col1:
+            st.dataframe(data, height=660)
+            st.write("Comunidades quilombolas que demandam regularização estão presentes em 80 dos 217 municípios do Maranhão.")
+        with col2:
+            data = data.sort_values(by='Número de Processos', ascending=False)
+            fig, ax = plt.subplots(figsize=(6, 10))
+            num_cores = len(municipios) 
+            palette = sns.color_palette("viridis", num_cores)
+            sns.barplot(x='Número de Processos', y='Municípios', data=data, palette=palette)
 
-        # Configurações do gráfico
-        sns.set_style("white")
-        ax.set_xlabel('')
-        ax.set_ylabel('')
-        sns.despine(right=True, top=True, bottom=True, left=True)
-        plt.tick_params(bottom=False, labelbottom=False)
+            # Configurações do gráfico
+            sns.set_style("white")
+            ax.set_xlabel('')
+            ax.set_ylabel('')
+            sns.despine(right=True, top=True, bottom=True, left=True)
+            plt.tick_params(bottom=False, labelbottom=False)
 
-        # Adicionar rótulos (quantidades) ao lado de cada barra
-        for i, num_processos in enumerate(data['Número de Processos']):
-            ax.text(num_processos + 0.5, i, f"{num_processos}", ha='left', va='center', weight='bold', fontsize='10')
+            # Adicionar rótulos (quantidades) ao lado de cada barra
+            for i, num_processos in enumerate(data['Número de Processos']):
+                ax.text(num_processos + 0.5, i, f"{num_processos}", ha='left', va='center', weight='bold', fontsize='10')
 
-        plt.tight_layout()
-        st.pyplot(fig)
+            plt.tight_layout()
+            st.pyplot(fig)
     else:
         st.warning("Não há registros para exibir.")
+    
+    # Fechar a conexão com o banco de dados
+    cursor.close()
+    conn.close()
 
-def exibir_processos_por_data_abertura():
+def data_abertura():
     st.write("### Ano de Abertura dos Processos")
     conn = conectar_banco_de_dados()
     cursor = conn.cursor()
@@ -198,26 +214,30 @@ def exibir_processos_por_data_abertura():
         # Adicionar a coluna de acumulado de processos ao DataFrame
         data['Acumulado'] = acumulado_por_ano
 
-        # Plot do gráfico de linhas
-        fig, ax = plt.subplots(figsize=(12, 6))
-        sns.lineplot(x='Data de Abertura', y='Acumulado', data=data, palette="Set1")
+        col1, col2 = st.columns(2)
+        with col1:
+            # Plot do gráfico de linhas
+            fig, ax = plt.subplots(figsize=(8, 6))
+            sns.lineplot(x='Data de Abertura', y='Acumulado', data=data, palette="Set1")
 
-        # Configurações do gráfico
-        ax.set(title='Acumulado de Processos por Ano')
-        ax.set_xlabel('')
-        ax.set_ylabel('')
-        sns.set_style("white")
-        sns.despine(right=True, top=True, bottom=False, left=False)
-        plt.xticks(rotation=45)  # Rotacionar os rótulos do eixo x para melhor legibilidade
+            # Configurações do gráfico
+            ax.set(title='Acumulado de Processos por Ano')
+            ax.set_xlabel('')
+            ax.set_ylabel('')
+            sns.set_style("white")
+            sns.despine(right=True, top=True, bottom=False, left=False)
+            plt.xticks(rotation=45)  # Rotacionar os rótulos do eixo x para melhor legibilidade
 
-        plt.tight_layout()
-        st.pyplot(fig)
+            plt.tight_layout()
+            st.pyplot(fig)
     else:
         st.warning('Não há registros para exibir.', title='Erro')
+        with col2:
+            st.write("")
 
 def plotar_mapa_interativo():
-    st.write("### Geolocalização das Comunidades Quilombolas")
     if st.button("Plotar Mapa"):
+        st.write("### Geolocalização das Comunidades Quilombolas")
         conn = conectar_banco_de_dados()
         cursor = conn.cursor()
 
@@ -283,3 +303,60 @@ def plotar_mapa_interativo():
                 st.warning('Não há registros válidos para exibir.', icon="⚠️")
         else:
             st.warning('Não há registros para exibir.', icon="⚠️")
+
+    st.markdown(
+                    f"<p style='color: #FFFFFF; background-color: #1f77b4; padding: 1px; border-radius: 1px;'>",
+                    unsafe_allow_html=True
+                )
+
+def relatorio_sweetviz():
+    st.subheader("Visão Geral dos Dados")
+
+    if st.button("Gerar Relatório"):
+        conn = conectar_banco_de_dados()
+        cursor = conn.cursor()
+
+        try:
+            cursor.execute("SELECT * FROM processos")
+            data = cursor.fetchall()
+
+            if data:
+                df = pd.DataFrame(data, columns=[
+                    'ID', 'Numero', 'Data_Abertura', 'Comunidade', 'Municipio', 'Area_ha','Num_familias', 
+                    'Fase_Processo', 'Etapa_RTID', 'Edital_DOU', 'Edital_DOE', 'Portaria_DOU', 'Decreto_DOU', 'Area_ha_Titulada',
+                    'Titulo', 'PNRA', 'Relatorio_Antropologico', 'Latitude', 'Longitude', 'Certidao_FCP', 'Data_Certificacao', 
+                    'Sobreposicao', 'Analise_de_Sobreposicao', 'Acao_Civil_Publica', 'Data_Decisao', 'Teor_Decisao_Prazo_Sentenca', 
+                    'Outras_Informacoes'
+                ])
+                
+                # Criar um relatório Sweetviz
+                st.write("Criando relatório Sweetviz...")
+                report = sv.analyze(df)
+
+                # Salvar o relatório como um arquivo HTML
+                report_file = "relatorio_sweetviz.html"
+                report.show_html(report_file)
+
+                # Exibir o relatório no Streamlit
+                st.write("### Relatório Sweetviz")
+                with open(report_file, "r", encoding="utf-8") as f:
+                    html_content = f.read()
+                st.html(html_content, height=1000, scrolling=True)
+
+                # Oferecer o relatório para download
+                with open(report_file, "rb") as f:
+                    st.download_button(
+                        label="Baixar Relatório Sweetviz (HTML)",
+                        data=f,
+                        file_name=report_file,
+                        mime="text/html"
+                    )
+
+            else:
+                st.warning('Não há registros para exibir.', icon="⚠️")
+
+        except Exception as e:
+            st.error(f"Erro ao gerar o relatório: {e}")
+        finally:
+            cursor.close()
+            conn.close()
