@@ -1,7 +1,6 @@
 import pandas as pd
 import streamlit as st
 import sqlite3
-import sweetviz as sv
 import matplotlib.pyplot as plt
 import plotly.express as px
 import seaborn as sns
@@ -308,55 +307,3 @@ def plotar_mapa_interativo():
                     f"<p style='color: #FFFFFF; background-color: #1f77b4; padding: 1px; border-radius: 1px;'>",
                     unsafe_allow_html=True
                 )
-
-def relatorio_sweetviz():
-    st.subheader("Visão Geral dos Dados")
-
-    if st.button("Gerar Relatório"):
-        conn = conectar_banco_de_dados()
-        cursor = conn.cursor()
-
-        try:
-            cursor.execute("SELECT * FROM processos")
-            data = cursor.fetchall()
-
-            if data:
-                df = pd.DataFrame(data, columns=[
-                    'ID', 'Numero', 'Data_Abertura', 'Comunidade', 'Municipio', 'Area_ha','Num_familias', 
-                    'Fase_Processo', 'Etapa_RTID', 'Edital_DOU', 'Edital_DOE', 'Portaria_DOU', 'Decreto_DOU', 'Area_ha_Titulada',
-                    'Titulo', 'PNRA', 'Relatorio_Antropologico', 'Latitude', 'Longitude', 'Certidao_FCP', 'Data_Certificacao', 
-                    'Sobreposicao', 'Analise_de_Sobreposicao', 'Acao_Civil_Publica', 'Data_Decisao', 'Teor_Decisao_Prazo_Sentenca', 
-                    'Outras_Informacoes'
-                ])
-                
-                # Criar um relatório Sweetviz
-                st.write("Criando relatório Sweetviz...")
-                report = sv.analyze(df)
-
-                # Salvar o relatório como um arquivo HTML
-                report_file = "relatorio_sweetviz.html"
-                report.show_html(report_file)
-
-                # Exibir o relatório no Streamlit
-                st.write("### Relatório Sweetviz")
-                with open(report_file, "r", encoding="utf-8") as f:
-                    html_content = f.read()
-                st.html(html_content, height=1000, scrolling=True)
-
-                # Oferecer o relatório para download
-                with open(report_file, "rb") as f:
-                    st.download_button(
-                        label="Baixar Relatório Sweetviz (HTML)",
-                        data=f,
-                        file_name=report_file,
-                        mime="text/html"
-                    )
-
-            else:
-                st.warning('Não há registros para exibir.', icon="⚠️")
-
-        except Exception as e:
-            st.error(f"Erro ao gerar o relatório: {e}")
-        finally:
-            cursor.close()
-            conn.close()
