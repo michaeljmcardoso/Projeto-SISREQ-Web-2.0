@@ -16,7 +16,7 @@ def criar_submenu():
         ()
     elif submenu == "Nº do Processo":
         ()
-    elif( submenu == "Quilombos em Assentamentos"):
+    elif submenu == "Quilombos em Assentamentos":
         quilombos_em_assentamentos()
 
 def filtrar_por_municipio():
@@ -148,6 +148,7 @@ def conectar_banco_de_dados():
     return sqlite3.connect('sisreq.db')
 
 def quilombos_em_assentamentos():
+    st.markdown('<h4 style="color: "#1f77b4";">Quilombos em Assentamentos</h4>', unsafe_allow_html=True)
     try:
         # Conectar ao banco de dados
         conn = conectar_banco_de_dados()
