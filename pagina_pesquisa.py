@@ -21,7 +21,7 @@ def criar_submenu():
 
 def filtrar_por_municipio():
     
-    st.markdown('<h4 style="color: "#1f77b4";">Pesquisar por Município</h4>', unsafe_allow_html=True)
+    st.markdown('<h4 style="color: #1f77b4";">Pesquisar por Município</h4>', unsafe_allow_html=True)
     #st.subheader("Pesquisar por Município")
 
     # Selecionar o município
@@ -148,7 +148,7 @@ def conectar_banco_de_dados():
     return sqlite3.connect('sisreq.db')
 
 def quilombos_em_assentamentos():
-    st.markdown('<h4 style="color: "#1f77b4";">Quilombos em Assentamentos</h4>', unsafe_allow_html=True)
+    st.markdown('<h4 style="color: #1f77b4";">Quilombos em Assentamentos</h4>', unsafe_allow_html=True)
     try:
         # Conectar ao banco de dados
         conn = conectar_banco_de_dados()
