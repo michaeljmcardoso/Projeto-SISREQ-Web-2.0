@@ -217,14 +217,14 @@ def tela_login():
 
 # Página inicial (após login)
 def pagina_inicial():
-    st.markdown('<h5 style="color: #1f77b4;">Controle de Processos</h5>', unsafe_allow_html=True)
-    #st.write("__Relação de Processos__")
     df = obter_todos_os_registros()
+    pesquisar_comunidade()
     if not df.empty:
         if 'ID' in df.columns:
             df = df.drop(columns=['ID'])
             df.index = df.index + 1
-            st.dataframe(df, height=600)
+            st.markdown('<h4 style="color: #1f77b5;">Controle de Processos</h4>', unsafe_allow_html=True)
+            st.dataframe(df, height=500)
 
     if st.button("Exportar para Excel"):
         df.to_excel('processos.xlsx', index=False)
@@ -237,12 +237,19 @@ def pagina_inicial():
                 mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
             )
 
+def pesquisar_comunidade():
+    df = obter_todos_os_registros()
+    if not df.empty:
+        if 'ID' in df.columns:
+            df = df.drop(columns=['ID'])
+            df.index = df.index + 1
     # Criar identificadores únicos de comunidade e município
     df['Comunidade_Municipio'] = df['Comunidade'] + " - " + df['Municipio']
     comunidades_disponiveis = df['Comunidade_Municipio'].unique().tolist()
 
     # Caixa de seleção para escolha da comunidade
-    comunidade_selecionada = st.selectbox("Selecione uma Comunidade ou Município para Consultar:", options=comunidades_disponiveis)
+    st.markdown('<h5 style="color: #1f77b4;">Selecione uma Comunidade ou Município:</h5>', unsafe_allow_html=True)
+    comunidade_selecionada = st.selectbox(" ", options=comunidades_disponiveis)
 
     # Validar a seleção da comunidade
     if comunidade_selecionada:
@@ -250,14 +257,14 @@ def pagina_inicial():
         registros_filtrados = df[(df['Comunidade'] == comunidade) & (df['Municipio'] == municipio)]
 
         if not registros_filtrados.empty:
-            st.markdown(f"<p style='color: #1f77b4;'><strong>Detalhes do Processo</strong></p>", unsafe_allow_html=True)
+            #st.markdown(f"<p style='color: #1f77b4;'><strong>Detalhes do Processo</strong></p>", unsafe_allow_html=True)
 
             for index, registro in registros_filtrados.iterrows():
                 st.markdown(
                     f"<p style='color: #FFFFFF; background-color: #1f77b4; padding: 1px; border-radius: 1px;'>",
                     unsafe_allow_html=True
                 )
-                
+
                 # Divisão em colunas para exibição de dados
             col1, col2, col3, col4 = st.columns(4)
 
@@ -294,15 +301,21 @@ def pagina_inicial():
                 st.markdown(f"<p><strong>Decreto DOU:</strong> {registro['Decreto_DOU']}</p>", unsafe_allow_html=True)
                 st.markdown(f"<p><strong>Sobreposição Territorial:</strong> {registro['Sobreposicao']}</p>", unsafe_allow_html=True)
 
-            # Informações adicionais
-            st.markdown("---")
-            st.markdown(f"<p><strong>Ação Civil Pública:</strong> {registro['Acao_Civil_Publica']}</p>", unsafe_allow_html=True)
-            st.markdown(f"<p><strong>Data da Sentença:</strong> {registro['Data_Decisao']}</p>", unsafe_allow_html=True)
-            st.markdown(f"<p><strong>Teor/Prazo da Sentença:</strong> {registro[24]}</p>", unsafe_allow_html=True)
-            st.markdown(f"<p><strong>Outras Informações:</strong> {registro['Outras_Informacoes']}</p>", unsafe_allow_html=True)
+           
         else:
             st.warning("Comunidade não encontrada. Por favor, verifique o nome informado.")
 
+    # informações adicionais
+    col1, col2, col3, col4 = st.columns(4)
+    with col1:
+        st.markdown(f"<p><strong>Ação Civil Pública:</strong> {registro['Acao_Civil_Publica']}</p>", unsafe_allow_html=True)
+    with col2:
+        st.markdown(f"<p><strong>Data da Sentença:</strong> {registro['Data_Decisao']}</p>", unsafe_allow_html=True)
+    with col3:
+        st.markdown(f"<p><strong>Teor/Prazo da Sentença:</strong> {registro[24]}</p>", unsafe_allow_html=True)
+    with col4:
+        st.markdown(f"<p><strong>Outras Informações:</strong> {registro['Outras_Informacoes']}</p>", unsafe_allow_html=True)
+    
 # Função para Página Sobre
 def pagina_about():
     st.subheader("Sobre o Projeto")

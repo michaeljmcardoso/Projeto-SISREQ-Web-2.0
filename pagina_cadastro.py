@@ -9,7 +9,7 @@ def tela_de_cadastro():
     col1, col2, col3, col4 = st.columns(4)
 
     with col1:
-        numero_processo = st.text_input("Nº do Processo: (formato: 54000.000000/2000-00)")
+        numero_processo = st.text_input("Nº do Processo:")
         data_abertura = st.date_input("Data de Abertura:")
         nome_comunidade = st.text_input("Comunidade:")
         municipio = st.selectbox("Municípios:", constantes.MUNICIPIOS)
@@ -27,7 +27,7 @@ def tela_de_cadastro():
         etapa_rtid = st.multiselect("Etapa RTID:", constantes.ETAPA_RTID)
         antropologico = st.selectbox("Antropológico:", constantes.RELATORIO_ANTROPOLOGICO)
         certidao_fcp = st.selectbox("Certidão FCP:", constantes.CERTIFICACAO_FCP)
-        data_certificacao = st.text_input("Data de Certificação (formato: DD-MM-YYYY):")
+        data_certificacao = st.text_input("Data de Certificação (DD-MM-YYYY):")
 
         # Validar a data de certificação
         if data_certificacao.strip():  # Verifica se a entrada não está vazia
@@ -49,8 +49,8 @@ def tela_de_cadastro():
     with col4:
         edital_dou = st.text_input("Edital DOU:")
         edital_doe = st.text_input("Edital DOE:")
-        portaria_dou = st.text_input("Portaria DOU: (formato: DD-MM-YYYY)")
-        decreto_dou = st.text_input("Decreto DOU: (formato: DD-MM-YYYY)")
+        portaria_dou = st.text_input("Portaria DOU: (DD-MM-YYYY)")
+        decreto_dou = st.text_input("Decreto DOU: (DD-MM-YYYY)")
         sobreposicao_territorial = st.multiselect("Sobreposição Territorial:", constantes.TIPO_SOBREPOSICAO)
         detalhes_sobreposicao = st.text_input("Detalhes de Sobreposição:")
 
@@ -72,7 +72,7 @@ def tela_de_cadastro():
     col5 = st.columns(1)[0]
     with col5:
         acao_civil_publica = st.selectbox("Ação Civil Pública:", constantes.ACAO_CIVIL_PUBLICA)
-        data_sentenca = st.text_input("Data da Sentença: (formato: DD-MM-YYYY)")
+        data_sentenca = st.text_input("Data da Sentença: (DD-MM-YYYY)")
         teor_sentenca = st.text_input("Teor/Prazo da Sentença:")
         outras_informacoes = st.text_area("Outras Informações:", height=100)
 
