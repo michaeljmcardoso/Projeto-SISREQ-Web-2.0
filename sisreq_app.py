@@ -300,7 +300,7 @@ def pesquisar_comunidade():
                 st.markdown(f"<p><strong>Portaria DOU:</strong> {registro['Portaria_DOU']}</p>", unsafe_allow_html=True)
                 st.markdown(f"<p><strong>Decreto DOU:</strong> {registro['Decreto_DOU']}</p>", unsafe_allow_html=True)
                 st.markdown(f"<p><strong>Sobreposição Territorial:</strong> {registro['Sobreposicao']}</p>", unsafe_allow_html=True)
-
+                st.markdown(f"<p><strong>Detalhes de Sobreposição:</strong> {registro['Analise_de_Sobreposicao']}</p>", unsafe_allow_html=True)
            
         else:
             st.warning("Comunidade não encontrada. Por favor, verifique o nome informado.")
