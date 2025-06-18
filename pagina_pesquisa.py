@@ -157,7 +157,7 @@ def quilombos_em_assentamentos():
         # Definir colunas específicas a serem consultadas
         colunas_desejadas = [
             "Numero", "Comunidade", "Municipio", "Area_ha", "Num_familias",
-            "Fase_Processo", "Etapa_RTID", "Sobreposicao", "Analise_de_Sobreposicao"
+            "Etapa_RTID", "Sobreposicao", "Analise_de_Sobreposicao"
         ]
         colunas_str = ", ".join(colunas_desejadas)
 
