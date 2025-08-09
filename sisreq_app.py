@@ -51,7 +51,7 @@ def iniciar_banco_de_dados():
             Analise_de_Sobreposicao TEXT,
             Acao_Civil_Publica TEXT,
             Data_Decisao DATE,
-            Teor_Decisao_Prazo_Sentença TEXT,
+            Teor_Decisao_Prazo_Sentenca TEXT,
             Outras_Informacoes TEXT
         )
         '''
@@ -341,7 +341,7 @@ def pagina_about():
         }
         </style>
         <div class="rodape">
-            © 2024 Desenvolvido por Michael J M Cardoso. Todos os direitos reservados.
+            © 2025 Desenvolvido por Michael J M Cardoso. Todos os direitos reservados.
         </div>
         """,
         unsafe_allow_html=True

@@ -24,7 +24,7 @@ def tela_de_cadastro():
 
     with col2:
         fase_processo = st.selectbox("Fase:", constantes.FASE_PROCESSO)
-        etapa_rtid = st.multiselect("Etapa RTID:", constantes.ETAPA_RTID)
+        etapa_rtid = st.selectbox("Etapa RTID:", constantes.ETAPA_RTID)
         antropologico = st.selectbox("Antropológico:", constantes.RELATORIO_ANTROPOLOGICO)
         certidao_fcp = st.selectbox("Certidão FCP:", constantes.CERTIFICACAO_FCP)
         data_certificacao = st.text_input("Data de Certificação (DD-MM-YYYY):")
@@ -102,7 +102,7 @@ def tela_de_cadastro():
             cursor.execute('''INSERT INTO processos ('Numero', 'Data_Abertura', 'Comunidade', 'Municipio', 'Area_ha','Num_familias', 
                         'Fase_Processo', 'Etapa_RTID', 'Edital_DOU', 'Edital_DOE', 'Portaria_DOU', 'Decreto_DOU', 'Area_ha_Titulada',
                         'Titulo', 'PNRA', 'Relatorio_Antropologico', 'Latitude', 'Longitude', 'Certidao_FCP', 'Data_Certificacao', 
-                        'Sobreposicao', 'Analise_de_Sobreposicao', 'Acao_Civil_Publica', 'Data_Decisao', 'Teor_Decisao_Prazo_Sentença', 
+                        'Sobreposicao', 'Analise_de_Sobreposicao', 'Acao_Civil_Publica', 'Data_Decisao', 'Teor_Decisao_Prazo_Sentenca', 
                         'Outras_Informacoes') 
                         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)''',
                         (numero_processo, data_abertura_formatada, nome_comunidade, municipio, area_identificada, numero_familias,
