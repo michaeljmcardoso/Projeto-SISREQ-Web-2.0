@@ -65,17 +65,7 @@ def iniciar_banco_de_dados():
             senha TEXT
         )
     ''')
-
-    # # Tabela para contatos
-    # cursor.execute('''
-    #     CREATE TABLE IF NOT EXISTS contatos (
-    #         id INTEGER PRIMARY KEY AUTOINCREMENT,
-    #         comunidade TEXT,
-    #         nome TEXT,
-    #         contato NUMERIC UNIQUE
-    #     )
-    # ''')
-    
+        
     # Adicionar um usuário administrador (somente na primeira execução)
     cursor.execute('SELECT COUNT(*) FROM usuarios')
     if cursor.fetchone()[0] == 0:
@@ -356,10 +346,6 @@ def pagina_about():
         """,
         unsafe_allow_html=True
     )
-
-import sqlite3
-import pandas as pd
-import streamlit as st
 
 def pagina_contatos():
     st.subheader("📞 Contatos")
