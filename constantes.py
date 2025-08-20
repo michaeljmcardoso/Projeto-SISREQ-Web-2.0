@@ -11,6 +11,7 @@ TIPO_SOBREPOSICAO = [
     'TERRAS DEVOLUTAS', 
     'TERRAS INDÍGENAS', 
     'TERRAS DA UNIÃO', 
+    'RESEX', 
     'SEM SOBREPOSIÇÃO'
     ]
 
