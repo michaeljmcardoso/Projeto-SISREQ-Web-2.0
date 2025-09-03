@@ -674,7 +674,12 @@ def rtids_publicados():
             df_filtrado = df
 
         # Exibir tabela no Streamlit
-        st.dataframe(df_filtrado, use_container_width=True)
+        if not df.empty:
+            if 'ID' in df.columns:
+                df = df.drop(columns=['ID'])
+                df.index = df.index + 1
+        st.dataframe(df, use_container_width=True)
+        
 
         # Exibir total
         st.metric(label="📊 Total de RTID´s Publicados", value=totalRtidPublicado)
