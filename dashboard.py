@@ -428,6 +428,11 @@ def territorios_identificados():
 
     else:
         st.warning("⚠️ Não há registros de Territórios Identificados.")
+    
+    st.markdown(
+                    f"<p style='color: #FFFFFF; background-color: #1f77b4; padding: 1px; border-radius: 1px;'>",
+                    unsafe_allow_html=True
+                )
         
 
 def exibir_area_total_em_territorios_identificados():
@@ -549,7 +554,7 @@ def exibir_processos_com_acao_civil():
         })
 
         # Plot do gráfico
-        fig, ax = plt.subplots(figsize=(10, 6))
+        fig, ax = plt.subplots(figsize=(8, 4))
         sns.barplot(x="Quantidade", y="ACP", data=data, palette="Set1", ax=ax)
 
         # Configurações do gráfico
