@@ -513,3 +513,56 @@ def territorios_nao_identificados():
 
     else:
         st.warning("⚠️ Não há registros de Territórios Não Identificados.")
+
+
+def exibir_processos_com_acao_civil():
+    conn = conectar_banco_de_dados()
+    cursor = conn.cursor()
+
+    cursor.execute("""
+        SELECT Acao_Civil_Publica, COUNT(*) AS Tipo_AcaoCivilPublica 
+        FROM processos 
+        WHERE Acao_Civil_Publica != 'Sem ACP' 
+        GROUP BY Acao_Civil_Publica
+    """)
+    resultados = cursor.fetchall()
+    conn.close()
+
+    if resultados:
+        acaocivil = []
+        tipo_decisao = []
+
+        for resultado in resultados:
+            acaocivil.append(resultado[0])
+            tipo_decisao.append(resultado[1])
+
+        # Criar DataFrame
+        data = pd.DataFrame({
+            'ACP': acaocivil,
+            'Quantidade': tipo_decisao
+        })
+
+        # Plot do gráfico
+        fig, ax = plt.subplots(figsize=(10, 6))
+        sns.barplot(x="Quantidade", y="ACP", data=data, palette="Set1", ax=ax)
+
+        # Configurações do gráfico
+        ax.set_title('Ação Civil Pública em Regularização Quilombola')
+        ax.set_xlabel('')
+        ax.set_ylabel('')
+        sns.set_style("white")
+        sns.despine(right=True, top=True, bottom=False, left=False)
+
+        # Adicionar rótulos (quantidades) ao lado de cada barra
+        for i, quantidade in enumerate(data["Quantidade"]):
+            ax.text(quantidade + 0.1, i, str(quantidade), 
+                    ha='left', va='center', weight='bold')
+
+        plt.tight_layout()
+
+        # Exibir no Streamlit
+        st.pyplot(fig)
+        st.dataframe(data, use_container_width=True)
+
+    else:
+        st.warning("⚠️ Não há registros de Ação Civil Pública para exibir.")
