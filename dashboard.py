@@ -411,12 +411,17 @@ def territorios_identificados():
     st.subheader("📑 Territórios Identificados")
 
     if not df.empty:
+        if 'ID' in df.columns:
+            df = df.drop(columns=['ID'])
+            df.index = df.index + 1
         filtro = st.text_input("🔍 Filtrar por Fase do Processo:")
 
         if filtro and "Fase_Processo" in df.columns:
             df_filtrado = df[df["Fase_Processo"].str.contains(filtro, case=False, na=False)]
         else:
             df_filtrado = df
+
+            
 
         st.dataframe(df_filtrado, use_container_width=True)
         if st.button("Área Total Identificada"):
