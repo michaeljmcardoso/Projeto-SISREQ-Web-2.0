@@ -577,3 +577,59 @@ def exibir_processos_com_acao_civil():
 
     else:
         st.warning("⚠️ Não há registros de Ação Civil Pública para exibir.")
+
+def exibir_status_pnra():
+    conn = conectar_banco_de_dados()
+    cursor = conn.cursor()
+
+    cursor.execute("""
+        SELECT PNRA, COUNT(*) AS Tipo_PNRA 
+        FROM processos 
+        WHERE PNRA IN ('ANDAMENTO', 'CONCLUIDO', 'NAO-INICIADO') 
+        GROUP BY PNRA
+    """)
+    resultados = cursor.fetchall()
+
+    if resultados:
+        pnra_status = []
+        tipo_pnra = []
+
+        for resultado in resultados:
+            pnra_status.append(resultado[0])
+            tipo_pnra.append(resultado[1])
+
+        # Criar DataFrame
+        data = pd.DataFrame({
+            'Status PNRA': pnra_status,
+            'Quantidade': tipo_pnra
+        })
+
+        # Criar gráfico com Plotly
+        fig = px.bar(
+            data,
+            x="Quantidade",
+            y="Status PNRA",
+            orientation="h",  # barras horizontais
+            text="Quantidade",
+            color="Status PNRA",
+            color_discrete_sequence=px.colors.qualitative.Set1
+        )
+
+        # Ajustes visuais
+        fig.update_layout(
+            title="Status do PNRA em Regularização Quilombola",
+            xaxis_title="Quantidade",
+            yaxis_title="",
+            plot_bgcolor="black",
+            showlegend=False
+        )
+
+        fig.update_traces(
+            textposition="outside",
+        )
+
+        # Exibir no Streamlit
+        st.plotly_chart(fig, use_container_width=True)
+
+    else:
+        st.warning("Não há registros para exibir.")
