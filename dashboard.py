@@ -154,7 +154,7 @@ def processos_por_municipio():
 
         with col1:
             st.dataframe(data, height=660)
-            st.write("Comunidades quilombolas que demandam regularização estão presentes em 80 dos 217 municípios do Maranhão.")
+            st.write("Comunidades quilombolas que demandam regularização estão presentes em 79 dos 217 municípios do Maranhão.")
         with col2:
             data = data.sort_values(by='Número de Processos', ascending=False)
             fig, ax = plt.subplots(figsize=(6, 10))
@@ -343,9 +343,9 @@ def exibir_status_pnra():
         st.dataframe(data, use_container_width=True)
 
         # Criar gráfico de barras com Matplotlib
-        fig, ax = plt.subplots(figsize=(7, 4))
+        fig, ax = plt.subplots(figsize=(5, 2))
         ax.barh(pnra_status, tipo_pnra, color="steelblue")
-
+        
         # Configurações do gráfico
         #ax.set_xlabel("Quantidade")
         #ax.set_ylabel("Status PNRA")
@@ -362,7 +362,7 @@ def exibir_status_pnra():
             ax.text(quantidade + 0.1, i, str(quantidade), va='center', weight='bold')
 
         # Mostrar gráfico no Streamlit
-        st.pyplot(fig)
+        st.pyplot(fig, clear_figure=False)
 
     else:
         st.warning("⚠️ Não há registros para exibir no banco de dados.")
@@ -420,8 +420,6 @@ def territorios_identificados():
             df_filtrado = df[df["Fase_Processo"].str.contains(filtro, case=False, na=False)]
         else:
             df_filtrado = df
-
-            
 
         st.dataframe(df_filtrado, use_container_width=True)
         if st.button("Área Total Identificada"):
