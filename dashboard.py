@@ -324,7 +324,7 @@ def exibir_status_pnra():
     cursor.execute("""
         SELECT PNRA, COUNT(*) AS Tipo_PNRA 
         FROM processos 
-        WHERE PNRA IN ('ANDAMENTO', 'CONCLUIDO', 'NAO-INICIADO') 
+        WHERE PNRA IN ('ANDAMENTO', 'CONCLUIDO') 
         GROUP BY PNRA
     """)
     resultados = cursor.fetchall()
