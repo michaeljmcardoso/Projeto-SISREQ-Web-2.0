@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 import plotly.express as px
 import seaborn as sns
 from constantes import FASE_PROCESSO
+from pagina_pesquisa import salvar_extrato_planilha
 
 # Função para conectar ao banco de dados
 def conectar_banco_de_dados():
@@ -342,13 +343,19 @@ def exibir_status_pnra():
         st.dataframe(data, use_container_width=True)
 
         # Criar gráfico de barras com Matplotlib
-        fig, ax = plt.subplots(figsize=(8, 5))
+        fig, ax = plt.subplots(figsize=(7, 4))
         ax.barh(pnra_status, tipo_pnra, color="steelblue")
 
         # Configurações do gráfico
-        ax.set_xlabel("Quantidade")
-        ax.set_ylabel("Status PNRA")
+        #ax.set_xlabel("Quantidade")
+        #ax.set_ylabel("Status PNRA")
         ax.set_title("Status do PNRA em Regularização Quilombola")
+        ax.set_xlabel('')
+        ax.set_ylabel('')
+        sns.set_style("white")
+        sns.despine(right=True, top=True, bottom=False, left=False)
+        plt.xticks(rotation=45)  # Rotacionar os rótulos do eixo x para melhor legibilidade
+
 
         # Adicionar rótulos
         for i, quantidade in enumerate(tipo_pnra):
@@ -360,3 +367,149 @@ def exibir_status_pnra():
     else:
         st.warning("⚠️ Não há registros para exibir no banco de dados.")
 
+
+def criar_dataframe(cursor, registros):
+    """Cria DataFrame a partir de registros do banco sem quebrar mesmo que o schema mude"""
+    try:
+        colnames = [desc[0] for desc in cursor.description]  # tenta pegar nomes reais
+        if len(colnames) == len(registros[0]):  # confere se bate o número de colunas
+            return pd.DataFrame(registros, columns=colnames)
+        else:
+            # nomes inconsistentes, gera genéricos
+            return pd.DataFrame(registros, columns=[f"col_{i}" for i in range(len(registros[0]))])
+    except Exception:
+        # fallback: nomes genéricos
+        return pd.DataFrame(registros, columns=[f"col_{i}" for i in range(len(registros[0]))])
+
+
+# Conexão com banco
+def conectar_banco_de_dados():
+    return sqlite3.connect("sisreq.db")
+
+def territorios_identificados():
+    conn = conectar_banco_de_dados()
+    cursor = conn.cursor()
+
+    query_base = """
+        SELECT * FROM processos WHERE 
+        Relatorio_Antropologico LIKE '%Execução_Direta%' OR 
+        Relatorio_Antropologico LIKE '%Contrato%' OR 
+        Relatorio_Antropologico LIKE '%Doação%' OR 
+        Relatorio_Antropologico LIKE '%Acordo_Coop_Técnica%' OR 
+        Relatorio_Antropologico LIKE '%Termo_Execução_Descentralizada%'
+    """
+    cursor.execute(query_base)
+    registros = cursor.fetchall()
+
+    # usa função robusta
+    df = criar_dataframe(cursor, registros)
+
+    cursor.execute(f"SELECT COUNT(*) FROM ({query_base})")
+    total = cursor.fetchone()[0]
+    conn.close()
+
+    st.subheader("📑 Territórios Identificados")
+
+    if not df.empty:
+        filtro = st.text_input("🔍 Filtrar por Fase do Processo:")
+
+        if filtro and "Fase_Processo" in df.columns:
+            df_filtrado = df[df["Fase_Processo"].str.contains(filtro, case=False, na=False)]
+        else:
+            df_filtrado = df
+
+        st.dataframe(df_filtrado, use_container_width=True)
+        if st.button("Área Total Identificada"):
+            exibir_area_total_em_territorios_identificados()
+        st.info(f"✅ Total de Processos: {total} registros encontrados com Território Identificado")
+
+    else:
+        st.warning("⚠️ Não há registros de Territórios Identificados.")
+        
+
+def exibir_area_total_em_territorios_identificados():
+    conn = conectar_banco_de_dados()
+    cursor = conn.cursor()
+
+    query = """
+        SELECT SUM(Area_ha) 
+        FROM processos 
+        WHERE Relatorio_Antropologico LIKE '%Execução_Direta%' 
+        OR Relatorio_Antropologico LIKE '%Contrato%' 
+        OR Relatorio_Antropologico LIKE '%Doação%' 
+        OR Relatorio_Antropologico LIKE '%Acordo_Coop_Técnica%' 
+        OR Relatorio_Antropologico LIKE '%Termo_Execução_Descentralizada%'
+    """
+    cursor.execute(query)
+    totalArea = cursor.fetchone()[0]
+    conn.close()
+
+    if totalArea is not None:
+        total_area_formatado = f"{totalArea:,.2f}".replace(",", ".")  # Formato decimal brasileiro
+        st.success(f"🌍 Área Total: **{total_area_formatado} hectares** em Territórios Identificados.")
+    else:
+        st.warning("⚠️ Não há registros de área para exibir.")
+
+def exibir_total_de_familias_em_territorios_identificados():
+    conn = conectar_banco_de_dados()
+    cursor = conn.cursor()
+
+    query = """
+        SELECT SUM(Num_familias) 
+        FROM processos 
+        WHERE Relatorio_Antropologico LIKE '%Execução_Direta%' 
+        OR Relatorio_Antropologico LIKE '%Contrato%' 
+        OR Relatorio_Antropologico LIKE '%Doação%' 
+        OR Relatorio_Antropologico LIKE '%Acordo_Coop_Técnica%' 
+        OR Relatorio_Antropologico LIKE '%Termo_Execução_Descentralizada%'
+    """
+    cursor.execute(query)
+    total_familias = cursor.fetchone()[0]
+    conn.close()
+
+    if total_familias is not None:
+        total_familias_formatado = f"{int(total_familias):,}".replace(",", ".")  # formato brasileiro
+        st.success(f"👨‍👩‍👧 Total de Famílias: **{total_familias_formatado}** em Territórios Identificados.")
+    else:
+        st.warning("⚠️ Não há registros de famílias para exibir.")
+
+
+
+# Função: Territórios Não Identificados
+def territorios_nao_identificados():
+    conn = conectar_banco_de_dados()
+    cursor = conn.cursor()
+
+    query = "SELECT * FROM processos WHERE Relatorio_Antropologico LIKE '%Sem_Relatório%'"
+    cursor.execute(query)
+    registros = cursor.fetchall()
+
+    cursor.execute("SELECT COUNT(*) FROM processos WHERE Relatorio_Antropologico LIKE '%Sem_Relatório%'")
+    total = cursor.fetchone()[0]
+    conn.close()
+
+    st.subheader("📑 Territórios Não Identificados")
+
+    if registros:
+        colnames = [desc[0] for desc in cursor.description]
+        df = pd.DataFrame(registros, columns=colnames)
+
+        # Filtro por Ano de Abertura (coluna 2) ou ACP (coluna 23 no seu código)
+        filtro = st.text_input("🔍 Filtrar por Ano de Abertura do Processo ou ACP:")
+
+        if filtro:
+            df_filtrado = df[
+                df["Data_Abertura"].str.contains(filtro, case=False, na=False) |
+                df["Acao_Civil_Publica"].str.contains(filtro, case=False, na=False)
+            ]
+        else:
+            df_filtrado = df
+
+        st.dataframe(df_filtrado, use_container_width=True)
+        st.info(f"✅ Total de Processos: {total} Território(s) Não Identificado(s)")
+
+        if st.button("📄 Extrato"):
+            salvar_extrato_planilha(df_filtrado)
+
+    else:
+        st.warning("⚠️ Não há registros de Territórios Não Identificados.")
