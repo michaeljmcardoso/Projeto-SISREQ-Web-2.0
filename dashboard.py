@@ -4,6 +4,7 @@ import sqlite3
 import matplotlib.pyplot as plt
 import plotly.express as px
 import seaborn as sns
+import io
 from constantes import FASE_PROCESSO
 from pagina_pesquisa import salvar_extrato_planilha
 
@@ -432,8 +433,7 @@ def territorios_identificados():
     st.markdown(
                     f"<p style='color: #FFFFFF; background-color: #1f77b4; padding: 1px; border-radius: 1px;'>",
                     unsafe_allow_html=True
-                )
-        
+                )  
 
 def exibir_area_total_em_territorios_identificados():
     conn = conectar_banco_de_dados()
@@ -578,6 +578,11 @@ def exibir_processos_com_acao_civil():
     else:
         st.warning("⚠️ Não há registros de Ação Civil Pública para exibir.")
 
+    st.markdown(
+                    f"<p style='color: #FFFFFF; background-color: #1f77b4; padding: 1px; border-radius: 1px;'>",
+                    unsafe_allow_html=True
+                )
+
 def exibir_status_pnra():
     conn = conectar_banco_de_dados()
     cursor = conn.cursor()
@@ -634,8 +639,11 @@ def exibir_status_pnra():
     else:
         st.warning("Não há registros para exibir.")
 
-import streamlit as st
-import pandas as pd
+    st.markdown(
+                    f"<p style='color: #FFFFFF; background-color: #1f77b4; padding: 1px; border-radius: 1px;'>",
+                    unsafe_allow_html=True
+                )
+
 
 def rtids_publicados():
     conn = conectar_banco_de_dados()
@@ -676,7 +684,7 @@ def rtids_publicados():
 
         with col1:
             if st.button("📄 Extrato"):
-                salvar_extrato_planilha(df_filtrado.to_records(index=False))
+                salvar_extrato(df_filtrado)
                 st.success("✅ Extrato exportado com sucesso!")
 
         with col2:
@@ -689,3 +697,55 @@ def rtids_publicados():
 
     else:
         st.warning("⚠️ Não há registros para exibir.")
+
+    st.markdown(
+                    f"<p style='color: #FFFFFF; background-color: #1f77b4; padding: 1px; border-radius: 1px;'>",
+                    unsafe_allow_html=True
+                )
+
+
+def exibir_total_de_familias_em_rtids_publicados():
+    conn = conectar_banco_de_dados()
+    cursor = conn.cursor()
+    
+    cursor.execute("SELECT SUM(Num_Familias) FROM processos WHERE Edital_DOU IS NOT NULL AND Edital_DOU != ''")
+    total_familias = cursor.fetchone()[0]
+
+    if total_familias is not None:
+        total_familias_formatado = f"{int(total_familias):,}".replace(",", ".")
+        st.metric("👨‍👩‍👧 Famílias em RTID Publicados", total_familias_formatado)
+    else:
+        st.warning("⚠️ Não há registros de famílias em RTID publicados.")
+
+
+def exibir_area_total_em_rtids_publicados():
+    conn = conectar_banco_de_dados()
+    cursor = conn.cursor()
+    
+    cursor.execute("SELECT SUM(Area_ha) FROM processos WHERE Edital_DOU IS NOT NULL AND Edital_DOU != ''")
+    total_area_rtid_publicado = cursor.fetchone()[0]
+
+    if total_area_rtid_publicado is not None:
+        total_area_formatado = f"{total_area_rtid_publicado:,.2f}".replace(",", ".")
+        st.metric("🌍 Área em RTID Publicados (ha)", total_area_formatado)
+    else:
+        st.warning("⚠️ Não há registros de área em RTID publicados.")
+
+def salvar_extrato(df: pd.DataFrame, nome_arquivo="extrato_rtids_publicados.xlsx"):
+    """
+    Gera um arquivo Excel com os registros filtrados e disponibiliza para download.
+    """
+    # Criar buffer de memória para armazenar o arquivo
+    buffer = io.BytesIO()
+
+    # Salvar o DataFrame no buffer em formato Excel
+    with pd.ExcelWriter(buffer, engine="openpyxl") as writer:
+        df.to_excel(writer, index=False, sheet_name="Extrato_RTID_Publicados")
+
+    # Retornar botão de download no Streamlit
+    st.download_button(
+        label="📥 Baixar Extrato (Excel)",
+        data=buffer.getvalue(),
+        file_name=nome_arquivo,
+        mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    )
