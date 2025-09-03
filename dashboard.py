@@ -531,6 +531,9 @@ def exibir_processos_com_acao_civil():
     resultados = cursor.fetchall()
     conn.close()
 
+    st.subheader("⚖️ Ação Civil Pública em Regularização Quilombola")
+
+
     if resultados:
         acaocivil = []
         tipo_decisao = []
