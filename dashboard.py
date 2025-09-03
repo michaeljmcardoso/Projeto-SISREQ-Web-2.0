@@ -633,3 +633,59 @@ def exibir_status_pnra():
 
     else:
         st.warning("Não há registros para exibir.")
+
+import streamlit as st
+import pandas as pd
+
+def rtids_publicados():
+    conn = conectar_banco_de_dados()
+    cursor = conn.cursor()
+    
+    # Contagem total de RTID publicados
+    cursor.execute("SELECT COUNT(*) as Total FROM processos WHERE Edital_DOU IS NOT NULL AND Edital_DOU != ''")
+    totalRtidPublicado = cursor.fetchone()[0]
+
+    # Busca todos os registros com Edital_DOU
+    cursor.execute("SELECT * FROM processos WHERE Edital_DOU IS NOT NULL AND Edital_DOU != ''")
+    registros = cursor.fetchall()
+
+    if registros:
+        # Obter nomes das colunas
+        colunas = [desc[0] for desc in cursor.description]
+
+        # Criar DataFrame
+        df = pd.DataFrame(registros, columns=colunas)
+
+        # Campo de filtro
+        filtro = st.text_input("🔎 Filtrar por Ano de Publicação (coluna Edital_DOU):")
+
+        # Aplicar filtro
+        if filtro:
+            df_filtrado = df[df["Edital_DOU"].astype(str).str.contains(filtro, case=False, na=False)]
+        else:
+            df_filtrado = df
+
+        # Exibir tabela no Streamlit
+        st.dataframe(df_filtrado, use_container_width=True)
+
+        # Exibir total
+        st.metric(label="📊 Total de RTID´s Publicados", value=totalRtidPublicado)
+
+        # Botões de ações
+        col1, col2, col3 = st.columns(3)
+
+        with col1:
+            if st.button("📄 Extrato"):
+                salvar_extrato_planilha(df_filtrado.to_records(index=False))
+                st.success("✅ Extrato exportado com sucesso!")
+
+        with col2:
+            if st.button("👨‍👩‍👧 Número de Famílias"):
+                exibir_total_de_familias_em_rtids_publicados()
+
+        with col3:
+            if st.button("🌍 Área Identificada"):
+                exibir_area_total_em_rtids_publicados()
+
+    else:
+        st.warning("⚠️ Não há registros para exibir.")
