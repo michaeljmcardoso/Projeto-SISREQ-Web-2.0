@@ -362,7 +362,7 @@ def exibir_status_pnra():
             ax.text(quantidade + 0.1, i, str(quantidade), va='center', weight='bold')
 
         # Mostrar gráfico no Streamlit
-        st.pyplot(fig, clear_figure=False)
+        st.pyplot(fig)
 
     else:
         st.warning("⚠️ Não há registros para exibir no banco de dados.")

@@ -14,5 +14,5 @@ def dashboard(fase):
     grafico_processos_por_fase()
     territorios_identificados()
     exibir_processos_com_acao_civil()
-    exibir_status_pnra()
+    #exibir_status_pnra()
     data_abertura()
