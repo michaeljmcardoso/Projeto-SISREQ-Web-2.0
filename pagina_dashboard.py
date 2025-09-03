@@ -1,5 +1,5 @@
 import streamlit as st
-from dashboard import processos_por_fase, processos_por_municipio, grafico_processos_por_fase, plotar_mapa_interativo, data_abertura
+from dashboard import processos_por_fase, processos_por_municipio, grafico_processos_por_fase, plotar_mapa_interativo, data_abertura, exibir_status_pnra
 
 def dashboard(fase):
     st.markdown('<h2 style="color: #1f77b4;">Dashboard</h2>', unsafe_allow_html=True)
@@ -12,4 +12,5 @@ def dashboard(fase):
     plotar_mapa_interativo()
     processos_por_fase()
     grafico_processos_por_fase()
+    exibir_status_pnra()
     data_abertura()

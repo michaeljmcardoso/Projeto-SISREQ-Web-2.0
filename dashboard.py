@@ -307,3 +307,56 @@ def plotar_mapa_interativo():
                     f"<p style='color: #FFFFFF; background-color: #1f77b4; padding: 1px; border-radius: 1px;'>",
                     unsafe_allow_html=True
                 )
+    
+
+
+# Função de conexão
+def conectar_banco_de_dados():
+    return sqlite3.connect("sisreq.db")
+
+# Função adaptada para Streamlit
+def exibir_status_pnra():
+    conn = conectar_banco_de_dados()
+    cursor = conn.cursor()
+
+    # Consulta ao banco
+    cursor.execute("""
+        SELECT PNRA, COUNT(*) AS Tipo_PNRA 
+        FROM processos 
+        WHERE PNRA IN ('ANDAMENTO', 'CONCLUIDO', 'NAO-INICIADO') 
+        GROUP BY PNRA
+    """)
+    resultados = cursor.fetchall()
+    conn.close()
+
+    if resultados:
+        # Separar os resultados
+        pnra_status = [r[0] for r in resultados]
+        tipo_pnra = [r[1] for r in resultados]
+
+        # Criar DataFrame
+        data = pd.DataFrame({'Status PNRA': pnra_status, 'Quantidade': tipo_pnra})
+
+        # Exibir tabela
+        st.subheader("📊 Status do PNRA em Regularização Quilombola")
+        st.dataframe(data, use_container_width=True)
+
+        # Criar gráfico de barras com Matplotlib
+        fig, ax = plt.subplots(figsize=(8, 5))
+        ax.barh(pnra_status, tipo_pnra, color="steelblue")
+
+        # Configurações do gráfico
+        ax.set_xlabel("Quantidade")
+        ax.set_ylabel("Status PNRA")
+        ax.set_title("Status do PNRA em Regularização Quilombola")
+
+        # Adicionar rótulos
+        for i, quantidade in enumerate(tipo_pnra):
+            ax.text(quantidade + 0.1, i, str(quantidade), va='center', weight='bold')
+
+        # Mostrar gráfico no Streamlit
+        st.pyplot(fig)
+
+    else:
+        st.warning("⚠️ Não há registros para exibir no banco de dados.")
+
