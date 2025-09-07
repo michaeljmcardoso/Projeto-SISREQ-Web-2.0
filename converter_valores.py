@@ -1,7 +1,10 @@
 import sqlite3
 import pandas as pd
 
-# Carregar dados do banco
+"""Funções para converter valores 
+da tabela para formato numérico
+e atualizar no banco de dados"""
+
 def converter_area_para_numeric():
     conn = sqlite3.connect('sisreq.db')
     df = pd.read_sql_query("SELECT * FROM processos", conn)
@@ -22,7 +25,6 @@ def converter_area_para_numeric():
     conn.commit()
     conn.close()
 
-# Carregar dados do banco
 def converter_familias_para_numeric():
     conn = sqlite3.connect('sisreq.db')
     df = pd.read_sql_query("SELECT * FROM processos", conn)
@@ -43,7 +45,6 @@ def converter_familias_para_numeric():
     conn.commit()
     conn.close()
 
-# Carregar dados do banco
 def converter_latitude_para_numeric():
     conn = sqlite3.connect('sisreq.db')
     df = pd.read_sql_query("SELECT * FROM processos", conn)
@@ -66,7 +67,6 @@ def converter_latitude_para_numeric():
     conn.commit()
     conn.close()
 
-# Carregar dados do banco
 def converter_longitude_para_numeric():
     conn = sqlite3.connect('sisreq.db')
     df = pd.read_sql_query("SELECT * FROM processos", conn)
