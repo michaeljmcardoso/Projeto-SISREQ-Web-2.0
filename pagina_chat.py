@@ -16,10 +16,10 @@ def iniciar_chat():
 
     # Configuração do modelo e da sessão de chat
     generation_config = {
-        "temperature": 1,
-        "top_p": 0.95,
-        "top_k": 64,
-        "max_output_tokens": 512,
+        "temperature": 0.3,
+        "top_p": 0.8,
+        "top_k": 40,
+        "max_output_tokens": 1500,
         "response_mime_type": "text/plain",
     }
 
