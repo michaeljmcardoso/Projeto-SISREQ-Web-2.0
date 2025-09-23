@@ -2,9 +2,8 @@ import sqlite3
 import pandas as pd
 import io
 import streamlit as st
-from constantes import MUNICIPIOS, TIPO_SOBREPOSICAO
-
-#def filtrar_por_comunidade():
+from constantes import MUNICIPIOS
+from obter_todos_registros import obter_todos_os_registros
 
 def criar_submenu():
     submenu = st.radio("",
@@ -13,16 +12,108 @@ def criar_submenu():
     if submenu == "Município":
         filtrar_por_municipio()
     elif submenu == "Comunidade":
-        ()
+        filtrar_por_comunidade()
     elif submenu == "Nº do Processo":
-        ()
+        filtrar_por_numero_processo()
     elif submenu == "Quilombos em Assentamentos":
         quilombos_em_assentamentos()
 
+def filtrar_por_comunidade():
+    df = obter_todos_os_registros()
+    if not df.empty:
+        if 'ID' in df.columns:
+            df = df.drop(columns=['ID'])
+            df.index = df.index + 1
+    
+    # Criar identificadores únicos de comunidade e município
+    df['Comunidade_Municipio'] = df['Comunidade'] + " - " + df['Municipio']
+    comunidades_disponiveis = df['Comunidade_Municipio'].unique().tolist()
+    
+    # Adicionar opção vazia no início da lista
+    opcoes = [""] + comunidades_disponiveis
+
+    # Caixa de seleção para escolha da comunidade
+    #st.markdown('<h4 style="color: #1f77b4;">Pesquisar por Comunidade</h4>', unsafe_allow_html=True)
+    st.subheader("Pesquisar por Comunidade")
+    comunidade_selecionada = st.selectbox(
+        'Selecione a comunidade:', 
+        options=opcoes,
+        index=0,  # Seleciona a primeira opção (vazia)
+        help="Selecione uma comunidade ou município para iniciar a busca"
+    )
+    
+    # Mensagem informativa quando nenhuma comunidade está selecionada
+    if not comunidade_selecionada:
+        st.info('🔍 Selecione uma comunidade para iniciar a busca')
+        return  # Sai da função sem processar mais nada
+
+    # Validar a seleção da comunidade
+    if comunidade_selecionada:
+        comunidade, municipio = comunidade_selecionada.split(" - ")
+        registros_filtrados = df[(df['Comunidade'] == comunidade) & (df['Municipio'] == municipio)]
+
+        if not registros_filtrados.empty:
+            for index, registro in registros_filtrados.iterrows():
+                st.markdown(
+                    f"<p style='color: #FFFFFF; background-color: #1f77b4; padding: 1px; border-radius: 1px;'>",
+                    unsafe_allow_html=True
+                )
+
+                # Divisão em colunas para exibição de dados
+                col1, col2, col3, col4 = st.columns(4)
+
+                # Coluna 1
+                with col1:
+                    st.markdown(f"<p><strong>Número do Processo:</strong> {registro[0]}</p>", unsafe_allow_html=True)
+                    st.markdown(f"<p><strong>Data de Abertura:</strong> {registro[1]}</p>", unsafe_allow_html=True)
+                    st.markdown(f"<p><strong>Comunidade:</strong> {registro[2]}</p>", unsafe_allow_html=True)
+                    st.markdown(f"<p><strong>Município:</strong> {registro[3]}</p>", unsafe_allow_html=True)
+                    st.markdown(f"<p><strong>Número de Famílias:</strong> {registro[5]}</p>", unsafe_allow_html=True)
+                    st.markdown(f"<p><strong>Área Identificada (ha):</strong> {registro[4]}</p>", unsafe_allow_html=True)
+
+                # Coluna 2
+                with col2:
+                    st.markdown(f"<p><strong>Fase do Processo:</strong> {registro[6]}</p>", unsafe_allow_html=True)
+                    st.markdown(f"<p><strong>Etapa RTID:</strong> {registro[7]}</p>", unsafe_allow_html=True)
+                    st.markdown(f"<p><strong>Relatório Antropológico:</strong> {registro[15]}</p>", unsafe_allow_html=True)
+                    st.markdown(f"<p><strong>Certidão FCP:</strong> {registro[18]}</p>", unsafe_allow_html=True)
+                    st.markdown(f"<p><strong>Data de Certificação:</strong> {registro[19]}</p>", unsafe_allow_html=True)
+
+                # Coluna 3
+                with col3:
+                    st.markdown(f"<p><strong>Área Titulada (ha):</strong> {registro[12]}</p>", unsafe_allow_html=True)
+                    st.markdown(f"<p><strong>Título:</strong> {registro['Titulo']}</p>", unsafe_allow_html=True)
+                    st.markdown(f"<p><strong>PNRA:</strong> {registro['PNRA']}</p>", unsafe_allow_html=True)
+                    st.markdown(f"<p><strong>Latitude:</strong> {registro['Latitude']}</p>", unsafe_allow_html=True)
+                    st.markdown(f"<p><strong>Longitude:</strong> {registro['Longitude']}</p>", unsafe_allow_html=True)
+
+                # Coluna 4
+                with col4:
+                    st.markdown(f"<p><strong>Edital DOU:</strong> {registro['Edital_DOU']}</p>", unsafe_allow_html=True)
+                    st.markdown(f"<p><strong>Edital DOE:</strong> {registro['Edital_DOE']}</p>", unsafe_allow_html=True)
+                    st.markdown(f"<p><strong>Portaria DOU:</strong> {registro['Portaria_DOU']}</p>", unsafe_allow_html=True)
+                    st.markdown(f"<p><strong>Decreto DOU:</strong> {registro['Decreto_DOU']}</p>", unsafe_allow_html=True)
+                    st.markdown(f"<p><strong>Sobreposição Territorial:</strong> {registro['Sobreposicao']}</p>", unsafe_allow_html=True)
+                    st.markdown(f"<p><strong>Detalhes de Sobreposição:</strong> {registro['Analise_de_Sobreposicao']}</p>", unsafe_allow_html=True)
+           
+            # informações adicionais
+            col1, col2, col3, col4 = st.columns(4)
+            with col1:
+                st.markdown(f"<p><strong>Ação Civil Pública:</strong> {registro['Acao_Civil_Publica']}</p>", unsafe_allow_html=True)
+            with col2:
+                st.markdown(f"<p><strong>Data da Sentença:</strong> {registro['Data_Decisao']}</p>", unsafe_allow_html=True)
+            with col3:
+                st.markdown(f"<p><strong>Teor/Prazo da Sentença:</strong> {registro[24]}</p>", unsafe_allow_html=True)
+            with col4:
+                st.markdown(f"<p><strong>Outras Informações:</strong> {registro['Outras_Informacoes']}</p>", unsafe_allow_html=True)
+                
+        else:
+            st.warning("Comunidade não encontrada. Por favor, verifique o nome informado.")
+
 def filtrar_por_municipio():
     
-    st.markdown('<h4 style="color: #1f77b4;">Pesquisar por Município</h4>', unsafe_allow_html=True)
-    #st.subheader("Pesquisar por Município")
+    #st.markdown('<h4 style="color: #1f77b4;">Pesquisar por Município</h4>', unsafe_allow_html=True)
+    st.subheader("Pesquisar por Município")
 
     # Selecionar o município
     municipio = st.selectbox("Selecione o município:", 
@@ -86,6 +177,90 @@ def salvar_extrato_planilha(df, municipio):
     )
     st.success(f"Extrato para {municipio} salvo e pronto para download!")
 
+
+def filtrar_por_numero_processo():
+    df = obter_todos_os_registros()
+    if not df.empty:
+        if 'ID' in df.columns:
+            df = df.drop(columns=['ID'])
+            df.index = df.index + 1
+    
+    # Obter lista de números de processo disponíveis
+    numeros_processo_disponiveis = df['Numero'].unique().tolist()
+    
+    # Adicionar opção vazia no início da lista
+    opcoes = [""] + numeros_processo_disponiveis
+
+    # Caixa de seleção para escolha do número do processo
+    st.subheader('Pesquisar por Número do Processo')
+    #st.markdown('<h4 style="color: #1f77b4;">Pesquisar por Número do Processo</h4>', unsafe_allow_html=True)
+    numero_processo_selecionado = st.selectbox(
+        'Selecione o número do processo:', 
+        options=opcoes,
+        index=0,  # Seleciona a primeira opção (vazia)
+        help="Selecione um número de processo para iniciar a busca"
+    )
+    
+    # Mensagem informativa quando nenhum processo está selecionado
+    if not numero_processo_selecionado:
+        st.info('🔍 Selecione um número de processo para iniciar a busca')
+        return  # Sai da função sem processar mais nada
+
+    # Validar a seleção do processo
+    if numero_processo_selecionado:
+        registros_filtrados = df[df['Numero'] == numero_processo_selecionado]
+
+        if not registros_filtrados.empty:
+            for index, registro in registros_filtrados.iterrows():
+                st.markdown(
+                    f"<div style='color: #FFFFFF; background-color: #1f77b4; padding: 10px; border-radius: 5px; margin-bottom: 20px;'>"
+                    f"<strong>Processo: {numero_processo_selecionado}</strong>"
+                    f"</div>",
+                    unsafe_allow_html=True
+                )
+
+                # Divisão em colunas para exibição de dados
+                col1, col2, col3, col4 = st.columns(4)
+
+                # Coluna 1
+                with col1:
+                    st.markdown(f"<p><strong>Número do Processo:</strong> {registro[0]}</p>", unsafe_allow_html=True)
+                    st.markdown(f"<p><strong>Data de Abertura:</strong> {registro[1]}</p>", unsafe_allow_html=True)
+                    st.markdown(f"<p><strong>Comunidade:</strong> {registro[2]}</p>", unsafe_allow_html=True)
+                    st.markdown(f"<p><strong>Município:</strong> {registro[3]}</p>", unsafe_allow_html=True)
+                    st.markdown(f"<p><strong>Número de Famílias:</strong> {registro[5]}</p>", unsafe_allow_html=True)
+                    st.markdown(f"<p><strong>Área Identificada (ha):</strong> {registro[4]}</p>", unsafe_allow_html=True)
+
+                # Coluna 2
+                with col2:
+                    st.markdown(f"<p><strong>Fase do Processo:</strong> {registro[6]}</p>", unsafe_allow_html=True)
+                    st.markdown(f"<p><strong>Etapa RTID:</strong> {registro[7]}</p>", unsafe_allow_html=True)
+                    st.markdown(f"<p><strong>Relatório Antropológico:</strong> {registro[15]}</p>", unsafe_allow_html=True)
+                    st.markdown(f"<p><strong>Certidão FCP:</strong> {registro[18]}</p>", unsafe_allow_html=True)
+                    st.markdown(f"<p><strong>Data de Certificação:</strong> {registro[19]}</p>", unsafe_allow_html=True)
+
+                # Coluna 3
+                with col3:
+                    st.markdown(f"<p><strong>Área Titulada (ha):</strong> {registro[12]}</p>", unsafe_allow_html=True)
+                    st.markdown(f"<p><strong>Título:</strong> {registro['Titulo']}</p>", unsafe_allow_html=True)
+                    st.markdown(f"<p><strong>PNRA:</strong> {registro['PNRA']}</p>", unsafe_allow_html=True)
+                    st.markdown(f"<p><strong>Latitude:</strong> {registro['Latitude']}</p>", unsafe_allow_html=True)
+                    st.markdown(f"<p><strong>Longitude:</strong> {registro['Longitude']}</p>", unsafe_allow_html=True)
+
+                # Coluna 4
+                with col4:
+                    st.markdown(f"<p><strong>Edital DOU:</strong> {registro['Edital_DOU']}</p>", unsafe_allow_html=True)
+                    st.markdown(f"<p><strong>Edital DOE:</strong> {registro['Edital_DOE']}</p>", unsafe_allow_html=True)
+                    st.markdown(f"<p><strong>Portaria DOU:</strong> {registro['Portaria_DOU']}</p>", unsafe_allow_html=True)
+                    st.markdown(f"<p><strong>Decreto DOU:</strong> {registro['Decreto_DOU']}</p>", unsafe_allow_html=True)
+                    st.markdown(f"<p><strong>Sobreposição Territorial:</strong> {registro['Sobreposicao']}</p>", unsafe_allow_html=True)
+                    st.markdown(f"<p><strong>Detalhes de Sobreposição:</strong> {registro['Analise_de_Sobreposicao']}</p>", unsafe_allow_html=True)
+      
+           
+                     
+        else:
+            st.warning("Número do processo não encontrado. Por favor, verifique o número informado.")
+
 def faseInicial():
     try:
         # Conectar ao banco de dados
@@ -148,7 +323,8 @@ def conectar_banco_de_dados():
     return sqlite3.connect('sisreq.db')
 
 def quilombos_em_assentamentos():
-    st.markdown('<h4 style="color: #1f77b4;">Quilombos em Assentamentos</h4>', unsafe_allow_html=True)
+    st.subheader('Quilombos em Assentamentos')
+    # st.markdown('<h4 style="color: #1f77b4;">Quilombos em Assentamentos</h4>', unsafe_allow_html=True)
     try:
         # Conectar ao banco de dados
         conn = conectar_banco_de_dados()
