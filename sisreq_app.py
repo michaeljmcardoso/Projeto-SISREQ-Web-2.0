@@ -259,7 +259,7 @@ else:
         #st.experimental_rerun()
 
     # Definir páginas disponíveis com base no tipo de usuário
-    opcoes_paginas = ["📁Controle de Processos", "📥Iniciar Processo", "📝Editar Processo", "🔍Pesquisa", "📊Dashboard", "✨SISREQ_IA", "☎️Contatos", "ℹ️Sobre"]
+    opcoes_paginas = ["📁Controle de Processos", "📥Iniciar Processo", "📝Editar Processo", "🔍Pesquisa", "📊Dashboard", "✨Oráculo", "☎️Contatos", "ℹ️Sobre"]
     
     if st.session_state['usuario_logado'] == "admin":
         opcoes_paginas.insert(6, "👨‍💻Gerenciar Usuários")  # Adicionar "Gerenciar Usuários" antes de "Sobre"
@@ -314,7 +314,7 @@ else:
             gerenciar_usuarios()
         else:
             st.error("Você não tem permissão para acessar esta página.")
-    elif pagina_selecionada == "✨SISREQ_IA":
+    elif pagina_selecionada == "✨Oráculo":
         iniciar_chat()
     elif pagina_selecionada == "ℹ️Sobre":
         pagina_about()

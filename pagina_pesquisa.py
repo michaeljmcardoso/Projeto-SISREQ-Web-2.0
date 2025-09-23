@@ -214,7 +214,7 @@ def filtrar_por_numero_processo():
             for index, registro in registros_filtrados.iterrows():
                 st.markdown(
                     f"<div style='color: #FFFFFF; background-color: #1f77b4; padding: 10px; border-radius: 5px; margin-bottom: 20px;'>"
-                    f"<strong>Processo: {numero_processo_selecionado}</strong>"
+                    f"<strong>Processo: {numero_processo_selecionado} | Comunidade: {registro['Comunidade']}</strong>"
                     f"</div>",
                     unsafe_allow_html=True
                 )

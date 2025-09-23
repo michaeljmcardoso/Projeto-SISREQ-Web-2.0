@@ -79,7 +79,7 @@ def iniciar_chat():
         st.session_state["files"] = None
 
     # Cria a Interface
-    st.subheader("Converse com SISREQ IA✨")
+    st.subheader("Converse com o Óraculo✨")
 
 
     db_path = "sisreq.db"
