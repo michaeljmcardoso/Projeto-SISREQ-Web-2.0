@@ -8,7 +8,7 @@ def pagina_about():
         Sistema de registro de processos de regularização quilombola.
         Projeto experimental. Focado em otimizar o registro, 
         visualização e consulta dos processos cadastrados. Inclui o Assistente Virtual, Oráculo. 
-             
+        Para atualizar a página aperte "R".
     """)
     # Rodapé
     st.markdown(
