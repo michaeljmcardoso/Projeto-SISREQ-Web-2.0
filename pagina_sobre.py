@@ -7,7 +7,8 @@ def pagina_about():
     st.write("""
         Sistema de registro de processos de regularização quilombola.
         Projeto experimental. Focado em otimizar o registro, 
-        visualização e consulta dos processos cadastrados. Inclui o Assistente Virtual, SISREQ_IA. 
+        visualização e consulta dos processos cadastrados. Inclui o Assistente Virtual, Oráculo. 
+             
     """)
     # Rodapé
     st.markdown(
