@@ -35,6 +35,7 @@ def iniciar_chat():
         ),
     )
     st.warning('Temporariamente indisponível.')
+
     # def fetch_data_from_db(db_path):
     #     """Conecta ao banco de dados SQLite e retorna um DataFrame com os dados."""
     #     conn = sqlite3.connect(db_path)
