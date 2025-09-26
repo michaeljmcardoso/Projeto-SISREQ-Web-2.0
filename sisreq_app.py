@@ -320,7 +320,7 @@ else:
         pagina_about()
     elif pagina_selecionada == "☎️Contatos":
         pagina_contatos()
-
+   
     st.sidebar.markdown('''
     ---
     Created with ❤️ by [Michael](https://github.com/michaeljmcardoso).

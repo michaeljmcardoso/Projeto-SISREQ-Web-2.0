@@ -78,8 +78,8 @@ def iniciar_chat():
     # if "files" not in st.session_state:
     #     st.session_state["files"] = None
 
-    # # Cria a Interface
-    # st.subheader("Converse com o Óraculo✨")
+    # Cria a Interface
+    st.subheader("Converse com o Óraculo✨")
 
 
     # db_path = "sisreq.db"
