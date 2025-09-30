@@ -19,7 +19,7 @@ def iniciar_chat():
         "temperature": 0.3,
         "top_p": 0.8,
         "top_k": 40,
-        "max_output_tokens": 750,
+        "max_output_tokens": 800,
         "response_mime_type": "text/plain",
     }
 
