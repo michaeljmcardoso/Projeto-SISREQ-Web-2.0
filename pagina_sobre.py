@@ -5,9 +5,15 @@ import streamlit as st
 def pagina_about():
     st.subheader("Sobre o Projeto")
     st.write("""
-        Sistema de registro de processos de regularização quilombola.
-        Projeto experimental. Focado em otimizar o registro, 
-        visualização e consulta dos processos cadastrados. Inclui o Assistente Virtual, Oráculo. 
+        O SISREQ é um sistema de gerenciamento de registros para a regularização quilombola, 
+        desenvolvido para facilitar o controle, acompanhamento e análise de processos. 
+        Ele utiliza tecnologias modernas para oferecer uma experiência intuitiva e eficiente,
+        tanto em ambientes desktop quanto mobile. O sistema conta com um assistente virtual chamado Oráculo, 
+        que utiliza a API `google.generativeai` para fornecer suporte e informações em tempo real. 
+        Além disso, o projeto possui controle de acesso de usuários, garantindo segurança e privacidade dos dados.
+        
+        Projeto experimental. Focado em otimizar o registro, visualização e consulta dos processos cadastrados. 
+        Inclui o Assistente Virtual, Oráculo.
         Para atualizar a página aperte "R".
     """)
     # Rodapé
