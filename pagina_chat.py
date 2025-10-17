@@ -101,10 +101,10 @@ def iniciar_chat():
 
         # Se o chat foi inicializado com sucesso, mostra o input
         if st.session_state.chat_initialized and st.session_state.chat_session is not None:
-            user_input = st.text_input("Digite sua pergunta sobre os processos quilombolas:")
+            user_input = st.text_input("Digite aqui sua pergunta sobre os processos quilombolas:")
             
             if user_input and user_input.strip():
-                with st.spinner("🔍 Consultando o Oráculo..."):
+                with st.spinner("🔍 Consultando o Oráculo✨..."):
                     try:
                         # Combina o contexto dos dados com a pergunta do usuário
                         full_prompt = f"""
