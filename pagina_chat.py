@@ -107,7 +107,7 @@ def iniciar_chat():
 
     # Cria a Interface
     st.subheader("Converse com o Óraculo✨")
-    st.success("Dados carregados com sucesso. Pronto para interação!")
+    st.success("Dados carregados com sucesso e pronto para interação!")
 
     # Exibe o histórico de mensagens
     for message in st.session_state.messages:
@@ -125,7 +125,7 @@ def iniciar_chat():
             st.markdown(user_input)
 
         with st.chat_message("assistant"):
-            with st.spinner("🔍 O Oráculo está pensando..."):
+            with st.spinner("O Oráculo está pensando..."):
                 
                 # Prepara o histórico de mensagens para o Gemini (apenas mensagens de texto)
                 gemini_history = [
