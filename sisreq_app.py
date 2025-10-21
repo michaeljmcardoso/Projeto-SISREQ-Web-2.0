@@ -11,6 +11,7 @@ from pagina_pesquisa import criar_submenu
 from pagina_chat import iniciar_chat
 from pagina_sobre import pagina_about
 from pagina_contatos import pagina_contatos
+from pagina_sobre_regularizacao_quilombola import pagina_sobre_regularizacao_quilombola
 
 # Função para hash de senha 
 def hash_senha(senha):
@@ -259,7 +260,7 @@ else:
         #st.experimental_rerun()
 
     # Definir páginas disponíveis com base no tipo de usuário
-    opcoes_paginas = ["📁Controle de Processos", "🔍Pesquisa", "✨Oráculo", "📊Dashboard", "☎️Contatos", "ℹ️Sobre"]
+    opcoes_paginas = ["📁Controle de Processos", "🔍Pesquisa", "✨Oráculo", "📊Dashboard", "☎️Contatos", "📃Regularização Quilombola","ℹ️Sobre o Projeto"]
     
     if st.session_state['usuario_logado'] == "admin":
         opcoes_paginas.insert(5, "👨‍💻Gerenciar Usuários")  # Adicionar "Gerenciar Usuários" antes de "Sobre"
@@ -319,8 +320,10 @@ else:
         else:
             st.error("Você não tem permissão para acessar esta página.")
     
-    elif pagina_selecionada == "ℹ️Sobre":
+    elif pagina_selecionada == "ℹ️Sobre o Projeto":
         pagina_about()
+    elif pagina_selecionada == "📃Regularização Quilombola":
+        pagina_sobre_regularizacao_quilombola()
     elif pagina_selecionada == "☎️Contatos":
         pagina_contatos()
    

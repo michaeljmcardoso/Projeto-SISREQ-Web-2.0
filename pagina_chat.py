@@ -6,50 +6,25 @@ import streamlit as st
 import google.generativeai as genai
 from dotenv import load_dotenv
 
-def rate_limited_request(func, *args, **kwargs):
-    """Implementa rate limiting para evitar erro 429"""
-    if "last_request_time" not in st.session_state:
-        st.session_state.last_request_time = 0
-    
-    current_time = time.time()
-    time_since_last_request = current_time - st.session_state.last_request_time
-    
-    # Espera pelo menos 3 segundos entre requisições (20 req/min)
-    min_interval = 3.0
-    if time_since_last_request < min_interval:
-        sleep_time = min_interval - time_since_last_request
-        time.sleep(sleep_time)
-    
-    st.session_state.last_request_time = time.time()
-    return func(*args, **kwargs)
-
 def iniciar_chat():
+
     # Carrega as variáveis de ambiente do arquivo .env
     load_dotenv()
 
     # Configuração da API Gemini
+    if "CHAVE_API" not in os.environ:
+        st.error("A CHAVE_API não está definida no arquivo .env.")
+        return
+
+    # 1. Inicializa a configuração da API
     genai.configure(api_key=os.environ["CHAVE_API"])
-
-    # Configuração do modelo
-    generation_config = {
-        "temperature": 0.3,
-        "top_p": 0.8,
-        "top_k": 40,
-        "max_output_tokens": 800,
-        "response_mime_type": "text/plain",
-    }
-
-    model = genai.GenerativeModel(
-        model_name="gemini-2.5-flash", 
-        generation_config=generation_config,
-        system_instruction=(
-            "Você é o assistente virtual Oráculo especialista em processos de regularização fundiária de territórios quilombolas "
-            "do Instituto Nacional de Colonização e Reforma Agrária. Responda conforme for perguntado. Mantenha-se no contexto "
-            "da regularização quilombola. Se for perguntado fora desse contexto, informe que não pode ajudar. "
-            "O tom da conversa deve ser amigável, utilize emojis nas respostas."
-            "Você tem acesso aos dados reais e atuais dos processos de regularização quilombola do INCRA no Maranhão."
-        ),
-    )
+    
+    # A inicialização do cliente não é mais necessária, pois removemos a API de arquivos.
+    # try:
+    #     client = genai.Client()
+    # except Exception as e:
+    #     st.error(f"Erro ao inicializar o cliente da Gemini API: {e}")
+    #     return
 
     def fetch_data_from_db(db_path):
         """Conecta ao banco de dados SQLite e retorna um DataFrame com os dados."""
@@ -59,110 +34,111 @@ def iniciar_chat():
         conn.close()
         return df
 
-    # Inicializa as variáveis de estado
-    if "chat_initialized" not in st.session_state:
-        st.session_state.chat_initialized = False
-    if "data_context" not in st.session_state:
-        st.session_state.data_context = ""
-    if "chat_session" not in st.session_state:
-        st.session_state.chat_session = None
-    if "df" not in st.session_state:
-        st.session_state.df = None
+    def save_dataframe_to_csv(df, csv_path):
+        """Salva um DataFrame em um arquivo CSV."""
+        df.to_csv(csv_path, index=False)
+
+    # Funções de upload e espera removidas, pois passaremos os dados como texto.
+    # def upload_to_gemini(...):
+    # def wait_for_files_active(...):
+    
+    # ----------------------------------------------------------------------
+    # 1. PREPARAÇÃO DE DADOS (FORA DA SESSÃO DE CHAT)
+    # ----------------------------------------------------------------------
+    db_path = "sisreq.db"
+    data_content = ""
+    
+    if os.path.exists(db_path):
+        try:
+            df = fetch_data_from_db(db_path)
+            # Converte o DataFrame para uma string CSV para passar ao modelo
+            data_content = df.to_csv(index=False)
+            st.session_state["data_loaded"] = True
+            
+            # Limpeza: Removemos o temp_data.csv, pois leremos diretamente o conteúdo.
+            # O arquivo não será mais necessário para a API.
+            
+        except Exception as e:
+            st.error(f"Erro ao carregar os dados do banco de dados: {e}")
+            st.session_state["data_loaded"] = False
+            return
+    else:
+        st.error("Banco de dados 'sisreq.db' não encontrado. Verifique o caminho do arquivo.")
+        return
+
+    # ----------------------------------------------------------------------
+    # 2. CONFIGURAÇÃO E INÍCIO DO CHAT
+    # ----------------------------------------------------------------------
+    
+    # Instrução de sistema aprimorada para incluir o contexto dos dados
+    system_instruction_template = (
+        "Você é o assistente virtual Oráculo especialista em processos de regularização fundiária de territórios quilombolas "
+        "do Instituto Nacional de Colonização e Reforma Agrária. Responda conforme for perguntado. Mantenha-se no contexto "
+        "da regularização quilombola. Se for perguntado fora desse contexto, informe que não pode ajudar. "
+        "O tom da conversa deve ser amigável, utilize emojis nas respostas.\n\n"
+        "INFORMAÇÕES DE CONTEXTO: Você tem acesso aos seguintes dados reais e atuais dos processos de regularização quilombola do INCRA no Maranhão. Utilize estes dados para responder a perguntas sobre processos, status, ou territórios:\n\n"
+        "--- INÍCIO DOS DADOS ---\n"
+        f"{data_content}\n"
+        "--- FIM DOS DADOS ---\n"
+    )
+
+    generation_config = {
+        "temperature": 0.3,
+        "top_p": 0.8,
+        "top_k": 40,
+        "max_output_tokens": 1600,
+        "response_mime_type": "text/plain",
+    }
+
+    model = genai.GenerativeModel(
+        model_name="gemini-2.5-flash",
+        generation_config=generation_config,
+        system_instruction=system_instruction_template,
+    )
+
+    # ----------------------------------------------------------------------
+    # 3. INTERFACE STREAMLIT
+    # ----------------------------------------------------------------------
+    
+    # Inicializa o histórico de mensagens do Streamlit
+    if "messages" not in st.session_state:
+        # A instrução de sistema já contém o contexto de dados, então o histórico começa vazio
+        st.session_state.messages = []
 
     # Cria a Interface
     st.subheader("Converse com o Óraculo✨")
+    st.success("Dados carregados com sucesso. Pronto para interação!")
 
-    db_path = "sisreq.db"
+    # Exibe o histórico de mensagens
+    for message in st.session_state.messages:
+        with st.chat_message(message["role"]):
+            st.markdown(message["content"])
 
-    if os.path.exists(db_path):
-        # Busca dados do banco apenas uma vez
-        if st.session_state.df is None:
-            with st.spinner("Carregando dados do banco..."):
-                st.session_state.df = fetch_data_from_db(db_path)
+    # Loop de interação com o usuário (Chat UI padrão do Streamlit)
+    user_input = st.chat_input("Digite sua pergunta:")
+
+    if user_input:
+        # Adiciona a mensagem do usuário ao histórico
+        st.session_state.messages.append({"role": "user", "content": user_input})
+        
+        with st.chat_message("user"):
+            st.markdown(user_input)
+
+        with st.chat_message("assistant"):
+            with st.spinner("🔍 O Oráculo está pensando..."):
                 
-                # Cria um resumo dos dados para incluir no contexto
-                data_summary = f"""
-                Dados dos processos de regularização fundiária quilombola:
-                - Total de processos: {len(st.session_state.df)}
-                - Colunas disponíveis: {', '.join(st.session_state.df.columns)}
-                - Amostra dos dados (primeiras 3 linhas):
-                {st.session_state.df.head(3).to_string()}
-                """
-                st.session_state.data_context = data_summary
-                
-                # Inicializa a sessão de chat
-                try:
-                    st.session_state.chat_session = model.start_chat(history=[])
-                    st.session_state.chat_initialized = True
-                    st.success("✅ Dados carregados e prontos para interação!")
-                except Exception as e:
-                    st.error(f"Erro ao inicializar chat: {e}")
-                    return
+                # Prepara o histórico de mensagens para o Gemini (apenas mensagens de texto)
+                gemini_history = [
+                    {"role": "user", "parts": [msg["content"]]} 
+                    if msg["role"] == "user" else 
+                    {"role": "model", "parts": [msg["content"]]}
+                    for msg in st.session_state.messages
+                ]
 
-        # Se o chat foi inicializado com sucesso, mostra o input
-        if st.session_state.chat_initialized and st.session_state.chat_session is not None:
-            user_input = st.text_input("Digite aqui sua pergunta sobre os processos quilombolas:")
-            
-            if user_input and user_input.strip():
-                with st.spinner("🔍 Consultando o Oráculo✨..."):
-                    try:
-                        # Combina o contexto dos dados com a pergunta do usuário
-                        full_prompt = f"""
-                        CONTEXTO DOS DADOS DISPONÍVEIS:
-                        {st.session_state.data_context}
+                # Inicia/Continua a sessão de chat com o histórico
+                # O contexto dos dados está em 'system_instruction'
+                chat_session = model.start_chat(history=gemini_history)
+                response = chat_session.send_message(user_input)
 
-                        PERGUNTA DO USUÁRIO: {user_input}
-
-                        INSTRUÇÕES:
-                        - Responda com base nos dados fornecidos sobre processos de regularização fundiária quilombola
-                        - Seja amigável e use emojis quando apropriado
-                        - Se a informação não estiver nos dados, informe que não possui essa informação específica
-                        - Mantenha o foco no contexto de regularização quilombola
-                        """
-                        
-                        # Usa rate limiting para evitar erro 429
-                        response = rate_limited_request(
-                            st.session_state.chat_session.send_message,
-                            full_prompt
-                        )
-                        
-                        st.markdown("### 💬 Resposta:")
-                        st.markdown(response.text)
-                        
-                    except Exception as e:
-                        error_msg = str(e)
-                        if "429" in error_msg:
-                            st.error("""
-                            ⚠️ **Limite de requisições atingido!**
-                            
-                            Aguarde 20-30 segundos antes de fazer outra pergunta.
-                            Isso é um limite temporário da API do Google.
-                            """)
-                            st.info("💡 **Dica:** Espere um pouco e tente novamente.")
-                        elif "'NoneType' object has no attribute 'send_message'" in error_msg:
-                            st.error("""
-                            🔄 **Sessão reinicializada!**
-                            
-                            Recarregando a conversa...
-                            """)
-                            # Tenta reinicializar a sessão
-                            try:
-                                st.session_state.chat_session = model.start_chat(history=[])
-                                st.rerun()
-                            except:
-                                st.error("Erro ao reinicializar. Recarregue a página.")
-                        else:
-                            st.error(f"Erro na consulta: {error_msg}")
-
-        else:
-            st.warning("⏳ Inicializando o chat...")
-
-    else:
-        st.error("❌ Banco de dados não encontrado. Verifique se o arquivo 'sisreq.db' está no diretório correto.")
-
-# Botão para resetar a conversa
-if st.button("🔄 Reiniciar Conversa"):
-    for key in list(st.session_state.keys()):
-        if key != "df":  # Mantém os dados carregados
-            del st.session_state[key]
-    st.rerun()
+                st.markdown(response.text)
+                st.session_state.messages.append({"role": "assistant", "content": response.text})
