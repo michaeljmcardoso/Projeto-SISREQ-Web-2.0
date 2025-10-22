@@ -329,5 +329,5 @@ else:
    
     st.sidebar.markdown('''
     ---
-    Created with ❤️ by [Michael](https://github.com/michaeljmcardoso).
+    Created with by [Michael](https://github.com/michaeljmcardoso).
     ''')  
