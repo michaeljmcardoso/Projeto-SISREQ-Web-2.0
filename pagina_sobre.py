@@ -32,7 +32,7 @@ def pagina_about():
         }
         </style>
         <div class="rodape">
-            © 2025 Desenvolvido por Michael J M Cardoso, Antropólogo e Programador. Todos os direitos reservados.
+            © 2026 Desenvolvido por Michael J M Cardoso, Antropólogo e Programador. Todos os direitos reservados.
         </div>
         """,
         unsafe_allow_html=True
