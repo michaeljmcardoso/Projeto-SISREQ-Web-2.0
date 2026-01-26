@@ -2,7 +2,7 @@ pandas
 plotly
 seaborn
 openpyxl
-streamlit
+streamlit==1.19.0
 matplotlib
 altair==5.4.0
 python-dotenv
