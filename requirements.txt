@@ -4,5 +4,6 @@ seaborn
 openpyxl
 streamlit
 matplotlib
+altair==5.4.0
 python-dotenv
 google-generativeai
