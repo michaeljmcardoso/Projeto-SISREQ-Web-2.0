@@ -4,8 +4,3 @@ backgroundColor = "#1c3329"             # Verde muito escuro (quase preto)
 secondaryBackgroundColor = "#2d4a3e"    # Verde escuro para widgets
 textColor = "#ffffff"                   # Branco puro para melhor contraste
 font = "monospace"
-
-# Cores adicionais para personalização (opcional)
-buttonColor = "#8B4513"                 # Marrom saddlebrown (escuro)
-secondaryButtonColor = "#D2B48C"        # Marrom tan (claro)
-buttonTextColor = "#ffffff"             # Texto branco nos botões
