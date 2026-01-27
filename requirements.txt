@@ -2,8 +2,7 @@ pandas
 plotly
 seaborn
 openpyxl
-streamlit==1.19.0
+streamlit
 matplotlib
-altair==5.4.0
 python-dotenv
 google-generativeai
