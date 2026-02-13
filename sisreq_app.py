@@ -50,7 +50,7 @@ def iniciar_banco_de_dados():
             Analise_de_Sobreposicao TEXT,
             Acao_Civil_Publica TEXT,
             Data_Decisao DATE,
-            Teor_Decisao_Prazo_Sentenca TEXT,
+            Numero_Processo_Judicial TEXT,
             Outras_Informacoes TEXT
         )
         '''
