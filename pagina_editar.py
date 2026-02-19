@@ -86,7 +86,7 @@ def pagina_editar():
                 data_sentenca_formatada = new_data_sentenca.strip()  # Apenas atribuir a string
             else:
                 st.error("Data da Sentença inválida! Por favor, use o formato DD-MM-YYYY.")
-        new_teor_sentenca = st.text_input("Teor/Prazo da Sentença:", value=registro[25])
+        new_teor_sentenca = st.text_input("Número da Ação Civil Pública:", value=registro[25])
         new_outras_informacoes = st.text_area("Outras Informações:", value=registro[26], height=100)
 
         if st.button("Atualizar"):
@@ -106,7 +106,7 @@ def pagina_editar():
                     SET Numero = ?, Data_Abertura = ?, Comunidade = ?, Municipio = ?, Area_ha = ?, Num_familias = ?, Fase_Processo = ?, 
                     Etapa_RTID = ?, Edital_DOU = ?, Edital_DOE = ?, Portaria_DOU = ?, Decreto_DOU = ?, Area_ha_Titulada = ?, Titulo = ?, 
                     PNRA = ?, Relatorio_Antropologico = ?, Latitude = ?, Longitude = ?, Certidao_FCP = ?, Data_Certificacao = ?, 
-                    Sobreposicao = ?, Analise_de_Sobreposicao = ?, Acao_Civil_Publica = ?, Data_Decisao = ?, Numero_Processo_Judicial = ?, Outras_Informacoes = ?
+                    Sobreposicao = ?, Analise_de_Sobreposicao = ?, Acao_Civil_Publica = ?, Data_Decisao = ?, Numero_Acao_Civil_Publica = ?, Outras_Informacoes = ?
                     WHERE id = ?
                 ''', (new_numero_processo, data_abertura_formatada, new_nome_comunidade, new_municipio, new_area_identificada, new_numero_familias, 
                     new_fase_processo, etapa_rtid, new_edital_dou, new_edital_doe, portaria_dou_formatada, decreto_dou_formatada, 

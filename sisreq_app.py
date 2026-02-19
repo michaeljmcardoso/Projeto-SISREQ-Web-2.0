@@ -50,7 +50,7 @@ def iniciar_banco_de_dados():
             Analise_de_Sobreposicao TEXT,
             Acao_Civil_Publica TEXT,
             Data_Decisao DATE,
-            Numero_Processo_Judicial TEXT,
+            Numero_Acao_Civil_Publica TEXT,
             Outras_Informacoes TEXT
         )
         '''
@@ -223,7 +223,7 @@ def pesquisar_comunidade():
             with col2:
                 st.markdown(f"<p><strong>Data da Sentença:</strong> {registro['Data_Decisao']}</p>", unsafe_allow_html=True)
             with col3:
-                st.markdown(f"<p><strong>Teor/Prazo da Sentença:</strong> {registro[24]}</p>", unsafe_allow_html=True)
+                st.markdown(f"<p><strong>Número da Ação Civil Pública:</strong> {registro['Numero_Acao_Civil_Publica']}</p>", unsafe_allow_html=True)
             with col4:
                 st.markdown(f"<p><strong>Outras Informações:</strong> {registro['Outras_Informacoes']}</p>", unsafe_allow_html=True)
                 
