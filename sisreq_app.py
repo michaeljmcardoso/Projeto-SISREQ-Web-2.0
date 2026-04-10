@@ -329,5 +329,5 @@ else:
    
     st.sidebar.markdown('''
     ---
-    Created by [Michael](https://github.com/michaeljmcardoso).
-    ''')  
+    Acompanhe o Caderno de Metas. Clique aqui [Metas](https://caderno-de-metas.streamlit.app/)
+    ''')
