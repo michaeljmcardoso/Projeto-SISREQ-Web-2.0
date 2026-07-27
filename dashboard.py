@@ -5,8 +5,11 @@ import matplotlib.pyplot as plt
 import plotly.express as px
 import seaborn as sns
 import io
+import os
 from constantes import FASE_PROCESSO
 from pagina_pesquisa import salvar_extrato_planilha
+from dotenv import load_dotenv
+load_dotenv()
 
 # Função para conectar ao banco de dados
 def conectar_banco_de_dados():
@@ -236,7 +239,10 @@ def data_abertura():
         with col2:
             st.write("")
 
+
 def plotar_mapa_interativo():
+    # Carrega as variáveis de ambiente do arquivo .env
+    load_dotenv()
     if st.button("Plotar Mapa"):
         st.write("### Geolocalização das Comunidades Quilombolas")
         conn = conectar_banco_de_dados()
@@ -278,7 +284,14 @@ def plotar_mapa_interativo():
             df = df.dropna(subset=['Latitude', 'Longitude'])
 
             if not df.empty:
-                px.set_mapbox_access_token('pk.eyJ1IjoibWpkYXRhc2NpZW5jZSIsImEiOiJjbGFlY3hwbGcwbWlxM3Nxa2NuOWh4cmNzIn0.2ye_ghCe_WAgIpqueUqedA')
+                # Usando variável de ambiente
+                mapbox_token = os.environ.get('CHAVE_MAPBOX', '')
+                
+                if not mapbox_token:
+                    st.error("❌ CHAVE_MAPBOX não configurada. Verifique as configurações de ambiente.")
+                    return
+                
+                px.set_mapbox_access_token(mapbox_token)
 
                 fig = px.scatter_mapbox(
                     df, 
@@ -294,8 +307,7 @@ def plotar_mapa_interativo():
                 )
 
                 fig.update_layout(mapbox_style="streets")
-                fig.update_layout(margin={"r": 0, "t": 0, "l": 0, "b": 0},
-                )
+                fig.update_layout(margin={"r": 0, "t": 0, "l": 0, "b": 0})
 
                 with st.spinner("Gerando o mapa..."):
                     st.plotly_chart(fig)
@@ -306,9 +318,9 @@ def plotar_mapa_interativo():
             st.warning('Não há registros para exibir.', icon="⚠️")
 
     st.markdown(
-                    f"<p style='color: #FFFFFF; background-color: #1f77b4; padding: 1px; border-radius: 1px;'>",
-                    unsafe_allow_html=True
-                )
+        f"<p style='color: #FFFFFF; background-color: #1f77b4; padding: 1px; border-radius: 1px;'>",
+        unsafe_allow_html=True
+    )
     
 
 
