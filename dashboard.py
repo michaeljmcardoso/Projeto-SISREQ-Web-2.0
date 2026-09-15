@@ -268,39 +268,28 @@ def plotar_mapa_interativo():
         resultados = cursor.fetchall()
 
         if resultados:
-            municipios = []
-            comunidades = []
-            latitudes = []
-            longitudes = []
-            numero_de_familias = []
-
+            registros_validos = []
             for resultado in resultados:
-                municipios.append(resultado[0])
-                comunidades.append(resultado[1])
+                municipio = resultado[0]
+                comunidade = resultado[1]
+                lat = resultado[2]
+                lon = resultado[3]
+                num_familias = resultado[4]
 
-                # Verificar se os valores de latitude e longitude são numéricos antes de adicioná-los
-                if isinstance(resultado[2], (float, int)) and isinstance(resultado[3], (float, int)):
-                    latitudes.append(resultado[2])
-                    longitudes.append(resultado[3])
-                else:
-                    latitudes.append(None)  # Se não for numérico, adicione None
-                    longitudes.append(None)
+                # Só aceita registros com lat/lon numéricos válidos
+                if isinstance(lat, (float, int)) and isinstance(lon, (float, int)):
+                    registros_validos.append({
+                        'Municipio': municipio,
+                        'Comunidade': comunidade,
+                        'Latitude': lat,
+                        'Longitude': lon,
+                        'Num_Familias': num_familias,
+                    })
 
-                numero_de_familias.append(resultado[4])
+            if registros_validos:
+                df = pd.DataFrame(registros_validos)
 
-            df = pd.DataFrame({
-                'Municipio': municipios, 
-                'Comunidade': comunidades, 
-                'Latitude': latitudes, 
-                'Longitude': longitudes, 
-                'Num_Familias': numero_de_familias
-            })
-
-            # Filtrar linhas com valores não nulos nas colunas de latitude e longitude
-            df = df.dropna(subset=['Latitude', 'Longitude'])
-
-            if not df.empty:
-                # Obtém o token dos Secrets (Cloud) ou da variável de ambiente (local)
+                # Obtém o token (Secrets no Cloud, .env local)
                 mapbox_token = obter_mapbox_token()
 
                 if not mapbox_token:
@@ -310,8 +299,8 @@ def plotar_mapa_interativo():
                 px.set_mapbox_access_token(mapbox_token)
 
                 fig = px.scatter_mapbox(
-                    df, 
-                    lat='Latitude', 
+                    df,
+                    lat='Latitude',
                     lon='Longitude',
                     color=df['Municipio'],
                     color_discrete_sequence=["fuchsia"],
@@ -327,7 +316,6 @@ def plotar_mapa_interativo():
 
                 with st.spinner("Gerando o mapa..."):
                     st.plotly_chart(fig)
-
             else:
                 st.warning('Não há registros válidos para exibir.', icon="⚠️")
         else:
