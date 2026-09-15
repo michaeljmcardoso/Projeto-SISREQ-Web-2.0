@@ -15,7 +15,23 @@ load_dotenv()
 def conectar_banco_de_dados():
     conn = sqlite3.connect('sisreq.db')
     return conn
+def obter_mapbox_token():
+    """
+    Obtém o token do Mapbox em ordem de prioridade:
+    1. Secrets do Streamlit Cloud (st.secrets)
+    2. Variável de ambiente (arquivo .env local)
+    """
+    # 1) Tenta ler dos Secrets do Streamlit
+    try:
+        token = st.secrets["CHAVE_MAPBOX"]
+        if token:
+            return token
+    except Exception:
+        pass  # Sem secrets.toml ou chave ausente → segue para o fallback
 
+    # 2) Fallback: variável de ambiente (.env local)
+    return os.environ.get("CHAVE_MAPBOX", "")
+    
 # Função para buscar registros por fase
 def buscar_registros_por_fase(fase):
     conn = conectar_banco_de_dados()
@@ -284,13 +300,13 @@ def plotar_mapa_interativo():
             df = df.dropna(subset=['Latitude', 'Longitude'])
 
             if not df.empty:
-                # Usando variável de ambiente
-                mapbox_token = os.environ.get('CHAVE_MAPBOX', '')
-                
+                # Obtém o token dos Secrets (Cloud) ou da variável de ambiente (local)
+                mapbox_token = obter_mapbox_token()
+
                 if not mapbox_token:
-                    st.error("❌ CHAVE_MAPBOX não configurada. Verifique as configurações de ambiente.")
+                    st.error("❌ CHAVE_MAPBOX não configurada. Verifique as configurações de Secrets/ambiente.")
                     return
-                
+
                 px.set_mapbox_access_token(mapbox_token)
 
                 fig = px.scatter_mapbox(
