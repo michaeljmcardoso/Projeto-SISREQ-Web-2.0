@@ -12,6 +12,8 @@ from pagina_chat import iniciar_chat
 from pagina_sobre import pagina_about
 from pagina_contatos import pagina_contatos
 from pagina_sobre_regularizacao_quilombola import pagina_sobre_regularizacao_quilombola
+from pagina_metricas import pagina_metricas
+from core_acesso import registrar_acesso
 
 # Função para hash de senha 
 def hash_senha(senha):
@@ -102,16 +104,25 @@ def tela_login():
         """, unsafe_allow_html=True)
     col1, col2, col3 = st.columns(3)
     with col2:
-        st.markdown('<h2 style="color: "#1f77b4";">Login</h2>', unsafe_allow_html=True)
+        st.markdown('<h2 style="color: #1f77b4;">Login</h2>', unsafe_allow_html=True)
         usuario = st.text_input("Usuário", placeholder="Digite seu usuário")
         senha = st.text_input("Senha", placeholder="Digite sua senha", type="password")
-    
+
         if st.button("Entrar"):
             if verificar_credenciais(usuario, senha):
                 st.session_state['usuario_logado'] = usuario
+
+                # ═══════════════════════════════════════════════════
+                # 🔐 REGISTRO SILENCIOSO DE ACESSO
+                # ═══════════════════════════════════════════════════
+                try:
+                    registrar_acesso(usuario)
+                except Exception as e:
+                    print(f"⚠️ [login] Falha no registro de acesso: {e}")
+                # ═══════════════════════════════════════════════════
+
                 st.success(f"Bem-vindo, {usuario}!")
                 st.rerun()
-                #st.experimental_rerun()
             else:
                 st.error("Credenciais inválidas.")
 
@@ -260,17 +271,20 @@ else:
         #st.experimental_rerun()
 
     # Definir páginas disponíveis com base no tipo de usuário
-    opcoes_paginas = ["📁Controle de Processos", "🔍Pesquisa", "✨Oráculo", "📊Dashboard", "☎️Contatos", "📃Regularização Quilombola","ℹ️Sobre o Projeto"]
+    opcoes_paginas = ["📁Controle de Processos", "🔍Pesquisa", "✨Oráculo", "📊Dashboard", "☎️Contatos", "📃Regularização Quilombola", "ℹ️Sobre o Projeto"]
     
     if st.session_state['usuario_logado'] == "admin":
-        opcoes_paginas.insert(5, "👨‍💻Gerenciar Usuários")  # Adicionar "Gerenciar Usuários" antes de "Sobre"
-        opcoes_paginas.insert( 1, "📝Editar Processo")
+        opcoes_paginas.insert(5, "👨‍💻Gerenciar Usuários")
+        opcoes_paginas.insert(1, "📝Editar Processo")
         opcoes_paginas.insert(1, "📥Iniciar Processo")
+        # ✅ NOVO — apenas admin vê
+        opcoes_paginas.insert(-1, "📊Métricas de Acesso")
     elif st.session_state['usuario_logado'] == "visitante":
-        opcoes_paginas = [pagina for pagina in opcoes_paginas if pagina not in ["📝Editar Processo", "📥Iniciar Processo", "☎️Contatos"]]
+        opcoes_paginas = [p for p in opcoes_paginas 
+                          if p not in ["📝Editar Processo", "📥Iniciar Processo", "☎️Contatos"]]
 
     # Navegação principal
-    pagina_selecionada = st.sidebar.radio("Selecione uma Página", opcoes_paginas)
+    pagina_selecionada = st.sidebar.radio("Escolha uma Página", opcoes_paginas)
 
     # Função para gerenciar usuários (apenas para admin)
     def gerenciar_usuarios():
@@ -301,7 +315,7 @@ else:
             usuarios = usuarios.rename(columns={"id": "ID", "usuario": "Usuário"})
             st.dataframe(usuarios, use_container_width=True, height=490)
 
-    # Redirecionamento de páginas
+        # Redirecionamento de páginas
     if pagina_selecionada == "📁Controle de Processos":
         pagina_inicial()
     elif pagina_selecionada == "🔍Pesquisa":
@@ -319,7 +333,12 @@ else:
             gerenciar_usuarios()
         else:
             st.error("Você não tem permissão para acessar esta página.")
-    
+    # ✅ NOVO
+    elif pagina_selecionada == "📊Métricas de Acesso":
+        if st.session_state['usuario_logado'] == "admin":
+            pagina_metricas()
+        else:
+            st.error("⛔ Acesso restrito a administradores.")
     elif pagina_selecionada == "ℹ️Sobre o Projeto":
         pagina_about()
     elif pagina_selecionada == "📃Regularização Quilombola":
