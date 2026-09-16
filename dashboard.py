@@ -304,10 +304,17 @@ def plotar_mapa_interativo():
                     height=700,
                 )
 
-                # ✅ Define o estilo do mapa através de map_style, não requer token do Mapbox
-                # "open-street-map" é um estilo de mapa público completamente gratuito
+                # Após criar o gráfico fig, modifique o update_layout
                 fig.update_layout(
                     map_style="open-street-map",
+                    # ✅ Ponto chave: definir manualmente o centro e o zoom do mapa
+                    map=dict(
+                        center=dict(
+                            lat=df['Latitude'].mean(),   # Latitude média de todos os pontos
+                            lon=df['Longitude'].mean()   # Longitude média de todos os pontos
+                        ),
+                        zoom=6  # Ajuste conforme necessário (Mariana, Brasil, zoom 6-7 é adequado)
+                    ),
                     margin={"r": 0, "t": 0, "l": 0, "b": 0}
                 )
 
