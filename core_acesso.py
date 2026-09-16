@@ -3,6 +3,7 @@ Módulo de métricas de acesso — registra logins silenciosamente.
 O usuário NUNCA vê nada disso.
 """
 import os
+from core_time import agora
 import sqlite3
 import getpass
 import platform
@@ -82,7 +83,7 @@ def _coletar_metadados():
 def _gravar_log(usuario: str, meta: dict) -> bool:
     try:
         _garantir_tabela_logs()
-        agora = datetime.now()
+        momento = agora()        # ✅ usa o módulo
         conn = sqlite3.connect(DB_PATH)
         cursor = conn.cursor()
         cursor.execute('''
@@ -92,10 +93,10 @@ def _gravar_log(usuario: str, meta: dict) -> bool:
             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
         ''', (
             usuario,
-            agora.strftime('%d/%m/%Y %H:%M:%S'),
-            agora.strftime('%d/%m/%Y'),
-            agora.strftime('%H:%M:%S'),
-            agora.strftime('%A'),
+            momento.strftime('%d/%m/%Y %H:%M:%S'),
+            momento.strftime('%d/%m/%Y'),
+            momento.strftime('%H:%M:%S'),
+            momento.strftime('%A'),
             meta.get('ip_local', ''),
             meta.get('hostname', ''),
             meta.get('sistema', ''),
@@ -113,7 +114,7 @@ def _gravar_log(usuario: str, meta: dict) -> bool:
 # 4. MONTAR EMAIL DE NOTIFICAÇÃO DE ACESSO
 # =========================================================
 def _montar_email_acesso(usuario: str, meta: dict) -> tuple:
-    agora = datetime.now()
+    momento = agora()                                    # ✅ alterado aqui
     assunto = f"🔐 Acesso registrado — {usuario}"
 
     dias = {
@@ -122,7 +123,7 @@ def _montar_email_acesso(usuario: str, meta: dict) -> tuple:
         'Friday': 'Sexta-feira', 'Saturday': 'Sábado',
         'Sunday': 'Domingo',
     }
-    dia_semana = dias.get(agora.strftime('%A'), agora.strftime('%A'))
+    dia_semana = dias.get(momento.strftime('%A'), momento.strftime('%A'))   # ✅ trocado
 
     corpo = f"""
         <div style="background:#E8EAF6; padding:15px; border-radius:8px;
@@ -141,11 +142,11 @@ def _montar_email_acesso(usuario: str, meta: dict) -> tuple:
         </div>
         <div class="info-row">
             <span class="info-label">📅 Data:</span>
-            <span class="info-value">{agora.strftime('%d/%m/%Y')}</span>
+            <span class="info-value">{momento.strftime('%d/%m/%Y')}</span>
         </div>
         <div class="info-row">
             <span class="info-label">🕐 Hora:</span>
-            <span class="info-value">{agora.strftime('%H:%M:%S')}</span>
+            <span class="info-value">{momento.strftime('%H:%M:%S')}</span>
         </div>
         <div class="info-row">
             <span class="info-label">📆 Dia da semana:</span>
