@@ -297,11 +297,10 @@ def plotar_mapa_interativo():
                     st.error("❌ CHAVE_MAPBOX não configurada. Verifique as configurações de Secrets/ambiente.")
                     return
 
-                px.set_mapbox_access_token(mapbox_token)
 
                 fig = px.scatter_mapbox(
-                    df,
-                    lat='Latitude',
+                    df, 
+                    lat='Latitude', 
                     lon='Longitude',
                     color=df['Municipio'],
                     color_discrete_sequence=["fuchsia"],
@@ -312,8 +311,14 @@ def plotar_mapa_interativo():
                     height=700,
                 )
 
-                fig.update_layout(mapbox_style="streets")
-                fig.update_layout(margin={"r": 0, "t": 0, "l": 0, "b": 0})
+                # ✅ CORRETO: passa o token e o estilo diretamente no layout da figura
+                fig.update_layout(
+                    mapbox={
+                        'accesstoken': mapbox_token,
+                        'style': 'streets'
+                    },
+                    margin={"r": 0, "t": 0, "l": 0, "b": 0}
+                )
 
                 with st.spinner("Gerando o mapa..."):
                     st.plotly_chart(fig)
