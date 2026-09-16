@@ -290,17 +290,10 @@ def plotar_mapa_interativo():
             if registros_validos:
                 df = pd.DataFrame(registros_validos)
 
-                # Obtém o token (Secrets no Cloud, .env local)
-                mapbox_token = obter_mapbox_token()
-
-                if not mapbox_token:
-                    st.error("❌ CHAVE_MAPBOX não configurada. Verifique as configurações de Secrets/ambiente.")
-                    return
-
-
-                fig = px.scatter_mapbox(
-                    df, 
-                    lat='Latitude', 
+                # ✅ Nova API: usa scatter_map em vez de scatter_mapbox
+                fig = px.scatter_map(
+                    df,
+                    lat='Latitude',
                     lon='Longitude',
                     color=df['Municipio'],
                     color_discrete_sequence=["fuchsia"],
@@ -311,12 +304,10 @@ def plotar_mapa_interativo():
                     height=700,
                 )
 
-                # ✅ CORRETO: passa o token e o estilo diretamente no layout da figura
+                # ✅ Define o estilo do mapa através de map_style, não requer token do Mapbox
+                # "open-street-map" é um estilo de mapa público completamente gratuito
                 fig.update_layout(
-                    mapbox={
-                        'accesstoken': mapbox_token,
-                        'style': 'streets'
-                    },
+                    map_style="open-street-map",
                     margin={"r": 0, "t": 0, "l": 0, "b": 0}
                 )
 
@@ -331,7 +322,6 @@ def plotar_mapa_interativo():
         f"<p style='color: #FFFFFF; background-color: #1f77b4; padding: 1px; border-radius: 1px;'>",
         unsafe_allow_html=True
     )
-    
 
 
 # Função de conexão
