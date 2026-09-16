@@ -15,6 +15,7 @@ load_dotenv()
 def conectar_banco_de_dados():
     conn = sqlite3.connect('sisreq.db')
     return conn
+
 def obter_mapbox_token():
     """
     Obtém o token do Mapbox em ordem de prioridade:
