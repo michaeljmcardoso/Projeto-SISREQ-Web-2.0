@@ -1,0 +1,147 @@
+{
+  "exportado_em": "2026-09-28T03:01:18.932424",
+  "total_usuarios": 28,
+  "nota": "Hashes de senha não são exportados neste arquivo.",
+  "usuarios": [
+    {
+      "id": 25,
+      "usuario": "Adriele",
+      "perfil": "comum"
+    },
+    {
+      "id": 17,
+      "usuario": "Agnes",
+      "perfil": "comum"
+    },
+    {
+      "id": 24,
+      "usuario": "Andrea",
+      "perfil": "comum"
+    },
+    {
+      "id": 26,
+      "usuario": "Ayoubi",
+      "perfil": "comum"
+    },
+    {
+      "id": 28,
+      "usuario": "Bruno",
+      "perfil": "comum"
+    },
+    {
+      "id": 3,
+      "usuario": "Cosme",
+      "perfil": "comum"
+    },
+    {
+      "id": 6,
+      "usuario": "Elivan",
+      "perfil": "comum"
+    },
+    {
+      "id": 8,
+      "usuario": "Henrique",
+      "perfil": "comum"
+    },
+    {
+      "id": 27,
+      "usuario": "Josy",
+      "perfil": "comum"
+    },
+    {
+      "id": 10,
+      "usuario": "Lidiane",
+      "perfil": "comum"
+    },
+    {
+      "id": 11,
+      "usuario": "Luana",
+      "perfil": "comum"
+    },
+    {
+      "id": 14,
+      "usuario": "Lucas",
+      "perfil": "comum"
+    },
+    {
+      "id": 15,
+      "usuario": "Marcos",
+      "perfil": "comum"
+    },
+    {
+      "id": 16,
+      "usuario": "Maria",
+      "perfil": "comum"
+    },
+    {
+      "id": 22,
+      "usuario": "Mauricio",
+      "perfil": "comum"
+    },
+    {
+      "id": 12,
+      "usuario": "Michael",
+      "perfil": "comum"
+    },
+    {
+      "id": 9,
+      "usuario": "Miguel",
+      "perfil": "comum"
+    },
+    {
+      "id": 7,
+      "usuario": "Nilza",
+      "perfil": "comum"
+    },
+    {
+      "id": 5,
+      "usuario": "Rafael",
+      "perfil": "comum"
+    },
+    {
+      "id": 13,
+      "usuario": "Rodrigo",
+      "perfil": "comum"
+    },
+    {
+      "id": 4,
+      "usuario": "Rosangela",
+      "perfil": "comum"
+    },
+    {
+      "id": 23,
+      "usuario": "Stefany",
+      "perfil": "comum"
+    },
+    {
+      "id": 1,
+      "usuario": "admin",
+      "perfil": "admin"
+    },
+    {
+      "id": 21,
+      "usuario": "geandro",
+      "perfil": "comum"
+    },
+    {
+      "id": 18,
+      "usuario": "jennifer",
+      "perfil": "comum"
+    },
+    {
+      "id": 20,
+      "usuario": "umberto",
+      "perfil": "comum"
+    },
+    {
+      "id": 19,
+      "usuario": "veronica",
+      "perfil": "comum"
+    },
+    {
+      "id": 2,
+      "usuario": "visitante",
+      "perfil": "visitante"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "exportado_em": "2026-09-28T03:01:18.932629",
+  "total_logs": 4,
+  "nota": "Últimos 5000 acessos registrados.",
+  "logs": [
+    {
+      "usuario": "admin",
+      "data_hora": "27/09/2026 23:57:48",
+      "data": "27/09/2026",
+      "hora": "23:57:48",
+      "dia_semana": "Sunday",
+      "ip_local": "10.12.56.12",
+      "hostname": "localhost",
+      "sistema": "Linux 6.12.94+",
+      "origem": "web"
+    },
+    {
+      "usuario": "admin",
+      "data_hora": "27/09/2026 22:47:41",
+      "data": "27/09/2026",
+      "hora": "22:47:41",
+      "dia_semana": "Sunday",
+      "ip_local": "192.168.1.17",
+      "hostname": "michael-HP-ProBook-640-G8-Notebook-PC",
+      "sistema": "Linux 7.0.0-31-generic",
+      "origem": "web"
+    },
+    {
+      "usuario": "Michael",
+      "data_hora": "16/09/2026 11:36:10",
+      "data": "16/09/2026",
+      "hora": "11:36:10",
+      "dia_semana": "Wednesday",
+      "ip_local": "192.168.1.17",
+      "hostname": "michael-HP-ProBook-640-G8-Notebook-PC",
+      "sistema": "Linux 7.0.0-31-generic",
+      "origem": "web"
+    },
+    {
+      "usuario": "admin",
+      "data_hora": "16/09/2026 07:53:58",
+      "data": "16/09/2026",
+      "hora": "07:53:58",
+      "dia_semana": "Wednesday",
+      "ip_local": "192.168.1.17",
+      "hostname": "michael-HP-ProBook-640-G8-Notebook-PC",
+      "sistema": "Linux 7.0.0-31-generic",
+      "origem": "web"
+    }
+  ]
+}
