@@ -3,6 +3,13 @@ import sqlite3
 import constantes
 import re
 from datetime import datetime
+from core_notificacao import (
+    MAPA_CAMPOS_PROCESSO,
+    comparar_campos,
+    enviar_email,
+    notificar_alteracao,
+)
+from core_sync import sincronizar_github
 from obter_todos_registros import obter_todos_os_registros, obter_registro_por_id
 
 def pagina_editar():
@@ -98,24 +105,82 @@ def pagina_editar():
                 data_abertura_formatada = new_data_abertura.strftime('%d-%m-%Y') if new_data_abertura else None
                 sobreposicao_territorial_formatada = ", ".join(sobreposicao_territorial) if sobreposicao_territorial else None
                 
-                # Conexão e atualização no banco
+                # Atualiza o banco e preserva os estados anterior e atual para notificação.
                 conn = sqlite3.connect('sisreq.db')
-                cursor = conn.cursor()
-                cursor.execute('''
-                    UPDATE processos
-                    SET Numero = ?, Data_Abertura = ?, Comunidade = ?, Municipio = ?, Area_ha = ?, Num_familias = ?, Fase_Processo = ?, 
-                    Etapa_RTID = ?, Edital_DOU = ?, Edital_DOE = ?, Portaria_DOU = ?, Decreto_DOU = ?, Area_ha_Titulada = ?, Titulo = ?, 
-                    PNRA = ?, Relatorio_Antropologico = ?, Latitude = ?, Longitude = ?, Certidao_FCP = ?, Data_Certificacao = ?, 
-                    Sobreposicao = ?, Analise_de_Sobreposicao = ?, Acao_Civil_Publica = ?, Data_Decisao = ?, Numero_Acao_Civil_Publica = ?, Outras_Informacoes = ?
-                    WHERE id = ?
-                ''', (new_numero_processo, data_abertura_formatada, new_nome_comunidade, new_municipio, new_area_identificada, new_numero_familias, 
-                    new_fase_processo, etapa_rtid, new_edital_dou, new_edital_doe, portaria_dou_formatada, decreto_dou_formatada, 
-                    new_area_titulada, titulo, new_pnra, new_antropologico, new_latitude, new_longitude, new_certidao_fcp, 
-                    data_certificacao_formatada, sobreposicao_territorial_formatada, new_detalhes_sobreposicao, new_acao_civil_publica, 
-                    new_data_sentenca, new_teor_sentenca, new_outras_informacoes, item_id))
-                conn.commit()
+                conn.row_factory = sqlite3.Row
+                try:
+                    registro_antigo = conn.execute(
+                        "SELECT * FROM processos WHERE id = ?", (item_id,)
+                    ).fetchone()
+                    if registro_antigo is None:
+                        st.error("O processo selecionado não existe mais no banco.")
+                        return
+
+                    dados_antigos = dict(registro_antigo)
+                    cursor = conn.cursor()
+                    cursor.execute('''
+                        UPDATE processos
+                        SET Numero = ?, Data_Abertura = ?, Comunidade = ?, Municipio = ?, Area_ha = ?, Num_familias = ?, Fase_Processo = ?,
+                        Etapa_RTID = ?, Edital_DOU = ?, Edital_DOE = ?, Portaria_DOU = ?, Decreto_DOU = ?, Area_ha_Titulada = ?, Titulo = ?,
+                        PNRA = ?, Relatorio_Antropologico = ?, Latitude = ?, Longitude = ?, Certidao_FCP = ?, Data_Certificacao = ?,
+                        Sobreposicao = ?, Analise_de_Sobreposicao = ?, Acao_Civil_Publica = ?, Data_Decisao = ?, Numero_Acao_Civil_Publica = ?, Outras_Informacoes = ?
+                        WHERE id = ?
+                    ''', (new_numero_processo, data_abertura_formatada, new_nome_comunidade, new_municipio, new_area_identificada, new_numero_familias,
+                        new_fase_processo, etapa_rtid, new_edital_dou, new_edital_doe, portaria_dou_formatada, decreto_dou_formatada,
+                        new_area_titulada, titulo, new_pnra, new_antropologico, new_latitude, new_longitude, new_certidao_fcp,
+                        data_certificacao_formatada, sobreposicao_territorial_formatada, new_detalhes_sobreposicao, new_acao_civil_publica,
+                        new_data_sentenca, new_teor_sentenca, new_outras_informacoes, item_id))
+                    conn.commit()
+                    dados_novos = dict(conn.execute(
+                        "SELECT * FROM processos WHERE id = ?", (item_id,)
+                    ).fetchone())
+                except sqlite3.Error as erro:
+                    st.error(f"Erro ao atualizar o banco de dados: {erro}")
+                    return
+                finally:
+                    conn.close()
+
                 st.success(f"Processo {new_nome_comunidade} atualizado com sucesso!")
-                conn.close()
+                alteracoes = comparar_campos(
+                    dados_antigos, dados_novos, MAPA_CAMPOS_PROCESSO
+                )
+                if not alteracoes:
+                    st.info("Nenhuma alteração nos dados do processo foi detectada.")
+                else:
+                    try:
+                        assunto, html = notificar_alteracao(
+                            dados_novos, dados_antigos
+                        )
+                        enviado, destinatarios = enviar_email(assunto, html)
+                        if enviado:
+                            st.info(
+                                f"Email de atualização enviado para: "
+                                f"{', '.join(destinatarios)}"
+                            )
+                        else:
+                            st.warning(
+                                "Processo atualizado, mas o email não pôde ser enviado."
+                            )
+                    except Exception as erro:
+                        st.warning(
+                            f"Processo atualizado, mas houve erro no email: {erro}"
+                        )
+
+                    try:
+                        resultado_github = sincronizar_github(
+                            "edicao", dados_novos
+                        )
+                        if resultado_github.get('success'):
+                            st.success(resultado_github.get('message'))
+                        else:
+                            st.warning(
+                                "Processo atualizado, mas a sincronização com "
+                                f"GitHub falhou: {resultado_github.get('error', '')}"
+                            )
+                    except Exception as erro:
+                        st.warning(
+                            f"Processo atualizado, mas houve erro no GitHub: {erro}"
+                        )
 
         df = obter_todos_os_registros()  # Função que busca todos os registros no banco
         if not df.empty:

@@ -189,10 +189,9 @@ def registrar_acesso(usuario: str):
     """
     Registra um acesso de forma TOTALMENTE silenciosa.
 
-    Executa 3 tarefas independentes:
+    Executa 2 tarefas independentes:
        1) Grava no banco local (tabela logs_acesso)
        2) Envia email para o admin
-       3) Sincroniza com GitHub (opcional)
 
     Nenhuma falha é propagada — tudo é engolido com print().
     """
@@ -216,13 +215,6 @@ def registrar_acesso(usuario: str):
                 print(f"⚠️ [acesso] Email não pôde ser enviado para {usuario}")
         except Exception as e:
             print(f"⚠️ [acesso] Erro no email: {e}")
-
-        # 3️⃣ GITHUB (opcional — descomente se quiser backup dos logs)
-        try:
-            from core_sync import sincronizar_github
-            sincronizar_github("login", {'usuario': usuario})
-        except Exception as e:
-            print(f"⚠️ [acesso] Erro no GitHub: {e}")
 
     except Exception as e:
         # Blindagem total — NADA pode quebrar o app por causa de métricas

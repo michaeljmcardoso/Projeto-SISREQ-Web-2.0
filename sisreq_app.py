@@ -14,6 +14,7 @@ from pagina_contatos import pagina_contatos
 from pagina_sobre_regularizacao_quilombola import pagina_sobre_regularizacao_quilombola
 from pagina_metricas import pagina_metricas
 from core_acesso import registrar_acesso
+from core_eventos import reportar_mudanca_banco
 
 # Função para hash de senha 
 def hash_senha(senha):
@@ -301,6 +302,15 @@ else:
                 sucesso, mensagem = adicionar_usuario(novo_usuario, nova_senha)
                 if sucesso:
                     st.success(mensagem)
+                    for nivel, aviso in reportar_mudanca_banco(
+                        'Novo usuário cadastrado',
+                        'usuario',
+                        {
+                            'Evento': 'Novo usuário cadastrado',
+                            'Usuário': novo_usuario,
+                        },
+                    ):
+                        getattr(st, nivel)(aviso)
                 else:
                     st.error(mensagem)
             else:

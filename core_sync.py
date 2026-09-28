@@ -1,400 +1,306 @@
 """
-Módulo de sincronização com GitHub para o SISREQ.
-Exporta o sisreq.db + um JSON resumido e faz commit/push.
+Exporta o banco SISREQ e envia um commit ao GitHub pela API.
 """
-import os
+import base64
 import json
+import os
+import re
 import sqlite3
-import shutil
+import tempfile
+import time
 from datetime import datetime
-from dotenv import load_dotenv
+from urllib.error import HTTPError, URLError
+from urllib.parse import quote
+from urllib.request import Request, urlopen
 
-load_dotenv()
-
-# =========================================================
-# TENTAR IMPORTAR GITPYTHON
-# =========================================================
-try:
-    from git import Repo
-    GIT_DISPONIVEL = True
-except ImportError:
-    GIT_DISPONIVEL = False
-    print("⚠️ GitPython não instalado. Rode: pip install GitPython")
+from core_config import get_config
 
 
-# =========================================================
-# CONFIGURAÇÕES
-# =========================================================
-GITHUB_ENABLED   = os.getenv('GITHUB_ENABLED', 'False').lower() == 'true'
-GITHUB_MODO_TESTE = os.getenv('GITHUB_MODO_TESTE', 'True').lower() == 'true'
-GITHUB_REPO_PATH = os.getenv('GITHUB_REPO_PATH', os.getcwd())
-GITHUB_BRANCH    = os.getenv('GITHUB_BRANCH', 'main')
-GITHUB_USER_NAME  = os.getenv('GITHUB_USER_NAME', 'SISREQ Bot')
-GITHUB_USER_EMAIL = os.getenv('GITHUB_USER_EMAIL', 'bot@sisreq.local')
-GITHUB_TOKEN      = os.getenv('GITHUB_TOKEN', '')
+GITHUB_ENABLED = get_config(
+    'GITHUB_ENABLED', 'false', section='github'
+).lower() == 'true'
+GITHUB_MODO_TESTE = get_config(
+    'GITHUB_MODO_TESTE', 'false', section='github'
+).lower() == 'true'
+GITHUB_REPOSITORY = get_config('GITHUB_REPOSITORY', section='github').strip()
+GITHUB_BRANCH = get_config('GITHUB_BRANCH', 'main', section='github').strip()
+GITHUB_TOKEN = get_config('GITHUB_TOKEN', section='github').strip()
+GITHUB_USER_NAME = get_config(
+    'GITHUB_USER_NAME', 'SISREQ Bot', section='github'
+).strip()
+GITHUB_USER_EMAIL = get_config(
+    'GITHUB_USER_EMAIL', 'bot@sisreq.local', section='github'
+).strip()
+DB_PATH = os.path.abspath(get_config('DB_PATH', 'sisreq.db'))
+GITHUB_API = 'https://api.github.com'
+GITHUB_MAX_BLOB_BYTES = 100 * 1024 * 1024
 
 
 class GitHubSync:
-    """Gerencia commit + push do sisreq.db para o GitHub."""
+    """Cria commits do banco e dos dados exportados no repositório configurado."""
 
     def __init__(self):
-        self.enabled   = GITHUB_ENABLED
-        self.modo_teste = GITHUB_MODO_TESTE
-        self.repo_path = GITHUB_REPO_PATH
-        self.branch    = GITHUB_BRANCH
-        self.token     = GITHUB_TOKEN
-        self.repo      = None
+        self.repository = GITHUB_REPOSITORY
+        self.branch = GITHUB_BRANCH
+        self.token = GITHUB_TOKEN
 
-        if self.enabled and GIT_DISPONIVEL:
-            self._carregar_repo()
+    def _api(self, method: str, endpoint: str, payload: dict = None) -> dict:
+        body = json.dumps(payload).encode('utf-8') if payload is not None else None
+        request = Request(
+            f'{GITHUB_API}{endpoint}',
+            data=body,
+            method=method,
+            headers={
+                'Accept': 'application/vnd.github+json',
+                'Authorization': f'Bearer {self.token}',
+                'X-GitHub-Api-Version': '2022-11-28',
+                'User-Agent': 'SISREQ-Streamlit',
+                'Content-Type': 'application/json',
+            },
+        )
+        with urlopen(request, timeout=30) as response:
+            return json.loads(response.read().decode('utf-8'))
 
-    def _carregar_repo(self):
-        try:
-            if not os.path.isdir(self.repo_path):
-                print(f"⚠️ Pasta do repositório não existe: {self.repo_path}")
-                return
-            self.repo = Repo(self.repo_path)
-            print(f"✅ Repositório Git carregado: {self.repo_path}")
-        except Exception as e:
-            print(f"❌ Erro ao carregar repositório: {e}")
+    def _snapshot(self) -> tuple[bytes, dict]:
+        if not os.path.isfile(DB_PATH):
+            raise FileNotFoundError(f'Banco SQLite não encontrado: {DB_PATH}')
 
-    # -----------------------------------------------------
-    # EXPORTAR DADOS
-    # -----------------------------------------------------
-        # -----------------------------------------------------
-    # EXPORTAR DADOS
-    # -----------------------------------------------------
-    def exportar_dados(self):
-        """
-        Exporta os dados do SISREQ para <repo>/dados/:
-          1) processos.json    — todos os processos
-          2) usuarios.json     — usuários (SEM hashes de senha!)
-          3) logs_acesso.json  — histórico de acessos (últimos 5000)
-          4) sisreq.db         — cópia completa (SOMENTE se permitido)
-
-        Modo de cópia do .db:
-          - .env:  GITHUB_COPIAR_DB=True
-          - Detecta automaticamente se está no Streamlit Cloud
-          - Repositório deve ser PRIVADO (sua responsabilidade)
-        """
-        if not self.repo:
-            return {'success': False, 'error': 'Repositório não carregado'}
-
-        try:
-            dados_dir = os.path.join(self.repo_path, 'dados')
-            os.makedirs(dados_dir, exist_ok=True)
-
-            db_origem = os.path.join(os.getcwd(), 'sisreq.db')
-            db_destino = os.path.join(dados_dir, 'sisreq.db')
-
-            if not os.path.exists(db_origem):
-                return {'success': False, 'error': f'Banco não encontrado: {db_origem}'}
-
-            # ═════════════════════════════════════════════
-            # 0) DECIDIR SE COPIA O .db
-            # ═════════════════════════════════════════════
-            copiar_db = self._deve_copiar_db()
-            db_copiado = False
-            db_tamanho_mb = 0.0
-
-            if copiar_db:
-                try:
-                    # Verificar integridade antes de copiar
-                    if self._verificar_integridade_db(db_origem):
-                        # Fazer checkpoint do WAL (se houver)
-                        self._checkpoint_sqlite(db_origem)
-
-                        shutil.copy2(db_origem, db_destino)
-                        db_copiado = True
-                        db_tamanho_mb = os.path.getsize(db_destino) / (1024 * 1024)
-
-                        print(f"✅ [sync] sisreq.db copiado "
-                              f"({db_tamanho_mb:.2f} MB)")
-                    else:
-                        print("⚠️ [sync] Banco corrompido — cópia abortada")
-                except Exception as e:
-                    print(f"⚠️ [sync] Erro ao copiar .db: {e}")
-            else:
-                print("ℹ️ [sync] Cópia do .db desabilitada neste ambiente")
-
-            # ═════════════════════════════════════════════
-            # 1) PROCESSOS
-            # ═════════════════════════════════════════════
-            conn = sqlite3.connect(db_origem)
-            conn.row_factory = sqlite3.Row
-            cursor = conn.cursor()
-
+        with tempfile.TemporaryDirectory() as temp_dir:
+            snapshot_path = os.path.join(temp_dir, 'sisreq.db')
+            source = sqlite3.connect(DB_PATH)
+            destination = sqlite3.connect(snapshot_path)
             try:
-                cursor.execute("SELECT * FROM processos")
-                processos = [dict(r) for r in cursor.fetchall()]
-            except Exception as e:
-                processos = []
-                print(f"⚠️ Erro ao ler processos: {e}")
+                source.backup(destination)
+            finally:
+                destination.close()
+                source.close()
 
-            processos_path = os.path.join(dados_dir, 'processos.json')
-            with open(processos_path, 'w', encoding='utf-8') as f:
-                json.dump({
-                    'exportado_em': datetime.now().isoformat(),
-                    'total_processos': len(processos),
-                    'processos': processos
-                }, f, ensure_ascii=False, indent=2)
-
-            # ═════════════════════════════════════════════
-            # 2) USUÁRIOS (SEM SENHAS!)
-            # ═════════════════════════════════════════════
+            snapshot = sqlite3.connect(snapshot_path)
+            snapshot.row_factory = sqlite3.Row
             try:
-                cursor.execute("""
-                    SELECT id, usuario,
-                           CASE
-                               WHEN usuario = 'admin'     THEN 'admin'
-                               WHEN usuario = 'visitante' THEN 'visitante'
-                               ELSE 'comum'
-                           END AS perfil
-                    FROM usuarios
-                """)
-                usuarios = [dict(r) for r in cursor.fetchall()]
-            except Exception as e:
-                usuarios = []
-                print(f"⚠️ Erro ao ler usuários: {e}")
+                integrity = snapshot.execute('PRAGMA integrity_check').fetchone()
+                if not integrity or integrity[0] != 'ok':
+                    raise sqlite3.DatabaseError(
+                        f'Falha na verificação de integridade do banco: {integrity}'
+                    )
 
-            usuarios_path = os.path.join(dados_dir, 'usuarios.json')
-            with open(usuarios_path, 'w', encoding='utf-8') as f:
-                json.dump({
-                    'exportado_em': datetime.now().isoformat(),
-                    'total_usuarios': len(usuarios),
-                    'nota': 'Hashes de senha NÃO são exportados por segurança.',
-                    'usuarios': usuarios
-                }, f, ensure_ascii=False, indent=2)
-
-            # ═════════════════════════════════════════════
-            # 3) LOGS DE ACESSO (métricas)
-            # ═════════════════════════════════════════════
-            try:
-                cursor.execute("""
-                    SELECT usuario, data_hora, data, hora, dia_semana,
-                           ip_local, hostname, sistema, origem
-                    FROM logs_acesso
-                    ORDER BY id DESC
-                    LIMIT 5000
-                """)
-                logs = [dict(r) for r in cursor.fetchall()]
-            except Exception as e:
-                logs = []
-                print(f"ℹ️ Logs de acesso não disponíveis: {e}")
-
-            logs_path = os.path.join(dados_dir, 'logs_acesso.json')
-            with open(logs_path, 'w', encoding='utf-8') as f:
-                json.dump({
-                    'exportado_em': datetime.now().isoformat(),
-                    'total_logs': len(logs),
-                    'nota': 'Últimos 5000 acessos registrados.',
-                    'logs': logs
-                }, f, ensure_ascii=False, indent=2)
-
-            conn.close()
-
-            # ═════════════════════════════════════════════
-            # Retorno consolidado
-            # ═════════════════════════════════════════════
-            return {
-                'success': True,
-                'total_processos':  len(processos),
-                'total_usuarios':   len(usuarios),
-                'total_logs':       len(logs),
-                'db_copiado':       db_copiado,
-                'db_tamanho_mb':    round(db_tamanho_mb, 2),
-                'db_path':          db_destino,
-                'processos_path':   processos_path,
-                'usuarios_path':    usuarios_path,
-                'logs_path':        logs_path,
-            }
-
-        except Exception as e:
-            return {'success': False, 'error': str(e)}
-            
-
-    # -----------------------------------------------------
-    # COMMIT + PUSH
-    # -----------------------------------------------------
-    def commit_e_push(self, mensagem: str):
-        if not self.repo:
-            return {'success': False, 'error': 'Repositório não carregado'}
-
-        try:
-            # Configurar usuário
-            with self.repo.config_writer() as cw:
-                cw.set_value('user', 'name', GITHUB_USER_NAME)
-                cw.set_value('user', 'email', GITHUB_USER_EMAIL)
-
-            # Stage tudo em dados/
-            self.repo.git.add(A=True)
-
-            # Verificar se há mudanças
-            if not self.repo.is_dirty(untracked_files=True):
-                return {'success': True, 'message': 'Nada a sincronizar (sem mudanças)'}
-
-            # Commit
-            commit = self.repo.index.commit(mensagem)
-
-            if self.modo_teste:
-                return {
-                    'success': True,
-                    'message': f'[MODO TESTE] Commit local: {commit.hexsha[:7]}',
-                    'commit_hash': commit.hexsha,
+                files = {
+                    'sisreq.db': _read_bytes(snapshot_path),
+                    'dados/sisreq.db': _read_bytes(snapshot_path),
+                    'dados/processos.json': self._exportar_tabela(
+                        snapshot, 'processos', 'processos'
+                    ),
+                    'dados/usuarios.json': self._exportar_usuarios(snapshot),
+                    'dados/logs_acesso.json': self._exportar_logs(snapshot),
                 }
+                return files['sisreq.db'], files
+            finally:
+                snapshot.close()
 
-            # Push
-            if self.token:
-                # Atualizar remote com token
-                remote_url = self.repo.remotes.origin.url
-                if 'https://' in remote_url and '@' not in remote_url:
-                    auth_url = remote_url.replace('https://', f'https://{self.token}@')
-                    self.repo.remotes.origin.set_url(auth_url)
+    @staticmethod
+    def _json_bytes(conteudo: dict) -> bytes:
+        return json.dumps(
+            conteudo, ensure_ascii=False, indent=2, default=str
+        ).encode('utf-8')
 
-            self.repo.remotes.origin.push(refspec=f'{self.branch}:{self.branch}')
+    def _exportar_tabela(self, conn: sqlite3.Connection, tabela: str,
+                         chave: str) -> bytes:
+        registros = [dict(registro) for registro in conn.execute(
+            f'SELECT * FROM {tabela}'
+        ).fetchall()]
+        return self._json_bytes({
+            'exportado_em': datetime.now().isoformat(),
+            f'total_{chave}': len(registros),
+            chave: registros,
+        })
+
+    def _exportar_usuarios(self, conn: sqlite3.Connection) -> bytes:
+        try:
+            usuarios = [dict(registro) for registro in conn.execute("""
+                SELECT id, usuario,
+                       CASE
+                           WHEN usuario = 'admin' THEN 'admin'
+                           WHEN usuario = 'visitante' THEN 'visitante'
+                           ELSE 'comum'
+                       END AS perfil
+                FROM usuarios
+            """).fetchall()]
+        except sqlite3.OperationalError:
+            usuarios = []
+        return self._json_bytes({
+            'exportado_em': datetime.now().isoformat(),
+            'total_usuarios': len(usuarios),
+            'nota': 'Hashes de senha não são exportados neste arquivo.',
+            'usuarios': usuarios,
+        })
+
+    def _exportar_logs(self, conn: sqlite3.Connection) -> bytes:
+        try:
+            logs = [dict(registro) for registro in conn.execute("""
+                SELECT usuario, data_hora, data, hora, dia_semana,
+                       ip_local, hostname, sistema, origem
+                FROM logs_acesso
+                ORDER BY id DESC
+                LIMIT 5000
+            """).fetchall()]
+        except sqlite3.OperationalError:
+            logs = []
+        return self._json_bytes({
+            'exportado_em': datetime.now().isoformat(),
+            'total_logs': len(logs),
+            'nota': 'Últimos 5000 acessos registrados.',
+            'logs': logs,
+        })
+
+    def exportar_dados(self) -> dict:
+        try:
+            banco, arquivos = self._snapshot()
+            if len(banco) > GITHUB_MAX_BLOB_BYTES:
+                return {
+                    'success': False,
+                    'error': 'O banco excede o limite de 100 MB da API do GitHub.',
+                }
+            return {'success': True, 'files': arquivos}
+        except (OSError, sqlite3.Error) as erro:
+            return {'success': False, 'error': str(erro)}
+
+    def commit_e_push(self, mensagem: str, arquivos: dict) -> dict:
+        if GITHUB_MODO_TESTE:
             return {
                 'success': True,
-                'message': f'Push realizado: {commit.hexsha[:7]}',
-                'commit_hash': commit.hexsha,
+                'message': 'Modo de teste ativo: nenhum commit foi enviado.',
             }
-        except Exception as e:
-            return {'success': False, 'error': str(e)}
+
+        repository_path = '/repos/' + '/'.join(
+            quote(parte, safe='') for parte in self.repository.split('/')
+        )
+        try:
+            blobs = []
+            for path, content in arquivos.items():
+                if len(content) > GITHUB_MAX_BLOB_BYTES:
+                    return {
+                        'success': False,
+                        'error': f'O arquivo {path} excede o limite de 100 MB.',
+                    }
+                blob = self._api('POST', f'{repository_path}/git/blobs', {
+                    'content': base64.b64encode(content).decode('ascii'),
+                    'encoding': 'base64',
+                })
+                blobs.append({
+                    'path': path,
+                    'mode': '100644',
+                    'type': 'blob',
+                    'sha': blob['sha'],
+                })
+
+            for tentativa in range(3):
+                referencia = self._api(
+                    'GET',
+                    f'{repository_path}/git/ref/heads/{quote(self.branch, safe="")}',
+                )
+                sha_pai = referencia['object']['sha']
+                commit_pai = self._api(
+                    'GET', f'{repository_path}/git/commits/{sha_pai}'
+                )
+                arvore = self._api('POST', f'{repository_path}/git/trees', {
+                    'base_tree': commit_pai['tree']['sha'],
+                    'tree': blobs,
+                })
+                commit = self._api('POST', f'{repository_path}/git/commits', {
+                    'message': mensagem,
+                    'tree': arvore['sha'],
+                    'parents': [sha_pai],
+                    'author': {
+                        'name': GITHUB_USER_NAME,
+                        'email': GITHUB_USER_EMAIL,
+                    },
+                })
+                try:
+                    self._api(
+                        'PATCH',
+                        f'{repository_path}/git/refs/heads/'
+                        f'{quote(self.branch, safe="")}',
+                        {'sha': commit['sha'], 'force': False},
+                    )
+                    return {
+                        'success': True,
+                        'message': f'Commit enviado ao GitHub: {commit["sha"][:7]}',
+                        'commit_hash': commit['sha'],
+                    }
+                except HTTPError as erro:
+                    if erro.code not in (409, 422) or tentativa == 2:
+                        raise
+                    time.sleep(0.5 * (tentativa + 1))
+
+            return {'success': False, 'error': 'Não foi possível atualizar a branch.'}
+        except HTTPError as erro:
+            mensagem_erro = erro.read().decode('utf-8', errors='replace')
+            try:
+                detalhe = json.loads(mensagem_erro).get('message', '')
+            except json.JSONDecodeError:
+                detalhe = ''
+            return {
+                'success': False,
+                'error': f'GitHub API retornou HTTP {erro.code}'
+                + (f': {detalhe}' if detalhe else ''),
+            }
+        except (URLError, TimeoutError, KeyError, ValueError) as erro:
+            return {'success': False, 'error': f'Falha na sincronização: {erro}'}
 
 
-# =========================================================
-# FUNÇÃO DE ALTO NÍVEL — é a que os módulos chamam
-# =========================================================
-def sincronizar_github(tipo: str, dados: dict = None):
-    """
-    Exporta os dados + faz commit/push.
+def _read_bytes(path: str) -> bytes:
+    with open(path, 'rb') as arquivo:
+        return arquivo.read()
 
-    tipo: 'cadastro' | 'edicao' | 'exclusao' | 'manual'
-    """
+
+def sincronizar_github(tipo: str, dados: dict = None) -> dict:
+    """Envia o snapshot atual do banco e os JSONs exportados ao GitHub."""
     if not GITHUB_ENABLED:
-        return {'success': False, 'error': 'GITHUB_ENABLED=False'}
+        return {
+            'success': False,
+            'error': 'Sincronização desativada: configure GITHUB_ENABLED=true.',
+        }
+    if not GITHUB_TOKEN:
+        return {'success': False, 'error': 'GITHUB_TOKEN não foi configurado.'}
+    if not re.fullmatch(r'[^/\s]+/[^/\s]+', GITHUB_REPOSITORY):
+        return {
+            'success': False,
+            'error': 'GITHUB_REPOSITORY deve estar no formato proprietário/repositorio.',
+        }
+    if not GITHUB_BRANCH:
+        return {'success': False, 'error': 'GITHUB_BRANCH não foi configurada.'}
 
     sync = GitHubSync()
-    if not sync.repo:
-        return {'success': False, 'error': 'Repositório Git não carregado'}
-
-    # 1) Exportar
     export = sync.exportar_dados()
     if not export['success']:
-        return {'success': False, 'error': f"Exportação falhou: {export.get('error')}"}
+        return {'success': False, 'error': f"Exportação falhou: {export['error']}"}
 
-    # 2) Mensagem de commit por tipo
-    comunidade = ''
+    identificador = ''
     if dados:
-        comunidade = dados.get('Comunidade', '')
         numero = dados.get('Numero', '')
-    else:
-        numero = ''
+        comunidade = dados.get('Comunidade', '')
+        if numero or comunidade:
+            identificador = f' — {numero} {comunidade}'.rstrip()
+        else:
+            referencia = (
+                dados.get('Evento') or dados.get('Usuário')
+                or dados.get('usuario') or ''
+            )
+            if referencia:
+                identificador = f' — {referencia}'
 
     prefixos = {
-        'cadastro': '➕ Novo processo',
-        'edicao':   '✏️ Edição de processo',
-        'exclusao': '🗑️ Exclusão de processo',
-        'login':    '🔐 Registro de acesso',
-        'manual':   '🔄 Sincronização manual',
+        'cadastro': 'Novo processo',
+        'edicao': 'Edição de processo',
+        'exclusao': 'Exclusão de processo',
+        'login': 'Registro de acesso',
+        'manual': 'Sincronização manual',
+        'contato': 'Alteração de contato',
+        'usuario': 'Alteração de usuário',
     }
-    prefixo = prefixos.get(tipo, '🔄 Sync')
-    msg = f"{prefixo} — {numero} {comunidade} [{datetime.now():%d/%m/%Y %H:%M}]"
-
-    # 3) Commit + push
-    result = sync.commit_e_push(msg)
-    return result
-
-# -----------------------------------------------------
-# DECIDIR SE DEVE COPIAR O .db
-# -----------------------------------------------------
-def _deve_copiar_db(self) -> bool:
-    """
-    Retorna True se o .db deve ser copiado para o repositório.
-
-    Regras:
-        1. Se GITHUB_COPIAR_DB=False no .env  → NUNCA copia
-        2. Se GITHUB_COPIAR_DB=True           → SEMPRE copia
-        3. Se não definido                    → só copia no Streamlit Cloud
-    """
-    env_value = os.getenv('GITHUB_COPIAR_DB', '').lower()
-
-    if env_value == 'true':
-        return True
-    if env_value == 'false':
-        return False
-
-    # Auto-detecção: está no Streamlit Cloud?
-    return self._is_streamlit_cloud()
-
-# -----------------------------------------------------
-# DETECTAR STREAMLIT CLOUD
-# -----------------------------------------------------
-def _is_streamlit_cloud(self) -> bool:
-    """
-    Detecta se está rodando no Streamlit Community Cloud.
-    Baseado em variáveis de ambiente que o Cloud injeta.
-    """
-    # O Streamlit Cloud define essas variáveis:
-    indicadores = [
-        'STREAMLIT_SHARING_MODE',   # legado
-        'STREAMLIT_RUNTIME_ENV',    # atual
-        'IS_STREAMLIT_CLOUD',
-    ]
-
-    for var in indicadores:
-        if os.getenv(var):
-            return True
-
-    # Fallback: o path típico do Cloud é /mount/src/...
-    cwd = os.getcwd()
-    if cwd.startswith('/mount/src/'):
-        return True
-
-    # Fallback: pasta .streamlit/config.toml com serverHeadless=true
-    # costuma indicar ambiente headless (Cloud)
-    if os.path.exists('/home/adminuser') or os.path.exists('/home/appuser'):
-        return True
-
-    return False
-
-# -----------------------------------------------------
-# VERIFICAR INTEGRIDADE DO SQLITE
-# -----------------------------------------------------
-def _verificar_integridade_db(self, db_path: str) -> bool:
-    """
-    Executa PRAGMA integrity_check para garantir que o banco
-    não está corrompido antes de copiar.
-    """
-    try:
-        conn = sqlite3.connect(db_path)
-        cursor = conn.cursor()
-        cursor.execute("PRAGMA integrity_check")
-        resultado = cursor.fetchone()
-        conn.close()
-
-        if resultado and resultado[0] == 'ok':
-            return True
-
-        print(f"⚠️ [sync] integrity_check retornou: {resultado}")
-        return False
-    except Exception as e:
-        print(f"⚠️ [sync] Erro no integrity_check: {e}")
-        return False
-
-# -----------------------------------------------------
-# CHECKPOINT DO WAL (evita copiar .db incompleto)
-# -----------------------------------------------------
-def _checkpoint_sqlite(self, db_path: str):
-    """
-    Força o SQLite a escrever o WAL no arquivo principal.
-    Sem isso, você pode copiar um .db sem as últimas transações.
-    """
-    try:
-        conn = sqlite3.connect(db_path)
-        cursor = conn.cursor()
-        cursor.execute("PRAGMA wal_checkpoint(FULL)")
-        conn.commit()
-        conn.close()
-        print("✅ [sync] WAL checkpoint concluído")
-    except Exception as e:
-        print(f"⚠️ [sync] Erro no WAL checkpoint: {e}")
+    prefixo = prefixos.get(tipo, 'Sincronização SISREQ')
+    mensagem = (
+        f'{prefixo}{identificador} '
+        f'[{datetime.now():%Y-%m-%d %H:%M:%S}]'
+    )
+    return sync.commit_e_push(mensagem, export['files'])

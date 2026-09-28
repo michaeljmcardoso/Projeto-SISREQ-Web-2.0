@@ -1,9 +1,12 @@
 import streamlit as st
 import sqlite3
 import pandas as pd
+from core_eventos import reportar_mudanca_banco
 
 def pagina_contatos():
     st.subheader("📞 Contatos")
+    for nivel, mensagem in st.session_state.pop('_avisos_contatos', []):
+        getattr(st, nivel)(mensagem)
     
     # Conexão com o banco de dados
     conn = sqlite3.connect('sisreq.db')
@@ -48,7 +51,20 @@ def pagina_contatos():
                             (nova_comunidade, novo_nome, novo_contato)
                         )
                         conn.commit()
-                        st.success("Contato adicionado com sucesso!")
+                        conn.close()
+                        st.session_state['_avisos_contatos'] = [
+                            ('success', 'Contato adicionado com sucesso!'),
+                            *reportar_mudanca_banco(
+                                'Novo contato cadastrado',
+                                'contato',
+                                {
+                                    'Evento': 'Novo contato cadastrado',
+                                    'Comunidade': nova_comunidade,
+                                    'Nome': novo_nome,
+                                    'Contato': novo_contato,
+                                },
+                            ),
+                        ]
                         st.rerun()
                     except Exception as e:
                         st.error(f"Erro ao salvar: {str(e)}")
@@ -111,15 +127,42 @@ def pagina_contatos():
                                         (edit_comunidade, edit_nome, edit_contato, contato_id)
                                     )
                                     conn.commit()
-                                    st.success("Atualizado!")
+                                    conn.close()
+                                    st.session_state['_avisos_contatos'] = [
+                                        ('success', 'Contato atualizado!'),
+                                        *reportar_mudanca_banco(
+                                            'Contato atualizado',
+                                            'contato',
+                                            {
+                                                'Evento': 'Contato atualizado',
+                                                'Comunidade': edit_comunidade,
+                                                'Nome': edit_nome,
+                                                'Contato': edit_contato,
+                                            },
+                                        ),
+                                    ]
                                     st.rerun()
                                 else:
                                     st.warning("Preencha os campos obrigatórios!")
                         with col2:
                             if st.form_submit_button("❌ Excluir"):
+                                contato_excluido = {
+                                    'Evento': 'Contato excluído',
+                                    'Comunidade': dados['comunidade'],
+                                    'Nome': dados['nome'],
+                                    'Contato': dados['contato'],
+                                }
                                 cursor.execute("DELETE FROM contatos WHERE id = ?", (contato_id,))
                                 conn.commit()
-                                st.success("Excluído!")
+                                conn.close()
+                                st.session_state['_avisos_contatos'] = [
+                                    ('success', 'Contato excluído!'),
+                                    *reportar_mudanca_banco(
+                                        'Contato excluído',
+                                        'contato',
+                                        contato_excluido,
+                                    ),
+                                ]
                                 st.rerun()
         else:
             st.info("Nenhum contato cadastrado ainda.")

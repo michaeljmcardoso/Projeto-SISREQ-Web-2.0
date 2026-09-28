@@ -1,24 +1,23 @@
 """
 Módulo de notificação por email + detecção de alterações.
 """
-import os
 import smtplib
+from html import escape
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from datetime import datetime
-from dotenv import load_dotenv
-
-load_dotenv()
+from core_config import get_config
+from core_time import agora
 
 # =========================================================
-# CONFIGURAÇÕES (lidas do .env)
+# CONFIGURAÇÕES (ambiente, .env ou Streamlit Secrets)
 # =========================================================
-EMAIL_ENABLED      = os.getenv('EMAIL_ENABLED', 'False').lower() == 'true'
-SMTP_SERVER        = os.getenv('SMTP_SERVER', 'smtp.gmail.com')
-SMTP_PORT          = int(os.getenv('SMTP_PORT', 587))
-EMAIL_REMETENTE    = os.getenv('EMAIL_REMETENTE', '')
-EMAIL_SENHA        = os.getenv('EMAIL_SENHA', '')
-EMAIL_DESTINATARIO = os.getenv('EMAIL_DESTINATARIO', '')
+EMAIL_ENABLED = get_config('EMAIL_ENABLED', 'false').lower() == 'true'
+SMTP_SERVER = get_config('SMTP_SERVER', 'smtp.gmail.com')
+SMTP_PORT = int(get_config('SMTP_PORT', '587'))
+EMAIL_REMETENTE = get_config('EMAIL_REMETENTE').strip()
+EMAIL_SENHA = ''.join(get_config('EMAIL_SENHA').split())
+EMAIL_DESTINATARIO = get_config('EMAIL_DESTINATARIO').strip()
 
 
 # =========================================================
@@ -119,11 +118,10 @@ def enviar_email(assunto: str, html: str, destinatarios_extras=None):
             msg['To']      = dest
             msg.attach(MIMEText(html, 'html'))
 
-            server = smtplib.SMTP(SMTP_SERVER, SMTP_PORT)
-            server.starttls()
-            server.login(EMAIL_REMETENTE, EMAIL_SENHA)
-            server.send_message(msg)
-            server.quit()
+            with smtplib.SMTP(SMTP_SERVER, SMTP_PORT, timeout=30) as server:
+                server.starttls()
+                server.login(EMAIL_REMETENTE, EMAIL_SENHA)
+                server.send_message(msg)
             enviados.append(dest)
             print(f"✅ Email enviado para {dest}")
         except Exception as e:
@@ -179,7 +177,7 @@ def _linhas_dados(dados: dict, mapa: dict) -> str:
     """Gera as linhas '<label> | <valor>' em HTML."""
     linhas = ""
     for campo, label in mapa.items():
-        valor = dados.get(campo, '') or '(vazio)'
+        valor = escape(str(dados.get(campo, '') or '(vazio)'))
         linhas += f"""
         <div class="info-row">
             <span class="info-label">{label}:</span>
@@ -194,12 +192,12 @@ def _tabela_alteracoes(alteracoes: list) -> str:
         return "<p>Nenhuma alteração significativa detectada.</p>"
     linhas = "".join(f"""
         <tr>
-            <td style="font-weight:bold;">{a['campo']}</td>
+            <td style="font-weight:bold;">{escape(str(a['campo']))}</td>
             <td style="background:#f8d7da;color:#721c24;">
-                <del>{a['valor_antigo']}</del>
+                <del>{escape(str(a['valor_antigo']))}</del>
             </td>
             <td style="background:#d4edda;color:#155724;">
-                <strong>{a['valor_novo']}</strong>
+                <strong>{escape(str(a['valor_novo']))}</strong>
             </td>
         </tr>
     """ for a in alteracoes)
@@ -228,7 +226,7 @@ def notificar_cadastro(dados: dict) -> tuple:
         <h3>📋 Dados do Processo</h3>
         {_linhas_dados(dados, MAPA_CAMPOS_PROCESSO)}
         <p style="margin-top:20px; color:#666; font-size:13px;">
-            🕐 Cadastrado em: {datetime.now().strftime('%d/%m/%Y %H:%M:%S')}
+            🕐 Cadastrado em: {agora().strftime('%d/%m/%Y %H:%M:%S')}
         </p>
     """
     html = _montar_email_base(
@@ -261,7 +259,7 @@ def notificar_alteracao(dados_novos: dict, dados_antigos: dict) -> tuple:
         <h3>📋 Estado Atual do Processo</h3>
         {_linhas_dados(dados_novos, MAPA_CAMPOS_PROCESSO)}
         <p style="margin-top:20px; color:#666; font-size:13px;">
-            🕐 Alterado em: {datetime.now().strftime('%d/%m/%Y %H:%M:%S')}
+            🕐 Alterado em: {agora().strftime('%d/%m/%Y %H:%M:%S')}
         </p>
     """
     html = _montar_email_base(
@@ -269,5 +267,28 @@ def notificar_alteracao(dados_novos: dict, dados_antigos: dict) -> tuple:
         subtitulo="Sistema de Regularização Quilombola",
         corpo_html=corpo,
         cor_primaria="#1a237e"
+    )
+    return assunto, html
+
+
+def notificar_mudanca_banco(evento: str, dados: dict) -> tuple:
+    """Retorna (assunto, html) para mudanças em tabelas sem template próprio."""
+    assunto = f"🔔 SISREQ — {evento}"
+    mapa = {campo: campo for campo in dados}
+    corpo = f"""
+        <div style="background:#E8EAF6; padding:15px; border-radius:8px;
+                    border-left:6px solid #3949AB; margin-bottom:20px;">
+            <h2 style="margin:0; color:#1A237E;">{escape(evento)}</h2>
+        </div>
+        {_linhas_dados(dados, mapa)}
+        <p style="margin-top:20px; color:#666; font-size:13px;">
+            🕐 Registrado em: {agora().strftime('%d/%m/%Y %H:%M:%S')}
+        </p>
+    """
+    html = _montar_email_base(
+        titulo="SISREQ",
+        subtitulo="Alteração no banco de dados",
+        corpo_html=corpo,
+        cor_primaria="#3949AB",
     )
     return assunto, html

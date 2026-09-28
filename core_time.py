@@ -2,8 +2,8 @@
 Módulo central de tratamento de data/hora.
 Garante que todos os timestamps usem o fuso configurado (America/Sao_Paulo).
 """
-import os
 from datetime import datetime
+from core_config import get_config
 
 try:
     from zoneinfo import ZoneInfo   # Python 3.9+
@@ -16,7 +16,7 @@ except ImportError:
         ZONEINFO_DISPONIVEL = False
 
 # Fuso padrão — configurável via .env / secrets
-TIMEZONE_NAME = os.getenv('TIMEZONE', 'America/Sao_Paulo')
+TIMEZONE_NAME = get_config('TIMEZONE', 'America/Sao_Paulo')
 
 # Cache do objeto de fuso
 _tz = None

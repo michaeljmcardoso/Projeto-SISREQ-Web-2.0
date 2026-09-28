@@ -86,6 +86,46 @@ Versão Web 2.0 do Sistema de Regularização Quilombola
    - A aplicação foi deployada utilizando o `Streamlit Cloud`, permitindo acesso global via navegador.
    - O deploy é simples e eficiente, garantindo alta disponibilidade e escalabilidade.
 
+### Persistência, emails e sincronização no Streamlit Cloud
+
+O armazenamento local do Streamlit Cloud pode ser descartado quando a aplicação
+reinicia ou é implantada novamente. Para preservar as alterações feitas nos
+processos, configure os secrets do app para email e para enviar commits pela API
+do GitHub:
+
+```toml
+EMAIL_ENABLED = "true"
+SMTP_SERVER = "smtp.gmail.com"
+SMTP_PORT = 587
+EMAIL_REMETENTE = "seu-email@gmail.com"
+EMAIL_SENHA = "sua-senha-de-app-do-gmail"
+EMAIL_DESTINATARIO = "destinatario@example.com"
+TIMEZONE = "America/Sao_Paulo"
+
+[github]
+GITHUB_ENABLED = "true"
+GITHUB_TOKEN = "seu-token-fine-grained"
+GITHUB_REPOSITORY = "michaeljmcardoso/Projeto-SISREQ-Web-2.0"
+GITHUB_BRANCH = "main"
+GITHUB_MODO_TESTE = "false"
+```
+
+Crie um fine-grained personal access token com acesso **Contents: Read and write**
+somente ao repositório privado conectado ao Streamlit Cloud. A branch configurada
+precisa aceitar commits desse token. Não coloque o token no código nem o versione.
+As configurações de email e `TIMEZONE` ficam no nível raiz dos Secrets; as
+configurações GitHub ficam na seção `[github]`. O Gmail exige uma senha de app,
+não a senha normal da conta. Nunca compartilhe nem versione esses segredos.
+O app envia o banco SQLite completo para `sisreq.db` e `dados/sisreq.db` no mesmo
+commit, além das exportações JSON. O banco contém hashes de senha, contatos e
+registros de acesso; mantenha o repositório privado e restrinja o acesso.
+
+Cadastros e edições de processos, alterações de contatos e inclusão de usuários
+notificam os destinatários configurados para email e sincronizam o banco com o
+GitHub. A interface informa separadamente quando a gravação teve sucesso, mas
+o email ou a sincronização falharam. Logins continuam enviando o email de acesso;
+os logs são incluídos no banco completo no próximo commit de uma alteração.
+
 ---
 
 ## Como Executar o Projeto
