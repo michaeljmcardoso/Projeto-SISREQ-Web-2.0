@@ -3,6 +3,7 @@
 # ══════════════════════════════════════════════
 
 # Ambiente virtual
+sisreq/
 sisreqApp/
 venv/
 env/
@@ -58,3 +59,5 @@ Thumbs.db
 !dados/**
 !dados/sisreq.db
 !dados/*.json
+# script unico para limpar logs
+limpar_logs.py
