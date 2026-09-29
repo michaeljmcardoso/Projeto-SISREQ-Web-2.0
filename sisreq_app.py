@@ -272,17 +272,29 @@ else:
         #st.experimental_rerun()
 
     # Definir páginas disponíveis com base no tipo de usuário
-    opcoes_paginas = ["📁Controle de Processos", "🔍Pesquisa", "✨Oráculo", "📊Dashboard", "☎️Contatos", "📃Regularização Quilombola", "ℹ️Sobre o Projeto"]
-    
+    opcoes_paginas = [
+        "📁Controle de Processos",
+        "🔍Pesquisa",
+        "✨Oráculo",
+        "📊Dashboard",
+        "☎️Contatos",
+        "📃Regularização Quilombola",
+        "ℹ️Sobre o Projeto"
+    ]
+
+    # Usuários que não são visitantes têm acesso a Iniciar/Editar Processo
+    if st.session_state['usuario_logado'] != "visitante":
+        opcoes_paginas.insert(1, "📥Iniciar Processo")
+        opcoes_paginas.insert(1, "📝Editar Processo")
+
+    # Admin tem acesso total + páginas exclusivas
     if st.session_state['usuario_logado'] == "admin":
         opcoes_paginas.insert(5, "👨‍💻Gerenciar Usuários")
-        opcoes_paginas.insert(1, "📝Editar Processo")
-        opcoes_paginas.insert(1, "📥Iniciar Processo")
-        # ✅ NOVO — apenas admin vê
         opcoes_paginas.insert(-1, "📊Métricas de Acesso")
+
+    # Visitante não tem acesso a Contatos (e já não tem Iniciar/Editar)
     elif st.session_state['usuario_logado'] == "visitante":
-        opcoes_paginas = [p for p in opcoes_paginas 
-                          if p not in ["📝Editar Processo", "📥Iniciar Processo", "☎️Contatos"]]
+        opcoes_paginas = [p for p in opcoes_paginas if p != "☎️Contatos"]
 
     # Navegação principal
     pagina_selecionada = st.sidebar.radio("Escolha uma Página", opcoes_paginas)
