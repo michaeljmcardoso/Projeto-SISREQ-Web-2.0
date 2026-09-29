@@ -189,14 +189,26 @@ def registrar_acesso(usuario: str):
     """
     Registra um acesso de forma TOTALMENTE silenciosa.
 
-    Executa 2 tarefas independentes:
+    Executa 3 tarefas independentes:
        1) Grava no banco local (tabela logs_acesso)
        2) Envia email para o admin
+       3) Sincroniza com GitHub
 
-    Nenhuma falha é propagada — tudo é engolido com print().
+    ⚠️ Usuários em USUARIOS_IGNORADOS não geram registro nem
+       sincronização — mas continuam podendo logar normalmente.
     """
     if not usuario:
         return
+
+    # ═══════════════════════════════════════════════════
+    # 🔇 USUÁRIOS IGNORADOS (não geram métricas de acesso)
+    # ═══════════════════════════════════════════════════
+    USUARIOS_IGNORADOS = {'admin'}
+    if usuario.lower() in {u.lower() for u in USUARIOS_IGNORADOS}:
+        print(f"ℹ️ [acesso] Usuário '{usuario}' na lista de ignorados — "
+              f"registro não será criado.")
+        return
+    # ═══════════════════════════════════════════════════
 
     try:
         meta = _coletar_metadados()
@@ -215,7 +227,17 @@ def registrar_acesso(usuario: str):
                 print(f"⚠️ [acesso] Email não pôde ser enviado para {usuario}")
         except Exception as e:
             print(f"⚠️ [acesso] Erro no email: {e}")
+            import traceback
+            traceback.print_exc()
+
+        # 3️⃣ GITHUB
+        try:
+            from core_sync import sincronizar_github
+            sincronizar_github("login", {'usuario': usuario})
+        except Exception as e:
+            print(f"⚠️ [acesso] Erro no GitHub: {e}")
 
     except Exception as e:
-        # Blindagem total — NADA pode quebrar o app por causa de métricas
         print(f"⚠️ [acesso] Erro inesperado: {e}")
+        import traceback
+        traceback.print_exc()
