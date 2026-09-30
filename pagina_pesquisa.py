@@ -3,7 +3,7 @@ import pandas as pd
 import io
 import streamlit as st
 from constantes import MUNICIPIOS
-from obter_todos_registros import obter_todos_os_registros
+from obter_todos_registros import obter_todos_os_registros, obter_ordem_colunas_processo
 
 def criar_submenu():
     submenu = st.radio("",
@@ -100,6 +100,7 @@ def filtrar_por_comunidade():
             col1, col2, col3, col4 = st.columns(4)
             with col1:
                 st.markdown(f"<p><strong>Ação Civil Pública:</strong> {registro['Acao_Civil_Publica']}</p>", unsafe_allow_html=True)
+                st.markdown(f"<p><strong>Número do Processo Judicial:</strong> {registro['Numero_Processo_Judicial']}</p>", unsafe_allow_html=True)
             with col2:
                 st.markdown(f"<p><strong>Data da Sentença:</strong> {registro['Data_Decisao']}</p>", unsafe_allow_html=True)
             with col3:
@@ -139,7 +140,7 @@ def filtrar_por_municipio():
             df = pd.DataFrame(registros, columns=colunas)
             df.index = df.index + 1
 
-            st.dataframe(df)
+            st.dataframe(df, column_order=obter_ordem_colunas_processo(df))
 
             # Exibir a contagem de registros
             st.write(f"Total de processos para {municipio}: {len(df)}")
@@ -281,7 +282,7 @@ def faseInicial():
             df.index = df.index + 1  # Ajustar o índice para começar em 1
 
             # Exibir o DataFrame no Streamlit
-            st.dataframe(df)
+            st.dataframe(df, column_order=obter_ordem_colunas_processo(df))
 
             # Exibir a contagem de registros
             st.write(f"Total de processos para fase inicial: {total_fase_inicial}")

@@ -3,7 +3,7 @@ import pandas as pd
 import sqlite3
 import hashlib
 import converter_valores
-from obter_todos_registros import obter_todos_os_registros
+from obter_todos_registros import obter_todos_os_registros, obter_ordem_colunas_processo
 from pagina_cadastro import tela_de_cadastro
 from pagina_editar import pagina_editar
 from pagina_dashboard import dashboard
@@ -137,7 +137,7 @@ def pagina_inicial():
             df.index = df.index + 1
             st.subheader('Controle de Processos')
             #st.markdown('<h4 style="color: #1f77b5;">Controle de Processos</h4>', unsafe_allow_html=True)
-            st.dataframe(df, height=500)
+            st.dataframe(df, column_order=obter_ordem_colunas_processo(df), height=500)
 
     if st.button("Exportar para Excel"):
         df.to_excel('processos.xlsx', index=False)
@@ -232,6 +232,7 @@ def pesquisar_comunidade():
             col1, col2, col3, col4 = st.columns(4)
             with col1:
                 st.markdown(f"<p><strong>Ação Civil Pública:</strong> {registro['Acao_Civil_Publica']}</p>", unsafe_allow_html=True)
+                st.markdown(f"<p><strong>Número do Processo Judicial:</strong> {registro['Numero_Processo_Judicial']}</p>", unsafe_allow_html=True)
             with col2:
                 st.markdown(f"<p><strong>Data da Sentença:</strong> {registro['Data_Decisao']}</p>", unsafe_allow_html=True)
             with col3:

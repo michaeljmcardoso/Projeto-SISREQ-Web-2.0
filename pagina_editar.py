@@ -10,7 +10,11 @@ from core_notificacao import (
     notificar_alteracao,
 )
 from core_sync import sincronizar_github
-from obter_todos_registros import obter_todos_os_registros, obter_registro_por_id
+from obter_todos_registros import (
+    obter_todos_os_registros,
+    obter_registro_por_id,
+    obter_ordem_colunas_processo,
+)
 
 def pagina_editar():
     st.markdown('<h3 style="color: "#1f77b4";">Editar Processo</h3>', unsafe_allow_html=True)
@@ -187,7 +191,7 @@ def pagina_editar():
             if 'ID' in df.columns:
                 df = df.drop(columns=['ID'])
                 df.index = df.index + 1  # Ajusta o índice para começar em 1
-                st.dataframe(df)
+                st.dataframe(df, column_order=obter_ordem_colunas_processo(df))
     else:
         st.warning("ID inválido. Por favor, selecione um ID existente.")
     return(pagina_editar)

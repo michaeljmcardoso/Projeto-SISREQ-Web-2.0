@@ -1,6 +1,14 @@
 import pandas as pd
 import sqlite3
 
+def obter_ordem_colunas_processo(df):
+    colunas = list(df.columns)
+    if 'Acao_Civil_Publica' in colunas and 'Numero_Processo_Judicial' in colunas:
+        colunas.remove('Numero_Processo_Judicial')
+        indice_acao_civil = colunas.index('Acao_Civil_Publica')
+        colunas.insert(indice_acao_civil + 1, 'Numero_Processo_Judicial')
+    return colunas
+
 def obter_todos_os_registros():
     conn = sqlite3.connect('sisreq.db')
     df = pd.read_sql_query('SELECT * FROM processos', conn)

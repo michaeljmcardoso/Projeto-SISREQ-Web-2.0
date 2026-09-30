@@ -8,6 +8,7 @@ import io
 import os
 from constantes import FASE_PROCESSO
 from pagina_pesquisa import salvar_extrato_planilha
+from obter_todos_registros import obter_ordem_colunas_processo
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -78,7 +79,7 @@ def processos_por_fase():
             if 'ID' in df.columns:
                 df = df.drop(columns=['ID'])
                 df.index = df.index + 1
-                st.dataframe(df)
+                st.dataframe(df, column_order=obter_ordem_colunas_processo(df))
 
             # Botão para salvar e baixar extrato
             if st.button("Salvar e Baixar Extrato"):
@@ -441,7 +442,11 @@ def territorios_identificados():
         else:
             df_filtrado = df
 
-        st.dataframe(df_filtrado, use_container_width=True)
+        st.dataframe(
+            df_filtrado,
+            column_order=obter_ordem_colunas_processo(df_filtrado),
+            use_container_width=True,
+        )
         if st.button("Área Total Identificada"):
             exibir_area_total_em_territorios_identificados()
         st.info(f"✅ Total de Processos: {total} registros encontrados com Território Identificado")
@@ -532,7 +537,11 @@ def territorios_nao_identificados():
         else:
             df_filtrado = df
 
-        st.dataframe(df_filtrado, use_container_width=True)
+        st.dataframe(
+            df_filtrado,
+            column_order=obter_ordem_colunas_processo(df_filtrado),
+            use_container_width=True,
+        )
         st.info(f"✅ Total de Processos: {total} Território(s) Não Identificado(s)")
 
         if st.button("📄 Extrato"):
@@ -697,7 +706,11 @@ def rtids_publicados():
             if 'ID' in df.columns:
                 df = df.drop(columns=['ID'])
                 df.index = df.index + 1
-        st.dataframe(df, use_container_width=True)
+        st.dataframe(
+            df,
+            column_order=obter_ordem_colunas_processo(df),
+            use_container_width=True,
+        )
         
 
         # Exibir total
