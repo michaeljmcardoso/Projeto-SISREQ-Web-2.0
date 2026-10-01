@@ -1,5 +1,5 @@
 {
-  "exportado_em": "2026-10-01T10:53:45.708753",
+  "exportado_em": "2026-10-01T17:50:42.956890",
   "total_processos": 444,
   "processos": [
     {
@@ -2948,11 +2948,11 @@
       "Data_Abertura": "03-11-2006",
       "Comunidade": "Bom Jesus/Santa Maria dos Moreiras",
       "Municipio": "Codó",
-      "Area_ha": 8730.726,
+      "Area_ha": 7572.0951,
       "Num_familias": 95,
-      "Fase_Processo": "Estudo de Identificação",
-      "Etapa_RTID": "RTID_Concluído",
-      "Edital_DOU": "",
+      "Fase_Processo": "Contestação",
+      "Etapa_RTID": "RTID_Publicado",
+      "Edital_DOU": "01-10-2026",
       "Edital_DOE": "",
       "Portaria_DOU": null,
       "Decreto_DOU": null,
