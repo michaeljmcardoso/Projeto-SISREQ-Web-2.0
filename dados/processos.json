@@ -1,5 +1,5 @@
 {
-  "exportado_em": "2026-09-30T21:56:10.228193",
+  "exportado_em": "2026-10-01T10:53:45.708753",
   "total_processos": 444,
   "processos": [
     {
@@ -29,7 +29,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 2,
@@ -58,7 +59,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "Verificar com a comunidade sobre certidão e conitnuidade do processo"
+      "Outras_Informacoes": "Verificar com a comunidade sobre certidão e conitnuidade do processo",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 3,
@@ -87,7 +89,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "Instrução para Kit Decreto."
+      "Outras_Informacoes": "Instrução para Kit Decreto.",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 4,
@@ -116,7 +119,8 @@
       "Acao_Civil_Publica": "Sentença Cumprida",
       "Data_Decisao": "11-07-2012",
       "Numero_Acao_Civil_Publica": "Concluir RTID em 100 dias. O RTID foi concluído.",
-      "Outras_Informacoes": "Em andamento Vistoria e Avaliação de imóveis. 36 imóveis incidentes no território."
+      "Outras_Informacoes": "Em andamento Vistoria e Avaliação de imóveis. 36 imóveis incidentes no território.",
+      "Numero_Processo_Judicial": "0007764-49.2008.4.01.3700"
     },
     {
       "ID": 5,
@@ -145,7 +149,8 @@
       "Acao_Civil_Publica": "Com Sentença",
       "Data_Decisao": "15-04-2013",
       "Numero_Acao_Civil_Publica": "Concluir RTID",
-      "Outras_Informacoes": "Incluido no Planejamento da Força Tarefa.\nRetomar os trabalhos de conclusão do Levantamento Fundiário.\no processo da comunidade Saco das Almas está contemplado nas ações da Força Tarefa, conforme Certidão 25001493. A programação para a continuidade do levantamento fundiário do RTID da comunidade está prevista para o período de 26/10 a 09/11/2025."
+      "Outras_Informacoes": "Incluido no Planejamento da Força Tarefa.\nRetomar os trabalhos de conclusão do Levantamento Fundiário.\no processo da comunidade Saco das Almas está contemplado nas ações da Força Tarefa, conforme Certidão 25001493. A programação para a continuidade do levantamento fundiário do RTID da comunidade está prevista para o período de 26/10 a 09/11/2025.",
+      "Numero_Processo_Judicial": "0013982-88.2011.4.01.3700"
     },
     {
       "ID": 6,
@@ -174,7 +179,8 @@
       "Acao_Civil_Publica": "Com Sentença",
       "Data_Decisao": "09-01-2010",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "1 Título provisório - CCDRU de parte da área: 620,5644 hectares (Fazenda Haras Ponta D'Areia)\n"
+      "Outras_Informacoes": "1 Título provisório - CCDRU de parte da área: 620,5644 hectares (Fazenda Haras Ponta D'Areia)\n",
+      "Numero_Processo_Judicial": "0014775-08.2003.4.01.3700"
     },
     {
       "ID": 7,
@@ -203,7 +209,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 8,
@@ -232,7 +239,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "4 Títulos Emitidos. Título Definitivo.\nTerritório 100% titulado.\nÁrea Titulada: 7626,24"
+      "Outras_Informacoes": "4 Títulos Emitidos. Título Definitivo.\nTerritório 100% titulado.\nÁrea Titulada: 7626,24",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 9,
@@ -261,7 +269,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "Terra"
+      "Outras_Informacoes": "Terra",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 10,
@@ -290,7 +299,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 11,
@@ -319,7 +329,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "Port. 361\nPendente de Kit Decreto"
+      "Outras_Informacoes": "Port. 361\nPendente de Kit Decreto",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 12,
@@ -348,7 +359,8 @@
       "Acao_Civil_Publica": "Sem Sentença",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "Port. n 34"
+      "Outras_Informacoes": "Port. n 34",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 13,
@@ -377,7 +389,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 14,
@@ -406,7 +419,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 15,
@@ -435,7 +449,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 16,
@@ -464,7 +479,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 17,
@@ -493,7 +509,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 18,
@@ -522,7 +539,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "Port. n 196"
+      "Outras_Informacoes": "Port. n 196",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 19,
@@ -551,7 +569,8 @@
       "Acao_Civil_Publica": "Decisão Liminar",
       "Data_Decisao": "26-01-2021",
       "Numero_Acao_Civil_Publica": "Concluir regularização",
-      "Outras_Informacoes": "Conflito assentados e quilombolas"
+      "Outras_Informacoes": "Conflito assentados e quilombolas",
+      "Numero_Processo_Judicial": "1001664-32.2020.4.01.3703"
     },
     {
       "ID": 20,
@@ -580,7 +599,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 21,
@@ -609,7 +629,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 22,
@@ -638,7 +659,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 23,
@@ -667,7 +689,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 24,
@@ -696,7 +719,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "Uma parte do território em Peritoró do Norte"
+      "Outras_Informacoes": "Uma parte do território em Peritoró do Norte",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 25,
@@ -725,7 +749,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": "1053363-32.2024.4.01.3700"
     },
     {
       "ID": 26,
@@ -754,7 +779,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 27,
@@ -783,7 +809,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "Área Pública. Encaminhado para Q-2 avaliar a situação do imóvel e posterior destinação à comunidade."
+      "Outras_Informacoes": "Área Pública. Encaminhado para Q-2 avaliar a situação do imóvel e posterior destinação à comunidade.",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 28,
@@ -812,7 +839,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "1 Título provisório: CCDRU - 54,7880 hectares - corresponde 5% do território. Data_Título: 02-12-2014."
+      "Outras_Informacoes": "1 Título provisório: CCDRU - 54,7880 hectares - corresponde 5% do território. Data_Título: 02-12-2014.",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 29,
@@ -841,7 +869,8 @@
       "Acao_Civil_Publica": "Decisão Liminar",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "Adotar medidas relacionadas a regularização",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": "1051488-95.2022.4.01.3700"
     },
     {
       "ID": 30,
@@ -870,7 +899,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 31,
@@ -899,7 +929,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "Em fase de Elaboração de Relatório Antropológico. início dos trabalhos para novembro de 2025, via Execução Direta."
+      "Outras_Informacoes": "Em fase de Elaboração de Relatório Antropológico. início dos trabalhos para novembro de 2025, via Execução Direta.",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 32,
@@ -928,7 +959,8 @@
       "Acao_Civil_Publica": "Sem Sentença",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "Improcedente",
-      "Outras_Informacoes": "2 Títulos provisórios: CCDRU 401,3321 hectares; CCDRU 206.1931 hectares. Área titulada: 401,3321. Correspondem a 11% do território. Data_Título: 02-12-2014"
+      "Outras_Informacoes": "2 Títulos provisórios: CCDRU 401,3321 hectares; CCDRU 206.1931 hectares. Área titulada: 401,3321. Correspondem a 11% do território. Data_Título: 02-12-2014",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 33,
@@ -957,7 +989,8 @@
       "Acao_Civil_Publica": "Decisão Liminar",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "Concluir Regularização",
-      "Outras_Informacoes": "Indicios de que a comunidade seja proprietaria da area. Como a comunidade poderia ser incluída como beneficiária da reforma agrária. Ver com a Maria José do Cadastro de PNRA"
+      "Outras_Informacoes": "Indicios de que a comunidade seja proprietaria da area. Como a comunidade poderia ser incluída como beneficiária da reforma agrária. Ver com a Maria José do Cadastro de PNRA",
+      "Numero_Processo_Judicial": "1003115-38.2019.4.01.3700"
     },
     {
       "ID": 34,
@@ -986,7 +1019,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 35,
@@ -1015,7 +1049,8 @@
       "Acao_Civil_Publica": "Sem Sentença",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "Concluir RTID",
-      "Outras_Informacoes": "3R"
+      "Outras_Informacoes": "3R",
+      "Numero_Processo_Judicial": "1003345-06.2021.4.01.3702"
     },
     {
       "ID": 36,
@@ -1044,7 +1079,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 37,
@@ -1073,7 +1109,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 38,
@@ -1102,7 +1139,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "Conflitos entre herdeiros das terras da comunidade"
+      "Outras_Informacoes": "Conflitos entre herdeiros das terras da comunidade",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 39,
@@ -1131,7 +1169,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "verificar se a área está contida no processo Comunidades de Alcântara"
+      "Outras_Informacoes": "verificar se a área está contida no processo Comunidades de Alcântara",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 40,
@@ -1160,7 +1199,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "Integrante do processo comunidades de Alcântara"
+      "Outras_Informacoes": "Integrante do processo comunidades de Alcântara",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 41,
@@ -1189,7 +1229,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "Levantamento sócio-econômico feito pelo CCN/SMDDH. Processo a ser arquivado por ser parte do processo de Alcântara matriz."
+      "Outras_Informacoes": "Levantamento sócio-econômico feito pelo CCN/SMDDH. Processo a ser arquivado por ser parte do processo de Alcântara matriz.",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 42,
@@ -1218,7 +1259,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 43,
@@ -1247,7 +1289,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "Após análise de Dissertação de Mestrado, foi dado parecer não aprovativo do Documento, uma vez que não atendeu aos requisitos da Instrução Normativa do INCRA para ser aceito como peça Relatório Antropológico. Iniciada a retomada dos trabalhos para complementação do Relatório Antropológico em outubro de 2005. Via execução Direta."
+      "Outras_Informacoes": "Após análise de Dissertação de Mestrado, foi dado parecer não aprovativo do Documento, uma vez que não atendeu aos requisitos da Instrução Normativa do INCRA para ser aceito como peça Relatório Antropológico. Iniciada a retomada dos trabalhos para complementação do Relatório Antropológico em outubro de 2005. Via execução Direta.",
+      "Numero_Processo_Judicial": "1044570-70.2025.4.01.3700"
     },
     {
       "ID": 44,
@@ -1276,7 +1319,8 @@
       "Acao_Civil_Publica": "Com Sentença",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "Concluir Regularização",
-      "Outras_Informacoes": "Port 355"
+      "Outras_Informacoes": "Port 355",
+      "Numero_Processo_Judicial": "0018235-85.2012.4.01.3700; 1056388-87.2023.4.01.3700"
     },
     {
       "ID": 45,
@@ -1305,7 +1349,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "Demacamp"
+      "Outras_Informacoes": "Demacamp",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 46,
@@ -1334,7 +1379,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "Port 170"
+      "Outras_Informacoes": "Port 170",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 47,
@@ -1363,7 +1409,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "Incluído no ACT UEMA/INCRA para elaboração de Relatório Fundiário, Planta e Memorial Descritivo, Analise de Sobreposição. Peças entregues pelo parceiro para análise e validação do INCRA."
+      "Outras_Informacoes": "Incluído no ACT UEMA/INCRA para elaboração de Relatório Fundiário, Planta e Memorial Descritivo, Analise de Sobreposição. Peças entregues pelo parceiro para análise e validação do INCRA.",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 48,
@@ -1392,7 +1439,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "Aguardando condições operacionais e financeiras para início dos estudos de identificação e delimitação"
+      "Outras_Informacoes": "Aguardando condições operacionais e financeiras para início dos estudos de identificação e delimitação",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 49,
@@ -1421,7 +1469,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 50,
@@ -1450,7 +1499,8 @@
       "Acao_Civil_Publica": "Com Sentença",
       "Data_Decisao": "14-06-2018",
       "Numero_Acao_Civil_Publica": "Concluir Regularização",
-      "Outras_Informacoes": "EcoDimensao"
+      "Outras_Informacoes": "EcoDimensao",
+      "Numero_Processo_Judicial": "0014846-24.2014.4.01.3700"
     },
     {
       "ID": 51,
@@ -1479,7 +1529,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "Território unificado a Pedreiras.\nRTID Concluído. Encaminhado a PFE para Parecer Jurídico."
+      "Outras_Informacoes": "Território unificado a Pedreiras.\nRTID Concluído. Encaminhado a PFE para Parecer Jurídico.",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 52,
@@ -1508,7 +1559,8 @@
       "Acao_Civil_Publica": "Com Sentença",
       "Data_Decisao": "24-10-2014",
       "Numero_Acao_Civil_Publica": "Concluir Regularização",
-      "Outras_Informacoes": "Aguardando autorização para publicação de Decreto pela Presidência."
+      "Outras_Informacoes": "Aguardando autorização para publicação de Decreto pela Presidência.",
+      "Numero_Processo_Judicial": "0054588-90.2013.4.01.3700"
     },
     {
       "ID": 53,
@@ -1537,7 +1589,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 54,
@@ -1566,7 +1619,8 @@
       "Acao_Civil_Publica": "Com Sentença",
       "Data_Decisao": "23-11-2017",
       "Numero_Acao_Civil_Publica": "Concluir RTID",
-      "Outras_Informacoes": "10 Contestações ao RTID, se encontram em análise.\nPrazo para contestação finda 10 de setembro 2025 (90 dias úteis )\nDemacamp"
+      "Outras_Informacoes": "10 Contestações ao RTID, se encontram em análise.\nPrazo para contestação finda 10 de setembro 2025 (90 dias úteis )\nDemacamp",
+      "Numero_Processo_Judicial": "0036137-17.2013.4.01.3700"
     },
     {
       "ID": 55,
@@ -1595,7 +1649,8 @@
       "Acao_Civil_Publica": "Com Sentença",
       "Data_Decisao": "07-10-2020",
       "Numero_Acao_Civil_Publica": "Adotar medidas relacionadas a regularização",
-      "Outras_Informacoes": "EcoDimensao"
+      "Outras_Informacoes": "EcoDimensao",
+      "Numero_Processo_Judicial": "0002791-95.2015.4.01.3703"
     },
     {
       "ID": 56,
@@ -1624,7 +1679,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 57,
@@ -1653,7 +1709,8 @@
       "Acao_Civil_Publica": "Com Sentença",
       "Data_Decisao": "12-04-2022",
       "Numero_Acao_Civil_Publica": "Concluir Regularização",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": "1000157-07.2018.4.01.3703"
     },
     {
       "ID": 58,
@@ -1682,7 +1739,8 @@
       "Acao_Civil_Publica": "Sem Sentença",
       "Data_Decisao": "17-03-2015",
       "Numero_Acao_Civil_Publica": "Adotar medidas relacionadas a regularizaçã",
-      "Outras_Informacoes": "Portaria publicada. Demacamp"
+      "Outras_Informacoes": "Portaria publicada. Demacamp",
+      "Numero_Processo_Judicial": "0036214-26.2013.4.01.3700"
     },
     {
       "ID": 59,
@@ -1711,7 +1769,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 60,
@@ -1740,7 +1799,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 61,
@@ -1769,7 +1829,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 62,
@@ -1798,7 +1859,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 63,
@@ -1827,7 +1889,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "Incluído no TED UFMA 2026."
+      "Outras_Informacoes": "Incluído no TED UFMA 2026.",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 64,
@@ -1856,7 +1919,8 @@
       "Acao_Civil_Publica": "Com Sentença",
       "Data_Decisao": " 20-12-2017",
       "Numero_Acao_Civil_Publica": "Concluir RTID",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": "0111178-19.2015.4.01.3700"
     },
     {
       "ID": 65,
@@ -1885,7 +1949,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 66,
@@ -1914,7 +1979,8 @@
       "Acao_Civil_Publica": "Com Sentença",
       "Data_Decisao": "21-12-2017",
       "Numero_Acao_Civil_Publica": "Concluir RTID",
-      "Outras_Informacoes": "Demanda unificada a de Centro dos Viola. Cumprindo prazo de contestação. Notificações pós RTID realizadas"
+      "Outras_Informacoes": "Demanda unificada a de Centro dos Viola. Cumprindo prazo de contestação. Notificações pós RTID realizadas",
+      "Numero_Processo_Judicial": "0064029-61.2014.4.01.3700"
     },
     {
       "ID": 67,
@@ -1943,7 +2009,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 68,
@@ -1972,7 +2039,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 69,
@@ -2001,7 +2069,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 70,
@@ -2030,7 +2099,8 @@
       "Acao_Civil_Publica": "Com Sentença",
       "Data_Decisao": "12-11-2020",
       "Numero_Acao_Civil_Publica": "Concluir RTID",
-      "Outras_Informacoes": "Em fase de Elaboração do Relatório Antropológico. Início dos trabalhos para novembro de 2025 via Execução Direta."
+      "Outras_Informacoes": "Em fase de Elaboração do Relatório Antropológico. Início dos trabalhos para novembro de 2025 via Execução Direta.",
+      "Numero_Processo_Judicial": "0012761-31.2015.4.01.3700"
     },
     {
       "ID": 71,
@@ -2059,7 +2129,8 @@
       "Acao_Civil_Publica": "Sem Sentença",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "Concluir RTID",
-      "Outras_Informacoes": "3R"
+      "Outras_Informacoes": "3R",
+      "Numero_Processo_Judicial": "1004827-57.2019.4.01.3702"
     },
     {
       "ID": 72,
@@ -2088,7 +2159,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 73,
@@ -2117,7 +2189,8 @@
       "Acao_Civil_Publica": "Com Sentença",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "Concluir RTID",
-      "Outras_Informacoes": "Incluído no planejamento da Força Tarefa Nacional para elaboração de peças do RTID: Levantamento Fundiário; Planta e Memorial Descritivo; Cadastro de Famílias. Prazo de início Abril de 2025.\nRelatório Antropológico 3R.\nPovoados Bacuri e Primeiro Brejo incluídos na certidão FCP nova de 2021."
+      "Outras_Informacoes": "Incluído no planejamento da Força Tarefa Nacional para elaboração de peças do RTID: Levantamento Fundiário; Planta e Memorial Descritivo; Cadastro de Famílias. Prazo de início Abril de 2025.\nRelatório Antropológico 3R.\nPovoados Bacuri e Primeiro Brejo incluídos na certidão FCP nova de 2021.",
+      "Numero_Processo_Judicial": "1006540-33.2020.4.01.3702"
     },
     {
       "ID": 74,
@@ -2146,7 +2219,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 75,
@@ -2175,7 +2249,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "1 Título provisório: CCDRU de 625,5662 hectares - corresponde a 57% do território quilombola. Data_Título: 02-12-2014."
+      "Outras_Informacoes": "1 Título provisório: CCDRU de 625,5662 hectares - corresponde a 57% do território quilombola. Data_Título: 02-12-2014.",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 76,
@@ -2204,7 +2279,8 @@
       "Acao_Civil_Publica": "Com Sentença",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "Concluir RTID",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": "0008273-53.2003.4.01.3700"
     },
     {
       "ID": 77,
@@ -2233,7 +2309,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 78,
@@ -2262,7 +2339,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 79,
@@ -2291,7 +2369,8 @@
       "Acao_Civil_Publica": "Com Sentença",
       "Data_Decisao": "28-01-2021",
       "Numero_Acao_Civil_Publica": "Concluir RTID",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": "0039824-94.2016.4.01.3700"
     },
     {
       "ID": 80,
@@ -2320,7 +2399,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 81,
@@ -2349,7 +2429,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 82,
@@ -2378,7 +2459,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "Terra"
+      "Outras_Informacoes": "Terra",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 83,
@@ -2407,7 +2489,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 84,
@@ -2436,7 +2519,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 85,
@@ -2465,7 +2549,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 86,
@@ -2494,7 +2579,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 87,
@@ -2523,7 +2609,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 88,
@@ -2552,7 +2639,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "Memorial Descritivo feito pela comunidade"
+      "Outras_Informacoes": "Memorial Descritivo feito pela comunidade",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 89,
@@ -2581,7 +2669,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 90,
@@ -2610,7 +2699,8 @@
       "Acao_Civil_Publica": "Com Sentença",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "Concluir regularização",
-      "Outras_Informacoes": "Instrução de Kit Decreto."
+      "Outras_Informacoes": "Instrução de Kit Decreto.",
+      "Numero_Processo_Judicial": "1003652-20.2022.4.01.3703"
     },
     {
       "ID": 91,
@@ -2639,7 +2729,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "Grave conflito fundiário. EcoDimensao"
+      "Outras_Informacoes": "Grave conflito fundiário. EcoDimensao",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 92,
@@ -2668,7 +2759,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 93,
@@ -2697,7 +2789,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 94,
@@ -2726,7 +2819,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 95,
@@ -2755,7 +2849,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 96,
@@ -2784,7 +2879,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 97,
@@ -2813,7 +2909,8 @@
       "Acao_Civil_Publica": "Sentença Cumprida",
       "Data_Decisao": "08-08-2017",
       "Numero_Acao_Civil_Publica": "Concluir RTID 240 dias",
-      "Outras_Informacoes": "Terra"
+      "Outras_Informacoes": "Terra",
+      "Numero_Processo_Judicial": "0010711-66.2014.4.01.3700"
     },
     {
       "ID": 98,
@@ -2842,7 +2939,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 99,
@@ -2871,7 +2969,8 @@
       "Acao_Civil_Publica": "Com Sentença",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "Concluir Regularização",
-      "Outras_Informacoes": "Bom Jesus / Santa Maria dos Moreiras / São Benedito dos Trindades / Tamboril. 3R\nRTID Concluído em setembro de 2025. Validado na comunidade."
+      "Outras_Informacoes": "Bom Jesus / Santa Maria dos Moreiras / São Benedito dos Trindades / Tamboril. 3R\nRTID Concluído em setembro de 2025. Validado na comunidade.",
+      "Numero_Processo_Judicial": "1000619-64.2018.4.01.3702"
     },
     {
       "ID": 100,
@@ -2900,7 +2999,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "Engecem"
+      "Outras_Informacoes": "Engecem",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 101,
@@ -2929,7 +3029,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "Pedido de arquivamento do processo de regularização"
+      "Outras_Informacoes": "Pedido de arquivamento do processo de regularização",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 102,
@@ -2958,7 +3059,8 @@
       "Acao_Civil_Publica": "Com Sentença",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "Pedido de arquivamento pela equipe do RTID\nConsta Nota Técnica da equipe fundamentando a recomendação\nConsta parecer técnico concluindo pelo não prosseguimento do processo por impossibilidade de fundamentação técnica de proposta territorial – Processo 54230.001414/2005-94 arquivado."
+      "Outras_Informacoes": "Pedido de arquivamento pela equipe do RTID\nConsta Nota Técnica da equipe fundamentando a recomendação\nConsta parecer técnico concluindo pelo não prosseguimento do processo por impossibilidade de fundamentação técnica de proposta territorial – Processo 54230.001414/2005-94 arquivado.",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 103,
@@ -2987,7 +3089,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "Demacamp"
+      "Outras_Informacoes": "Demacamp",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 104,
@@ -3016,7 +3119,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 105,
@@ -3045,7 +3149,8 @@
       "Acao_Civil_Publica": "Com Sentença",
       "Data_Decisao": "10-05-2017",
       "Numero_Acao_Civil_Publica": "Concluir RTID",
-      "Outras_Informacoes": "EcoDimensao"
+      "Outras_Informacoes": "EcoDimensao",
+      "Numero_Processo_Judicial": "0042838-57.2014.4.01.3700"
     },
     {
       "ID": 106,
@@ -3074,7 +3179,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 107,
@@ -3103,7 +3209,8 @@
       "Acao_Civil_Publica": "Com Sentença",
       "Data_Decisao": "28-08-2017",
       "Numero_Acao_Civil_Publica": "Concluir RTID",
-      "Outras_Informacoes": "Área reajustada, após manifestação e contestação da Comunidade Santo Antônio dos Gundes, quanto a inclusão do povoado na demanda por regularização."
+      "Outras_Informacoes": "Área reajustada, após manifestação e contestação da Comunidade Santo Antônio dos Gundes, quanto a inclusão do povoado na demanda por regularização.",
+      "Numero_Processo_Judicial": "0014135-19.2014.4.01.3700"
     },
     {
       "ID": 108,
@@ -3132,7 +3239,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "Demacamp"
+      "Outras_Informacoes": "Demacamp",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 109,
@@ -3161,7 +3269,8 @@
       "Acao_Civil_Publica": "Com Sentença",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "Concluir RTID",
-      "Outras_Informacoes": "Conflito na área com fazendeiros. 3R"
+      "Outras_Informacoes": "Conflito na área com fazendeiros. 3R",
+      "Numero_Processo_Judicial": "1002792-27.2019.4.01.3702"
     },
     {
       "ID": 110,
@@ -3190,7 +3299,8 @@
       "Acao_Civil_Publica": "Com Sentença",
       "Data_Decisao": "15-04-2016",
       "Numero_Acao_Civil_Publica": "Adotar medidas relacionadas a regularização",
-      "Outras_Informacoes": "EcoDimensao"
+      "Outras_Informacoes": "EcoDimensao",
+      "Numero_Processo_Judicial": "0017125-85.2011.4.01.3700"
     },
     {
       "ID": 111,
@@ -3219,7 +3329,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "Tem Título do ITERMA"
+      "Outras_Informacoes": "Tem Título do ITERMA",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 112,
@@ -3248,7 +3359,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 113,
@@ -3277,7 +3389,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 114,
@@ -3306,7 +3419,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 115,
@@ -3335,7 +3449,8 @@
       "Acao_Civil_Publica": "Decisão Liminar",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "Concluir RTID",
-      "Outras_Informacoes": "Denúncia de venda de lotes e ocupação irregular na área"
+      "Outras_Informacoes": "Denúncia de venda de lotes e ocupação irregular na área",
+      "Numero_Processo_Judicial": "1016131-88.2021.4.01.3700"
     },
     {
       "ID": 116,
@@ -3364,7 +3479,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 117,
@@ -3393,7 +3509,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "Não localizado."
+      "Outras_Informacoes": "Não localizado.",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 118,
@@ -3422,7 +3539,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 119,
@@ -3451,7 +3569,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 120,
@@ -3480,7 +3599,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "Arquivado"
+      "Outras_Informacoes": "Arquivado",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 121,
@@ -3509,7 +3629,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "Incluído no TED UFMA 2026. Não digitalizado."
+      "Outras_Informacoes": "Incluído no TED UFMA 2026. Não digitalizado.",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 122,
@@ -3538,7 +3659,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 123,
@@ -3567,7 +3689,8 @@
       "Acao_Civil_Publica": "Com Sentença",
       "Data_Decisao": "23-11-2020",
       "Numero_Acao_Civil_Publica": "Concluir Regularização",
-      "Outras_Informacoes": "Incluído no TED UFMA 2026."
+      "Outras_Informacoes": "Incluído no TED UFMA 2026.",
+      "Numero_Processo_Judicial": "1001422-53.2018.4.01.3700"
     },
     {
       "ID": 124,
@@ -3596,7 +3719,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 125,
@@ -3625,7 +3749,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "EcoDimensao"
+      "Outras_Informacoes": "EcoDimensao",
+      "Numero_Processo_Judicial": "1035559-51.2024.4.01.3700"
     },
     {
       "ID": 126,
@@ -3654,7 +3779,8 @@
       "Acao_Civil_Publica": "Sem Sentença",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "Adotar medidas relacionadas a regularização",
-      "Outras_Informacoes": "Incluído no ACT UEMA/INCRA para elaboração de Relatório Fundiário, Planta e Memorial Descritivo. Peças entregues pela parceiria para analise e validação do INCRA."
+      "Outras_Informacoes": "Incluído no ACT UEMA/INCRA para elaboração de Relatório Fundiário, Planta e Memorial Descritivo. Peças entregues pela parceiria para analise e validação do INCRA.",
+      "Numero_Processo_Judicial": "1007326-54.2018.4.01.3700"
     },
     {
       "ID": 127,
@@ -3683,7 +3809,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 128,
@@ -3712,7 +3839,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 129,
@@ -3741,7 +3869,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 130,
@@ -3770,7 +3899,8 @@
       "Acao_Civil_Publica": "Com Sentença",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "Adotar medidas relacionadas a regularização",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": "1009510-07.2023.4.01.3700"
     },
     {
       "ID": 131,
@@ -3799,7 +3929,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 132,
@@ -3828,7 +3959,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 133,
@@ -3857,7 +3989,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 134,
@@ -3886,7 +4019,8 @@
       "Acao_Civil_Publica": "Decisão Liminar",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "Concluir Regularização",
-      "Outras_Informacoes": "EcoDimensao"
+      "Outras_Informacoes": "EcoDimensao",
+      "Numero_Processo_Judicial": "1045193-42.2022.4.01.3700"
     },
     {
       "ID": 135,
@@ -3915,7 +4049,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 136,
@@ -3944,7 +4079,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 137,
@@ -3973,7 +4109,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "Portaria Publicada. Processo em fase de instrução do Kit Decreto."
+      "Outras_Informacoes": "Portaria Publicada. Processo em fase de instrução do Kit Decreto.",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 138,
@@ -4002,7 +4139,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "Processo número 54230.002867/2007-08 repetido, para comunidade Santa Maria dos Pinheiros.\nRegistro arquivado.\nMantido o processo mais antigo, aberto em 2004, 54230.003776/2004-39"
+      "Outras_Informacoes": "Processo número 54230.002867/2007-08 repetido, para comunidade Santa Maria dos Pinheiros.\nRegistro arquivado.\nMantido o processo mais antigo, aberto em 2004, 54230.003776/2004-39",
+      "Numero_Processo_Judicial": "0014775-08.2003.4.01.3700"
     },
     {
       "ID": 139,
@@ -4031,7 +4169,8 @@
       "Acao_Civil_Publica": "Com Sentença",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "Concluir Regularização",
-      "Outras_Informacoes": "Há divergência na comunidade quanto a titulação quilombola. Ação de manutenção de posse pela comunidade contra Joaquim Ribeiro e outros. - Processo 54230.003903/2005-81 inativo"
+      "Outras_Informacoes": "Há divergência na comunidade quanto a titulação quilombola. Ação de manutenção de posse pela comunidade contra Joaquim Ribeiro e outros. - Processo 54230.003903/2005-81 inativo",
+      "Numero_Processo_Judicial": "1003945-72.2017.4.01.3700"
     },
     {
       "ID": 140,
@@ -4060,7 +4199,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "Pedido de cancelamento do processo pela comunidade."
+      "Outras_Informacoes": "Pedido de cancelamento do processo pela comunidade.",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 141,
@@ -4089,7 +4229,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "Foi solicitado arquivamento do processo de desapropriação"
+      "Outras_Informacoes": "Foi solicitado arquivamento do processo de desapropriação",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 142,
@@ -4118,7 +4259,8 @@
       "Acao_Civil_Publica": "Com Sentença",
       "Data_Decisao": "25-11-2025",
       "Numero_Acao_Civil_Publica": "1103982-63.2024.4.01.3700",
-      "Outras_Informacoes": "Decisão Improcedente"
+      "Outras_Informacoes": "Decisão Improcedente",
+      "Numero_Processo_Judicial": "1103982-63.2024.4.01.3700"
     },
     {
       "ID": 143,
@@ -4147,7 +4289,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 144,
@@ -4176,7 +4319,8 @@
       "Acao_Civil_Publica": "Com Sentença",
       "Data_Decisao": "22-03-2019",
       "Numero_Acao_Civil_Publica": "Concluir RTID",
-      "Outras_Informacoes": "Relatório Antropológico aguardando aprovação da proposta de área."
+      "Outras_Informacoes": "Relatório Antropológico aguardando aprovação da proposta de área.",
+      "Numero_Processo_Judicial": "0025300-92.2016.4.01.3700"
     },
     {
       "ID": 145,
@@ -4205,7 +4349,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 146,
@@ -4234,7 +4379,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 147,
@@ -4263,7 +4409,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 148,
@@ -4292,7 +4439,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 149,
@@ -4321,7 +4469,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 150,
@@ -4350,7 +4499,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 151,
@@ -4379,7 +4529,8 @@
       "Acao_Civil_Publica": "Decisão Liminar",
       "Data_Decisao": "13-06-2013",
       "Numero_Acao_Civil_Publica": "Concluir Regularização",
-      "Outras_Informacoes": "Retificação do Edital de Publicação 14-07-2017. Fazendo Conjunto Portaria. Demacamp"
+      "Outras_Informacoes": "Retificação do Edital de Publicação 14-07-2017. Fazendo Conjunto Portaria. Demacamp",
+      "Numero_Processo_Judicial": "1034781-86.2021.4.01.3700"
     },
     {
       "ID": 152,
@@ -4408,7 +4559,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "Incluído no planejamento da Força Tarefa Nacional para elaboração de peças do RTID: Levantamento Fundiário; Planta e Memorial Descritivo; Cadastro de Famílias. Prazo de início Abril de 2025.\nRelatório Antropológico 3R."
+      "Outras_Informacoes": "Incluído no planejamento da Força Tarefa Nacional para elaboração de peças do RTID: Levantamento Fundiário; Planta e Memorial Descritivo; Cadastro de Famílias. Prazo de início Abril de 2025.\nRelatório Antropológico 3R.",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 153,
@@ -4437,7 +4589,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 154,
@@ -4466,7 +4619,8 @@
       "Acao_Civil_Publica": "Sentença Cumprida",
       "Data_Decisao": "11-06-2013",
       "Numero_Acao_Civil_Publica": "Concluir RTID- Concluído",
-      "Outras_Informacoes": "RTID Publicado. EcoDimensao"
+      "Outras_Informacoes": "RTID Publicado. EcoDimensao",
+      "Numero_Processo_Judicial": "1057231-57.2020.4.01.3700"
     },
     {
       "ID": 155,
@@ -4495,7 +4649,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 156,
@@ -4524,7 +4679,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 157,
@@ -4553,7 +4709,8 @@
       "Acao_Civil_Publica": "Com Sentença",
       "Data_Decisao": "18-06-2020",
       "Numero_Acao_Civil_Publica": "Concluir Regularização",
-      "Outras_Informacoes": "Demacamp"
+      "Outras_Informacoes": "Demacamp",
+      "Numero_Processo_Judicial": "0002793-65.2015.4.01.3703"
     },
     {
       "ID": 158,
@@ -4582,7 +4739,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "Ação de reintegração de posse"
+      "Outras_Informacoes": "Ação de reintegração de posse",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 159,
@@ -4611,7 +4769,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 160,
@@ -4640,7 +4799,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 161,
@@ -4669,7 +4829,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 162,
@@ -4698,7 +4859,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 163,
@@ -4727,7 +4889,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 164,
@@ -4756,7 +4919,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 165,
@@ -4785,7 +4949,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 166,
@@ -4814,7 +4979,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 167,
@@ -4843,7 +5009,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 168,
@@ -4872,7 +5039,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 169,
@@ -4901,7 +5069,8 @@
       "Acao_Civil_Publica": "Decisão Liminar",
       "Data_Decisao": "23-08-2021",
       "Numero_Acao_Civil_Publica": "Concluir RTID",
-      "Outras_Informacoes": "Análise de Recursos, 3 no total. Processo recebido na DFQ-1 para análise do recurso. Processo foi incluído no acompanhamento especial da unidade e será reaberto quando for iniciada a análise. EcoDimensao"
+      "Outras_Informacoes": "Análise de Recursos, 3 no total. Processo recebido na DFQ-1 para análise do recurso. Processo foi incluído no acompanhamento especial da unidade e será reaberto quando for iniciada a análise. EcoDimensao",
+      "Numero_Processo_Judicial": "1029909-28.2021.4.01.3700"
     },
     {
       "ID": 170,
@@ -4930,7 +5099,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 171,
@@ -4959,7 +5129,8 @@
       "Acao_Civil_Publica": "Com Sentença",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 172,
@@ -4988,7 +5159,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 173,
@@ -5017,7 +5189,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 174,
@@ -5046,7 +5219,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 175,
@@ -5075,7 +5249,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 176,
@@ -5104,7 +5279,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 177,
@@ -5133,7 +5309,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 178,
@@ -5162,7 +5339,8 @@
       "Acao_Civil_Publica": "Sem Sentença",
       "Data_Decisao": "24-02-2021",
       "Numero_Acao_Civil_Publica": "Adotar medidas relacionadas a regularização",
-      "Outras_Informacoes": "Incluído no ACT com a UEMA. em vias de aditivação do ACT para validar a inclusão da comunidade no Acordo."
+      "Outras_Informacoes": "Incluído no ACT com a UEMA. em vias de aditivação do ACT para validar a inclusão da comunidade no Acordo.",
+      "Numero_Processo_Judicial": "1050437-20.2020.4.01.3700"
     },
     {
       "ID": 179,
@@ -5191,7 +5369,8 @@
       "Acao_Civil_Publica": "Sentença Cumprida",
       "Data_Decisao": "06-09-2017",
       "Numero_Acao_Civil_Publica": "Concluir RTID 240 dias",
-      "Outras_Informacoes": "3 Títulos provisórios: CCDRU - Fazenda Santa Rita: 340.2534 hectares; CCDRU - Fazenda Sítio Raiz: 114.2210 hectares; CCDRU - Fazenda Noeli: 298,6943 hectares; Área titulada: 753,1687.\nAguardando pagamento de indenizações dos demais imóveis.\n200 familias na Portaria do PNRA"
+      "Outras_Informacoes": "3 Títulos provisórios: CCDRU - Fazenda Santa Rita: 340.2534 hectares; CCDRU - Fazenda Sítio Raiz: 114.2210 hectares; CCDRU - Fazenda Noeli: 298,6943 hectares; Área titulada: 753,1687.\nAguardando pagamento de indenizações dos demais imóveis.\n200 familias na Portaria do PNRA",
+      "Numero_Processo_Judicial": "0004012-64.2011.4.01.3700"
     },
     {
       "ID": 180,
@@ -5220,7 +5399,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "Incluído no planejamento da Força Tarefa Nacional para elaboração de peças do RTID: Levantamento Fundiário; Planta e Memorial Descritivo; Cadastro de Famílias. Prazo de início Abril de 2025.\nRelatório Antropológico 3R."
+      "Outras_Informacoes": "Incluído no planejamento da Força Tarefa Nacional para elaboração de peças do RTID: Levantamento Fundiário; Planta e Memorial Descritivo; Cadastro de Famílias. Prazo de início Abril de 2025.\nRelatório Antropológico 3R.",
+      "Numero_Processo_Judicial": "1056560-92.2024.4.01.3700; 1016983-73.2025.4.01.3700"
     },
     {
       "ID": 181,
@@ -5249,7 +5429,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 182,
@@ -5278,7 +5459,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 183,
@@ -5307,7 +5489,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 184,
@@ -5336,7 +5519,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "Terra"
+      "Outras_Informacoes": "Terra",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 185,
@@ -5365,7 +5549,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 186,
@@ -5394,7 +5579,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 187,
@@ -5423,7 +5609,8 @@
       "Acao_Civil_Publica": "Com Sentença",
       "Data_Decisao": "03-09-2020",
       "Numero_Acao_Civil_Publica": "Concluir Regularização",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": "1000074-88.2018.4.01.3703"
     },
     {
       "ID": 188,
@@ -5452,7 +5639,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 189,
@@ -5481,7 +5669,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 190,
@@ -5510,7 +5699,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 191,
@@ -5539,7 +5729,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 192,
@@ -5568,7 +5759,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 193,
@@ -5597,7 +5789,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 194,
@@ -5626,7 +5819,8 @@
       "Acao_Civil_Publica": "Com Sentença",
       "Data_Decisao": "17-01-2022",
       "Numero_Acao_Civil_Publica": "Concluir Regularização",
-      "Outras_Informacoes": "EcoDimensao"
+      "Outras_Informacoes": "EcoDimensao",
+      "Numero_Processo_Judicial": "1000293-04.2018.4.01.3703"
     },
     {
       "ID": 195,
@@ -5655,7 +5849,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 196,
@@ -5684,7 +5879,8 @@
       "Acao_Civil_Publica": "Com Sentença",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "Demacamp"
+      "Outras_Informacoes": "Demacamp",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 197,
@@ -5713,7 +5909,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 198,
@@ -5742,7 +5939,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 199,
@@ -5771,7 +5969,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "Identificada sobreposição com Parte de RESEX (ICMBio) e área da UNIÃO (SPU). Realizada reunião na comunidade para esclarecimentos, em 20 de agosto de 2025. Mantem-se a área identificada no RTID com as sobreposições indicadas. Encaminhamento: Enviar processo à Diretoria Quilombola para tratativas de conciliação de interesses do Estado. Após conciliação, retornar processo para preparação do Kit Portaria de Reconhecimento e demais encaminhamentos."
+      "Outras_Informacoes": "Identificada sobreposição com Parte de RESEX (ICMBio) e área da UNIÃO (SPU). Realizada reunião na comunidade para esclarecimentos, em 20 de agosto de 2025. Mantem-se a área identificada no RTID com as sobreposições indicadas. Encaminhamento: Enviar processo à Diretoria Quilombola para tratativas de conciliação de interesses do Estado. Após conciliação, retornar processo para preparação do Kit Portaria de Reconhecimento e demais encaminhamentos.",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 200,
@@ -5800,7 +5999,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 201,
@@ -5829,7 +6029,8 @@
       "Acao_Civil_Publica": "Com Sentença",
       "Data_Decisao": "21-08-2015",
       "Numero_Acao_Civil_Publica": "Concluir RTID em 180\nConcluir Regularização",
-      "Outras_Informacoes": "Imóvel desapropriado já imitido na Posse do INCRA."
+      "Outras_Informacoes": "Imóvel desapropriado já imitido na Posse do INCRA.",
+      "Numero_Processo_Judicial": "0008826-80.2015.4.01.3700"
     },
     {
       "ID": 202,
@@ -5858,7 +6059,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 203,
@@ -5887,7 +6089,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 204,
@@ -5916,7 +6119,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 205,
@@ -5945,7 +6149,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 206,
@@ -5974,7 +6179,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 207,
@@ -6003,7 +6209,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 208,
@@ -6032,7 +6239,8 @@
       "Acao_Civil_Publica": "Decisão Liminar",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "Adotar medidas relacionadas a regularização",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": "1028739-50.2023.4.01.3700"
     },
     {
       "ID": 209,
@@ -6061,7 +6269,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 210,
@@ -6090,7 +6299,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 211,
@@ -6119,7 +6329,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 212,
@@ -6148,7 +6359,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 213,
@@ -6177,7 +6389,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 214,
@@ -6206,7 +6419,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 215,
@@ -6235,7 +6449,8 @@
       "Acao_Civil_Publica": "Com Sentença",
       "Data_Decisao": "30-01-2026",
       "Numero_Acao_Civil_Publica": "1015406-31.2023.4.01.3700",
-      "Outras_Informacoes": "RTID iniciado por execução direta. Área de conflitos. Em elaboração o Relatório Antropológico. Cadastro de famílias concluído. Relatório fundiário programado para primeiro semestre de 2026.\nAção civil pública nº 1015406-31.2023.4.01.3700. Concluir RTID em 180 dias"
+      "Outras_Informacoes": "RTID iniciado por execução direta. Área de conflitos. Em elaboração o Relatório Antropológico. Cadastro de famílias concluído. Relatório fundiário programado para primeiro semestre de 2026.\nAção civil pública nº 1015406-31.2023.4.01.3700. Concluir RTID em 180 dias",
+      "Numero_Processo_Judicial": "1015406-31.2023.4.01.3700"
     },
     {
       "ID": 216,
@@ -6264,7 +6479,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "Processo de reintegração de posse contra a Associação da Comunidade. Demacamp"
+      "Outras_Informacoes": "Processo de reintegração de posse contra a Associação da Comunidade. Demacamp",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 217,
@@ -6293,7 +6509,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 218,
@@ -6322,7 +6539,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 219,
@@ -6351,7 +6569,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 220,
@@ -6380,7 +6599,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 221,
@@ -6409,7 +6629,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "Incluído no planejamento da Força Tarefa Nacional para elaboração de peças do RTID: Levantamento Fundiário; Planta e Memorial Descritivo; Cadastro de Famílias. Prazo de início Abril de 2025.\nRelatório Antropológico 3R."
+      "Outras_Informacoes": "Incluído no planejamento da Força Tarefa Nacional para elaboração de peças do RTID: Levantamento Fundiário; Planta e Memorial Descritivo; Cadastro de Famílias. Prazo de início Abril de 2025.\nRelatório Antropológico 3R.",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 222,
@@ -6438,7 +6659,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "Faz parte do PA Outeiro (No processo consta pedido para conversão em Projeto Especial Quilombola)\nIncluído no TED UFMA 2027."
+      "Outras_Informacoes": "Faz parte do PA Outeiro (No processo consta pedido para conversão em Projeto Especial Quilombola)\nIncluído no TED UFMA 2027.",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 223,
@@ -6467,7 +6689,8 @@
       "Acao_Civil_Publica": "Com Sentença",
       "Data_Decisao": " 19-05-2017",
       "Numero_Acao_Civil_Publica": "Concluir Regularização",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": "0051743-51.2014.4.01.3700"
     },
     {
       "ID": 224,
@@ -6496,7 +6719,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 225,
@@ -6525,7 +6749,8 @@
       "Acao_Civil_Publica": "Com Sentença",
       "Data_Decisao": "20-09-2018",
       "Numero_Acao_Civil_Publica": "Concluir RTID",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": "0045421-44.2016.4.01.3700"
     },
     {
       "ID": 226,
@@ -6554,7 +6779,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "EcoDimensao"
+      "Outras_Informacoes": "EcoDimensao",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 227,
@@ -6583,7 +6809,8 @@
       "Acao_Civil_Publica": "Com Sentença",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "Adotar medidas relacionadas a regularização",
-      "Outras_Informacoes": "Há conflitos envolvendo ocupantes irregulares na área, o que requer atuação da Câmara de Conciliação Agrária. Por ser área de assentamento, há a necessidade de atuação do setor de desenvolvimento no que tange à supervisão ocupacional para identificação de ocupantes irregulares. necessária cautela e atuação conjunta Divisão Quilombola e Desenvolvimento de Assentamentos."
+      "Outras_Informacoes": "Há conflitos envolvendo ocupantes irregulares na área, o que requer atuação da Câmara de Conciliação Agrária. Por ser área de assentamento, há a necessidade de atuação do setor de desenvolvimento no que tange à supervisão ocupacional para identificação de ocupantes irregulares. necessária cautela e atuação conjunta Divisão Quilombola e Desenvolvimento de Assentamentos.",
+      "Numero_Processo_Judicial": "0027406-95.2014.4.01.3700"
     },
     {
       "ID": 228,
@@ -6612,7 +6839,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "Demacamp"
+      "Outras_Informacoes": "Demacamp",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 229,
@@ -6641,7 +6869,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 230,
@@ -6670,7 +6899,8 @@
       "Acao_Civil_Publica": "Decisão Liminar",
       "Data_Decisao": " 23-08-2021",
       "Numero_Acao_Civil_Publica": "Concluir RTID",
-      "Outras_Informacoes": "Demacamp"
+      "Outras_Informacoes": "Demacamp",
+      "Numero_Processo_Judicial": "1050399-08.2020.4.01.3700"
     },
     {
       "ID": 231,
@@ -6699,7 +6929,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "Incluído no TED UFMA 2026."
+      "Outras_Informacoes": "Incluído no TED UFMA 2026.",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 232,
@@ -6728,7 +6959,8 @@
       "Acao_Civil_Publica": "Com Sentença",
       "Data_Decisao": "18-05-2021",
       "Numero_Acao_Civil_Publica": "Concluir RTID",
-      "Outras_Informacoes": "Comunidade ocupa o Imóvel Baixa das Galinhas, já desapropriado e imitido na Posse do Incra. RTID Concluído e Publicado. Cumprindo prazo de contestação. Iniciado a instrução do Kit Portaria."
+      "Outras_Informacoes": "Comunidade ocupa o Imóvel Baixa das Galinhas, já desapropriado e imitido na Posse do Incra. RTID Concluído e Publicado. Cumprindo prazo de contestação. Iniciado a instrução do Kit Portaria.",
+      "Numero_Processo_Judicial": "1012589-62.2021.4.01.3700"
     },
     {
       "ID": 233,
@@ -6757,7 +6989,8 @@
       "Acao_Civil_Publica": "Com Sentença",
       "Data_Decisao": "30-09-2019",
       "Numero_Acao_Civil_Publica": "Adotar medidas relacionadas a regularização",
-      "Outras_Informacoes": "Demanda incluída na proposta de Acordo de Cooperação Técnica com a Universidade Estadual - UEMA, para realização de Levantamento Fundiário, Análise de Sobreposição e Planta e Memorial Descritivo.\nPeças entregues pela parceiria para analise e parecer do INCRA."
+      "Outras_Informacoes": "Demanda incluída na proposta de Acordo de Cooperação Técnica com a Universidade Estadual - UEMA, para realização de Levantamento Fundiário, Análise de Sobreposição e Planta e Memorial Descritivo.\nPeças entregues pela parceiria para analise e parecer do INCRA.",
+      "Numero_Processo_Judicial": "0034943-45.2014.4.01.3700; 1053122-97.2020.4.01.3700"
     },
     {
       "ID": 234,
@@ -6786,7 +7019,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 235,
@@ -6815,7 +7049,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 236,
@@ -6844,7 +7079,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 237,
@@ -6873,7 +7109,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 238,
@@ -6902,7 +7139,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 239,
@@ -6931,7 +7169,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 240,
@@ -6960,7 +7199,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 241,
@@ -6989,7 +7229,8 @@
       "Acao_Civil_Publica": "Decisão Liminar",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "Adotar medidas relacionadas a regularização",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 242,
@@ -7018,7 +7259,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 243,
@@ -7047,7 +7289,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 244,
@@ -7076,7 +7319,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 245,
@@ -7105,7 +7349,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 246,
@@ -7134,7 +7379,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 247,
@@ -7163,7 +7409,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 248,
@@ -7192,7 +7439,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 249,
@@ -7221,7 +7469,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 250,
@@ -7250,7 +7499,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 251,
@@ -7279,7 +7529,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "Incluído no TED UFMA 2025."
+      "Outras_Informacoes": "Incluído no TED UFMA 2025.",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 252,
@@ -7308,7 +7559,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 253,
@@ -7337,7 +7589,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "Engecem"
+      "Outras_Informacoes": "Engecem",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 254,
@@ -7366,7 +7619,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 255,
@@ -7395,7 +7649,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "Junto com Pau Pombo. Engecem"
+      "Outras_Informacoes": "Junto com Pau Pombo. Engecem",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 256,
@@ -7424,7 +7679,8 @@
       "Acao_Civil_Publica": "Com Sentença",
       "Data_Decisao": "28-10-2013",
       "Numero_Acao_Civil_Publica": "Concluir RTID",
-      "Outras_Informacoes": "RTID Concluído e Publicado. Realizar Notificação aos Órgãos; Confrontantes e Incidentes; Prefeitura sobre a Publicação do RTID. Parte da área, Paxibal e Deus Bem Sabe receberam título do ITERMA."
+      "Outras_Informacoes": "RTID Concluído e Publicado. Realizar Notificação aos Órgãos; Confrontantes e Incidentes; Prefeitura sobre a Publicação do RTID. Parte da área, Paxibal e Deus Bem Sabe receberam título do ITERMA.",
+      "Numero_Processo_Judicial": "0032082-91.2011.4.01.3700"
     },
     {
       "ID": 257,
@@ -7453,7 +7709,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 258,
@@ -7482,7 +7739,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "Junto com Pau Pombo. Engecem"
+      "Outras_Informacoes": "Junto com Pau Pombo. Engecem",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 259,
@@ -7511,7 +7769,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 260,
@@ -7540,7 +7799,8 @@
       "Acao_Civil_Publica": "Com Sentença",
       "Data_Decisao": "24-10-2018",
       "Numero_Acao_Civil_Publica": "Concluir RTID",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": "0009245-66.2016.4.01.3700"
     },
     {
       "ID": 261,
@@ -7569,7 +7829,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 262,
@@ -7598,7 +7859,8 @@
       "Acao_Civil_Publica": "Com Sentença",
       "Data_Decisao": "17-10-2013",
       "Numero_Acao_Civil_Publica": "Concluir RTID",
-      "Outras_Informacoes": "Incluído no planejamento da Força Tarefa Nacional para elaboração de peças do RTID: Levantamento Fundiário; Planta e Memorial Descritivo; Cadastro de Famílias. RTID Concluído e Publicado. Realizar Notificação aos Órgãos; Confrontantes e Incidentes; e Prefeitura, sobre a Publicação do RTID."
+      "Outras_Informacoes": "Incluído no planejamento da Força Tarefa Nacional para elaboração de peças do RTID: Levantamento Fundiário; Planta e Memorial Descritivo; Cadastro de Famílias. RTID Concluído e Publicado. Realizar Notificação aos Órgãos; Confrontantes e Incidentes; e Prefeitura, sobre a Publicação do RTID.",
+      "Numero_Processo_Judicial": "0031192-21.2012.4.01.3700"
     },
     {
       "ID": 263,
@@ -7627,7 +7889,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 264,
@@ -7656,7 +7919,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 265,
@@ -7685,7 +7949,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "Incluído no TED UFMA 2025."
+      "Outras_Informacoes": "Incluído no TED UFMA 2025.",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 266,
@@ -7714,7 +7979,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 267,
@@ -7743,7 +8009,8 @@
       "Acao_Civil_Publica": "Com Sentença",
       "Data_Decisao": "23-08-2021",
       "Numero_Acao_Civil_Publica": "Concluir RTID",
-      "Outras_Informacoes": "Processo em favor de Comunidade Rio da Prata integrante do território. Engecem"
+      "Outras_Informacoes": "Processo em favor de Comunidade Rio da Prata integrante do território. Engecem",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 268,
@@ -7772,7 +8039,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 269,
@@ -7801,7 +8069,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 270,
@@ -7830,7 +8099,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 271,
@@ -7859,7 +8129,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 272,
@@ -7888,7 +8159,8 @@
       "Acao_Civil_Publica": "Sem Sentença",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "Conclui RTID",
-      "Outras_Informacoes": "Junto com Pau Pombo. Engecem"
+      "Outras_Informacoes": "Junto com Pau Pombo. Engecem",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 273,
@@ -7917,7 +8189,8 @@
       "Acao_Civil_Publica": "Decisão Liminar",
       "Data_Decisao": "23-08-2021",
       "Numero_Acao_Civil_Publica": "Concluir Regularização",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": "1029907-58.2021.4.01.3700"
     },
     {
       "ID": 274,
@@ -7946,7 +8219,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 275,
@@ -7975,7 +8249,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 276,
@@ -8004,7 +8279,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 277,
@@ -8033,7 +8309,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 278,
@@ -8062,7 +8339,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "Incluído no TED UFMA 2026."
+      "Outras_Informacoes": "Incluído no TED UFMA 2026.",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 279,
@@ -8091,7 +8369,8 @@
       "Acao_Civil_Publica": "Com Sentença",
       "Data_Decisao": "21-03-2017",
       "Numero_Acao_Civil_Publica": "Concluir RTID",
-      "Outras_Informacoes": "Demacamp"
+      "Outras_Informacoes": "Demacamp",
+      "Numero_Processo_Judicial": "0021735-57.2015.4.01.3700"
     },
     {
       "ID": 280,
@@ -8120,7 +8399,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "Junto com Pau Pombo. Engecem"
+      "Outras_Informacoes": "Junto com Pau Pombo. Engecem",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 281,
@@ -8149,7 +8429,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 282,
@@ -8178,7 +8459,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 283,
@@ -8207,7 +8489,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "Junto com Pau Pombo. Engecem"
+      "Outras_Informacoes": "Junto com Pau Pombo. Engecem",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 284,
@@ -8236,7 +8519,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 285,
@@ -8265,7 +8549,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": "1028739-50.2023.4.01.3700"
     },
     {
       "ID": 286,
@@ -8294,7 +8579,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 287,
@@ -8323,7 +8609,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "Incluído no TED UFMA 2027."
+      "Outras_Informacoes": "Incluído no TED UFMA 2027.",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 288,
@@ -8352,7 +8639,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "Demacamp"
+      "Outras_Informacoes": "Demacamp",
+      "Numero_Processo_Judicial": "1010724-96.2024.4.01.3700"
     },
     {
       "ID": 289,
@@ -8381,7 +8669,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "Demacamp"
+      "Outras_Informacoes": "Demacamp",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 290,
@@ -8410,7 +8699,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 291,
@@ -8439,7 +8729,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 292,
@@ -8468,7 +8759,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 293,
@@ -8497,7 +8789,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 294,
@@ -8526,7 +8819,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 295,
@@ -8555,7 +8849,8 @@
       "Acao_Civil_Publica": "Com Sentença",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "Concluir RTID",
-      "Outras_Informacoes": "Incluído no TED UFMA 2026."
+      "Outras_Informacoes": "Incluído no TED UFMA 2026.",
+      "Numero_Processo_Judicial": "1003615-64.2020.4.01.3702"
     },
     {
       "ID": 296,
@@ -8584,7 +8879,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "Incluído no TED UFMA 2027."
+      "Outras_Informacoes": "Incluído no TED UFMA 2027.",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 297,
@@ -8613,7 +8909,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 298,
@@ -8642,7 +8939,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 299,
@@ -8671,7 +8969,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 300,
@@ -8700,7 +8999,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 301,
@@ -8729,7 +9029,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 302,
@@ -8758,7 +9059,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 303,
@@ -8787,7 +9089,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 304,
@@ -8816,7 +9119,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 305,
@@ -8845,7 +9149,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "Santa Cruz I/Santa Cruz II/Quebra I/Quebra II/Cabeceira do Centro/Moia/ \nComunidades Integrantes do TQ"
+      "Outras_Informacoes": "Santa Cruz I/Santa Cruz II/Quebra I/Quebra II/Cabeceira do Centro/Moia/ \nComunidades Integrantes do TQ",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 306,
@@ -8874,7 +9179,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 307,
@@ -8903,7 +9209,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 308,
@@ -8932,7 +9239,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": "1025816-17.2024.4.01.3700"
     },
     {
       "ID": 309,
@@ -8961,7 +9269,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 310,
@@ -8990,7 +9299,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 311,
@@ -9019,7 +9329,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 312,
@@ -9048,7 +9359,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 313,
@@ -9077,7 +9389,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 314,
@@ -9106,7 +9419,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 315,
@@ -9135,7 +9449,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": " Território Quilombola São Roque – Processo ITERMA nº 203481/2018: encontra-se em fase final de instrução, dependendo da conclusão de análise jurídica especializada acerca das matrículas imobiliárias incidentes na área. Terras Públicas do Estado. Em regularização pelo Instituto de Terras - ITERMA.\n"
+      "Outras_Informacoes": " Território Quilombola São Roque – Processo ITERMA nº 203481/2018: encontra-se em fase final de instrução, dependendo da conclusão de análise jurídica especializada acerca das matrículas imobiliárias incidentes na área. Terras Públicas do Estado. Em regularização pelo Instituto de Terras - ITERMA.\n",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 316,
@@ -9164,7 +9479,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": "1027514-29.2022.4.01.3700"
     },
     {
       "ID": 317,
@@ -9193,7 +9509,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 318,
@@ -9222,7 +9539,8 @@
       "Acao_Civil_Publica": "Decisão Liminar",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "Concluir Regularização",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": "1000405-34.2022.4.01.3702"
     },
     {
       "ID": 319,
@@ -9251,7 +9569,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 320,
@@ -9280,7 +9599,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 321,
@@ -9309,7 +9629,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "Incluído no TED UFMA 2027. (CUBA; MARFIM)"
+      "Outras_Informacoes": "Incluído no TED UFMA 2027. (CUBA; MARFIM)",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 322,
@@ -9338,7 +9659,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 323,
@@ -9367,7 +9689,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 324,
@@ -9396,7 +9719,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": "1011536-75.2023.4.01.3700"
     },
     {
       "ID": 325,
@@ -9425,7 +9749,8 @@
       "Acao_Civil_Publica": "Com Sentença",
       "Data_Decisao": "13-12-2021",
       "Numero_Acao_Civil_Publica": "Concluir RTID",
-      "Outras_Informacoes": "São João e Tanque de Rodagem \nIntegrantes do TQ\nAcordo com UNILAB para elaboração do RA\nIncluído no TED UFMA 2025."
+      "Outras_Informacoes": "São João e Tanque de Rodagem \nIntegrantes do TQ\nAcordo com UNILAB para elaboração do RA\nIncluído no TED UFMA 2025.",
+      "Numero_Processo_Judicial": "1006494-10.2021.4.01.3702"
     },
     {
       "ID": 326,
@@ -9454,7 +9779,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 327,
@@ -9483,7 +9809,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 328,
@@ -9512,7 +9839,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 329,
@@ -9541,7 +9869,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 330,
@@ -9570,7 +9899,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 331,
@@ -9599,7 +9929,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 332,
@@ -9628,7 +9959,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 333,
@@ -9657,7 +9989,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 334,
@@ -9686,7 +10019,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "Incluído no TED UFMA 2026."
+      "Outras_Informacoes": "Incluído no TED UFMA 2026.",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 335,
@@ -9715,7 +10049,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 336,
@@ -9744,7 +10079,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 337,
@@ -9773,7 +10109,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 338,
@@ -9802,7 +10139,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 339,
@@ -9831,7 +10169,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 340,
@@ -9860,7 +10199,8 @@
       "Acao_Civil_Publica": "Com Sentença",
       "Data_Decisao": "11-12-2018",
       "Numero_Acao_Civil_Publica": "Concluir RTID",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": "0013883-45.2016.4.01.3700"
     },
     {
       "ID": 341,
@@ -9889,7 +10229,8 @@
       "Acao_Civil_Publica": "Decisão Liminar",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "Adotar medidas relacionadas a regularização",
-      "Outras_Informacoes": "Incluído no Planejamento 2024\nRel. Fundiário\nO.S. SEI(19268966)"
+      "Outras_Informacoes": "Incluído no Planejamento 2024\nRel. Fundiário\nO.S. SEI(19268966)",
+      "Numero_Processo_Judicial": "1006655-31.2018.4.01.3700; 1069303-08.2022.4.01.3700"
     },
     {
       "ID": 342,
@@ -9918,7 +10259,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": "1000074-88.2018.4.01.3703"
     },
     {
       "ID": 343,
@@ -9947,7 +10289,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "Incluído no TED UFMA 2027."
+      "Outras_Informacoes": "Incluído no TED UFMA 2027.",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 344,
@@ -9976,7 +10319,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 345,
@@ -10005,7 +10349,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 346,
@@ -10034,7 +10379,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 347,
@@ -10063,7 +10409,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 348,
@@ -10092,7 +10439,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 349,
@@ -10121,7 +10469,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 350,
@@ -10150,7 +10499,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 351,
@@ -10179,7 +10529,8 @@
       "Acao_Civil_Publica": "Sem Sentença",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "Concluir RTID",
-      "Outras_Informacoes": "Possível área do Estado\nIncluído no TED UFMA 2027."
+      "Outras_Informacoes": "Possível área do Estado\nIncluído no TED UFMA 2027.",
+      "Numero_Processo_Judicial": "1002847-41.2020.4.01.3702"
     },
     {
       "ID": 352,
@@ -10208,7 +10559,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 353,
@@ -10237,7 +10589,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 354,
@@ -10266,7 +10619,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 355,
@@ -10295,7 +10649,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 356,
@@ -10324,7 +10679,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 357,
@@ -10353,7 +10709,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 358,
@@ -10382,7 +10739,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 359,
@@ -10411,7 +10769,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 360,
@@ -10440,7 +10799,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 361,
@@ -10469,7 +10829,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 362,
@@ -10498,7 +10859,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 363,
@@ -10527,7 +10889,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 364,
@@ -10556,7 +10919,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 365,
@@ -10585,7 +10949,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 366,
@@ -10614,7 +10979,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 367,
@@ -10643,7 +11009,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "Demacamp"
+      "Outras_Informacoes": "Demacamp",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 368,
@@ -10672,7 +11039,8 @@
       "Acao_Civil_Publica": "Decisão Liminar",
       "Data_Decisao": "16-10-2024",
       "Numero_Acao_Civil_Publica": "Concluir RTID 180\nConcluir Titulação",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": "1075224-74.2024.4.01.3700"
     },
     {
       "ID": 369,
@@ -10701,7 +11069,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 370,
@@ -10730,7 +11099,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 371,
@@ -10759,7 +11129,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 372,
@@ -10788,7 +11159,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 373,
@@ -10817,7 +11189,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 374,
@@ -10846,7 +11219,8 @@
       "Acao_Civil_Publica": "Sem Sentença",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "Concluir Regularização",
-      "Outras_Informacoes": "Incluído no TED UFMA 2025."
+      "Outras_Informacoes": "Incluído no TED UFMA 2025.",
+      "Numero_Processo_Judicial": "1002347-04.2022.4.01.3702"
     },
     {
       "ID": 375,
@@ -10875,7 +11249,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "Conversão para Processo de Regularização Fundiária de Território Quilombola em 21-03-2016.\nIncluído no TED UFMA 2026.\n"
+      "Outras_Informacoes": "Conversão para Processo de Regularização Fundiária de Território Quilombola em 21-03-2016.\nIncluído no TED UFMA 2026.\n",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 376,
@@ -10904,7 +11279,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 377,
@@ -10933,7 +11309,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 378,
@@ -10962,7 +11339,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 379,
@@ -10991,7 +11369,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 380,
@@ -11020,7 +11399,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 381,
@@ -11049,7 +11429,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 382,
@@ -11078,7 +11459,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 383,
@@ -11107,7 +11489,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 384,
@@ -11136,7 +11519,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 385,
@@ -11165,7 +11549,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 386,
@@ -11194,7 +11579,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 387,
@@ -11223,7 +11609,8 @@
       "Acao_Civil_Publica": "Decisão Liminar",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "Concluir Regularização",
-      "Outras_Informacoes": "Formalizar acordo para regularização da área identificada no RTID. Divisão De Desenvolvimento deu parecer aprovativo para destinação de parte da área do PA para inclusão das famílias quilombolas. Levar subsídios para conciliação no âmbito do processo judicial (ACP) para informar e validar a decisão técnica do INCRA."
+      "Outras_Informacoes": "Formalizar acordo para regularização da área identificada no RTID. Divisão De Desenvolvimento deu parecer aprovativo para destinação de parte da área do PA para inclusão das famílias quilombolas. Levar subsídios para conciliação no âmbito do processo judicial (ACP) para informar e validar a decisão técnica do INCRA.",
+      "Numero_Processo_Judicial": "1005480-94.2021.4.01.3700; 1003881-86.2022.4.01.3700"
     },
     {
       "ID": 388,
@@ -11252,7 +11639,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 389,
@@ -11281,7 +11669,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 390,
@@ -11310,7 +11699,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 391,
@@ -11339,7 +11729,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 392,
@@ -11368,7 +11759,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 393,
@@ -11397,7 +11789,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "Território Quilombola Ilhas do Teso – Processo ITERMA nº 174437/2016: encontra-se em fase inicial de tramitação, aguardando definição de cronograma para início das atividades de Diagnóstico de identificação. Em regularização pelo Instituto de Terras do Maranhão - ITERMA. Terras Públicas do Estado."
+      "Outras_Informacoes": "Território Quilombola Ilhas do Teso – Processo ITERMA nº 174437/2016: encontra-se em fase inicial de tramitação, aguardando definição de cronograma para início das atividades de Diagnóstico de identificação. Em regularização pelo Instituto de Terras do Maranhão - ITERMA. Terras Públicas do Estado.",
+      "Numero_Processo_Judicial": "1089201-02.2025.4.01.3700"
     },
     {
       "ID": 394,
@@ -11426,7 +11819,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 395,
@@ -11455,7 +11849,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 396,
@@ -11484,7 +11879,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "Território Quilombola Cupaúba – Processo ITERMA nº 174302/2016: encontra-se em fase intermediária de tramitação. Possui relatório ocupacional e georreferenciamento realizados, porém, diante da necessidade de adequação ao SIGEF, demanda novo levantamento georreferenciado, complementação dos estudos técnicos e atualização das certidões cartoriais pertinentes. Terras Públicas do Estado. Em regularização pelo Instituto de Terras - ITERMA."
+      "Outras_Informacoes": "Território Quilombola Cupaúba – Processo ITERMA nº 174302/2016: encontra-se em fase intermediária de tramitação. Possui relatório ocupacional e georreferenciamento realizados, porém, diante da necessidade de adequação ao SIGEF, demanda novo levantamento georreferenciado, complementação dos estudos técnicos e atualização das certidões cartoriais pertinentes. Terras Públicas do Estado. Em regularização pelo Instituto de Terras - ITERMA.",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 397,
@@ -11513,7 +11909,8 @@
       "Acao_Civil_Publica": "Com Sentença",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "Adotar medidas relacionadas a regularização",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": "1030381-58.2023.4.01.3700"
     },
     {
       "ID": 398,
@@ -11542,7 +11939,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 399,
@@ -11571,7 +11969,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "Incluído no TED UFMA 2025."
+      "Outras_Informacoes": "Incluído no TED UFMA 2025.",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 400,
@@ -11600,7 +11999,8 @@
       "Acao_Civil_Publica": "Decisão Liminar",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "Concluir Regularização",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": "1036538-81.2022.4.01.3700"
     },
     {
       "ID": 401,
@@ -11629,7 +12029,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 402,
@@ -11658,7 +12059,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 403,
@@ -11687,7 +12089,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 404,
@@ -11716,7 +12119,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 405,
@@ -11745,7 +12149,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 406,
@@ -11774,7 +12179,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 407,
@@ -11803,7 +12209,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 408,
@@ -11832,7 +12239,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 409,
@@ -11861,7 +12269,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 410,
@@ -11890,7 +12299,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": "1045550-51.2024.4.01.3700"
     },
     {
       "ID": 411,
@@ -11919,7 +12329,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 412,
@@ -11948,7 +12359,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 413,
@@ -11977,7 +12389,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "RTID de execução direta. Em elaboração Relatório Antropológico. Cadastro de Famílias concluído. Relatório fundiário programado para segundo semestre."
+      "Outras_Informacoes": "RTID de execução direta. Em elaboração Relatório Antropológico. Cadastro de Famílias concluído. Relatório fundiário programado para segundo semestre.",
+      "Numero_Processo_Judicial": "1059115-48.2025.4.01.3700"
     },
     {
       "ID": 414,
@@ -12006,7 +12419,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 415,
@@ -12035,7 +12449,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "Incluído no planejamento 2026 com Ordem de Serviço e prazo de 180 dias para conclusão do RTID por execução direta."
+      "Outras_Informacoes": "Incluído no planejamento 2026 com Ordem de Serviço e prazo de 180 dias para conclusão do RTID por execução direta.",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 416,
@@ -12064,7 +12479,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 417,
@@ -12093,7 +12509,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 418,
@@ -12122,7 +12539,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 419,
@@ -12151,7 +12569,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 420,
@@ -12180,7 +12599,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 421,
@@ -12209,7 +12629,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "Ação de reintegração de posse contra a comunidade"
+      "Outras_Informacoes": "Ação de reintegração de posse contra a comunidade",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 422,
@@ -12238,7 +12659,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "Território Quilombola Teso Grande – Processo ITERMA nº 174395/2016: encontra-se em fase intermediária de tramitação. A área já foi georreferenciada; contudo, considerando que à época não era obrigatório o lançamento das informações no Sistema de Gestão Fundiária – SIGEF, faz-se necessária a realização de novo georreferenciamento, bem como a conclusão dos relatórios fundiário e ocupacional e a atualização das certidões cartoriais para identificação de eventuais matrículas incidentes na área. Terras Públicas do Estado. Em regularização pelo Instituto de Terras do Maranhão -ITERMA.\n"
+      "Outras_Informacoes": "Território Quilombola Teso Grande – Processo ITERMA nº 174395/2016: encontra-se em fase intermediária de tramitação. A área já foi georreferenciada; contudo, considerando que à época não era obrigatório o lançamento das informações no Sistema de Gestão Fundiária – SIGEF, faz-se necessária a realização de novo georreferenciamento, bem como a conclusão dos relatórios fundiário e ocupacional e a atualização das certidões cartoriais para identificação de eventuais matrículas incidentes na área. Terras Públicas do Estado. Em regularização pelo Instituto de Terras do Maranhão -ITERMA.\n",
+      "Numero_Processo_Judicial": "1089201-02.2025.4.01.3700"
     },
     {
       "ID": 423,
@@ -12267,7 +12689,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 424,
@@ -12296,7 +12719,8 @@
       "Acao_Civil_Publica": "Sem Sentença",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 425,
@@ -12325,7 +12749,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 426,
@@ -12354,7 +12779,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "Incluído no TED UFMA 2027."
+      "Outras_Informacoes": "Incluído no TED UFMA 2027.",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 427,
@@ -12383,7 +12809,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": null,
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 428,
@@ -12412,7 +12839,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": null,
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 429,
@@ -12441,7 +12869,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": null,
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 430,
@@ -12470,7 +12899,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": null,
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 431,
@@ -12499,7 +12929,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "A comunidade é composta por Bacurizeiro e Valença"
+      "Outras_Informacoes": "A comunidade é composta por Bacurizeiro e Valença",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 432,
@@ -12528,7 +12959,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": null,
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "Associação Comunitária Quilombola Unidos de Comum. A Comunidade de Cumum é tradicionalmente ocupada por famílias remanescentes de quilombos, com vínculos históricos, culturais e territoriais\nconsolidados há gerações."
+      "Outras_Informacoes": "Associação Comunitária Quilombola Unidos de Comum. A Comunidade de Cumum é tradicionalmente ocupada por famílias remanescentes de quilombos, com vínculos históricos, culturais e territoriais\nconsolidados há gerações.",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 433,
@@ -12557,7 +12989,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": null,
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 434,
@@ -12586,7 +13019,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "Comunidades integrantes do TQ Buqueirão do Salazar: Mancal, Pacoval e Rumo. Abertura de processo a pedido do sindicato de trabalhadores rurais e da FERQMA."
+      "Outras_Informacoes": "Comunidades integrantes do TQ Buqueirão do Salazar: Mancal, Pacoval e Rumo. Abertura de processo a pedido do sindicato de trabalhadores rurais e da FERQMA.",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 435,
@@ -12615,7 +13049,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "A comunidade está em um Projeto de Assentamento Santo Antônio II e, dentro desse PA, possui 4 comunidades: Centrinho; Santo Antônio; Vila Esperança; São Benedito. Na ocasião, a Vila Esperança está invadindo a área de São Benedito dos Costas. Essa área é um marco histórico, pois já funcionou como um poço de escravizados. Dentro dessas comunidades, apenas São Benedito dos Costas se identifica como quilombola."
+      "Outras_Informacoes": "A comunidade está em um Projeto de Assentamento Santo Antônio II e, dentro desse PA, possui 4 comunidades: Centrinho; Santo Antônio; Vila Esperança; São Benedito. Na ocasião, a Vila Esperança está invadindo a área de São Benedito dos Costas. Essa área é um marco histórico, pois já funcionou como um poço de escravizados. Dentro dessas comunidades, apenas São Benedito dos Costas se identifica como quilombola.",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 436,
@@ -12644,7 +13079,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": null,
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "Certificada pela SEDIHPOP. Processo aberto na Palmares."
+      "Outras_Informacoes": "Certificada pela SEDIHPOP. Processo aberto na Palmares.",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 437,
@@ -12673,7 +13109,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 438,
@@ -12702,7 +13139,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "Ação Possessória contra a Associação Quilombola"
+      "Outras_Informacoes": "Ação Possessória contra a Associação Quilombola",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 439,
@@ -12731,7 +13169,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": null,
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "A comunidade é composta por Bacurizeiro e Valença"
+      "Outras_Informacoes": "A comunidade é composta por Bacurizeiro e Valença",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 440,
@@ -12760,7 +13199,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": "",
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 441,
@@ -12789,7 +13229,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": null,
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 442,
@@ -12818,7 +13259,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": null,
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 443,
@@ -12847,7 +13289,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": null,
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": ""
+      "Outras_Informacoes": "",
+      "Numero_Processo_Judicial": null
     },
     {
       "ID": 444,
@@ -12876,7 +13319,8 @@
       "Acao_Civil_Publica": "Sem ACP",
       "Data_Decisao": null,
       "Numero_Acao_Civil_Publica": "",
-      "Outras_Informacoes": "Em fase de notificação de abertura do processo aos órgãos e entidades. data certificação FCP 29-08-2018"
+      "Outras_Informacoes": "Em fase de notificação de abertura do processo aos órgãos e entidades. data certificação FCP 29-08-2018",
+      "Numero_Processo_Judicial": null
     }
   ]
 }
