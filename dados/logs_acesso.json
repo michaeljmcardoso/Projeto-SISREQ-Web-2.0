@@ -1,8 +1,30 @@
 {
-  "exportado_em": "2026-10-07T12:28:29.322432",
-  "total_logs": 36,
+  "exportado_em": "2026-10-07T19:13:24.014178",
+  "total_logs": 38,
   "nota": "Últimos 5000 acessos registrados.",
   "logs": [
+    {
+      "usuario": "Stefany",
+      "data_hora": "07/10/2026 16:13:22",
+      "data": "07/10/2026",
+      "hora": "16:13:22",
+      "dia_semana": "Wednesday",
+      "ip_local": "10.12.7.90",
+      "hostname": "localhost",
+      "sistema": "Linux 6.12.94+",
+      "origem": "web"
+    },
+    {
+      "usuario": "jennifer",
+      "data_hora": "07/10/2026 13:56:34",
+      "data": "07/10/2026",
+      "hora": "13:56:34",
+      "dia_semana": "Wednesday",
+      "ip_local": "10.12.7.90",
+      "hostname": "localhost",
+      "sistema": "Linux 6.12.94+",
+      "origem": "web"
+    },
     {
       "usuario": "Stefany",
       "data_hora": "07/10/2026 09:28:28",
