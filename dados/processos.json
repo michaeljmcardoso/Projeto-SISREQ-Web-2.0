@@ -1,6 +1,6 @@
 {
-  "exportado_em": "2026-10-13T13:46:58.981125",
-  "total_processos": 444,
+  "exportado_em": "2026-10-13T13:52:04.856486",
+  "total_processos": 445,
   "processos": [
     {
       "ID": 1,
@@ -13320,6 +13320,36 @@
       "Data_Decisao": null,
       "Numero_Acao_Civil_Publica": "",
       "Outras_Informacoes": "Em fase de notificação de abertura do processo aos órgãos e entidades. data certificação FCP 29-08-2018",
+      "Numero_Processo_Judicial": null
+    },
+    {
+      "ID": 445,
+      "Numero": "54000.136999/2026-09",
+      "Data_Abertura": "26-08-2026",
+      "Comunidade": "Ilha",
+      "Municipio": "Nina Rodrigues",
+      "Area_ha": 0,
+      "Num_familias": 50,
+      "Fase_Processo": "Inicial",
+      "Etapa_RTID": "Sem_RTID",
+      "Edital_DOU": "",
+      "Edital_DOE": "",
+      "Portaria_DOU": "",
+      "Decreto_DOU": "",
+      "Area_ha_Titulada": 0,
+      "Titulo": "SEM TITULO",
+      "PNRA": "NAO-INICIADO",
+      "Relatorio_Antropologico": "Sem_Relatório",
+      "Latitude": "",
+      "Longitude": "",
+      "Certidao_FCP": "Certificada",
+      "Data_Certificacao": null,
+      "Sobreposicao": "PA INCRA, AREA PARTICULAR",
+      "Analise_de_Sobreposicao": "",
+      "Acao_Civil_Publica": "Sem ACP",
+      "Data_Decisao": "",
+      "Numero_Acao_Civil_Publica": "",
+      "Outras_Informacoes": "",
       "Numero_Processo_Judicial": null
     }
   ]
