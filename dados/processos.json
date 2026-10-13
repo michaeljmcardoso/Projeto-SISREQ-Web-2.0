@@ -1,5 +1,5 @@
 {
-  "exportado_em": "2026-10-13T13:52:04.856486",
+  "exportado_em": "2026-10-13T15:38:10.231830",
   "total_processos": 445,
   "processos": [
     {
@@ -13340,8 +13340,8 @@
       "Titulo": "SEM TITULO",
       "PNRA": "NAO-INICIADO",
       "Relatorio_Antropologico": "Sem_Relatório",
-      "Latitude": "",
-      "Longitude": "",
+      "Latitude": null,
+      "Longitude": null,
       "Certidao_FCP": "Certificada",
       "Data_Certificacao": null,
       "Sobreposicao": "PA INCRA, AREA PARTICULAR",
