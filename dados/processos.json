@@ -1,5 +1,5 @@
 {
-  "exportado_em": "2026-10-28T15:51:41.340124",
+  "exportado_em": "2026-10-28T17:28:27.569529",
   "total_processos": 445,
   "processos": [
     {
@@ -4630,7 +4630,7 @@
       "Municipio": "Matinha",
       "Area_ha": 0,
       "Num_familias": 0,
-      "Fase_Processo": "",
+      "Fase_Processo": "Inicial",
       "Etapa_RTID": "Sem_RTID",
       "Edital_DOU": "",
       "Edital_DOE": "",
