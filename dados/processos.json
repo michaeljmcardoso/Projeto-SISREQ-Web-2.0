@@ -1,5 +1,5 @@
 {
-  "exportado_em": "2026-10-28T14:21:01.640222",
+  "exportado_em": "2026-10-28T14:24:27.230257",
   "total_processos": 445,
   "processos": [
     {
@@ -6940,11 +6940,11 @@
       "Municipio": "Vargem Grande",
       "Area_ha": 1.8360441,
       "Num_familias": 77,
-      "Fase_Processo": "Contestação",
+      "Fase_Processo": "Portaria",
       "Etapa_RTID": "RTID_Publicado",
       "Edital_DOU": "20 e 23-03-2026",
       "Edital_DOE": "",
-      "Portaria_DOU": null,
+      "Portaria_DOU": "22-10-2026",
       "Decreto_DOU": null,
       "Area_ha_Titulada": 0,
       "Titulo": "SEM TITULO",
@@ -6959,7 +6959,7 @@
       "Acao_Civil_Publica": "Com Sentença",
       "Data_Decisao": "18-05-2021",
       "Numero_Acao_Civil_Publica": "Concluir RTID",
-      "Outras_Informacoes": "Comunidade ocupa o Imóvel Baixa das Galinhas, já desapropriado e imitido na Posse do Incra. RTID Concluído e Publicado. Cumprindo prazo de contestação. Iniciado a instrução do Kit Portaria.",
+      "Outras_Informacoes": "Comunidade ocupa o Imóvel Baixa das Galinhas, já desapropriado e imitido na Posse do Incra. RTID Concluído e Publicado. Cumprindo prazo de contestação. Portaria publicada 22 de outubro de 2026.",
       "Numero_Processo_Judicial": "1012589-62.2021.4.01.3700"
     },
     {
