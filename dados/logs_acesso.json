@@ -1,8 +1,19 @@
 {
-  "exportado_em": "2026-11-23T13:04:46.993080",
-  "total_logs": 234,
+  "exportado_em": "2026-11-23T16:18:12.087630",
+  "total_logs": 235,
   "nota": "Últimos 5000 acessos registrados.",
   "logs": [
+    {
+      "usuario": "Rodrigo",
+      "data_hora": "23/11/2026 13:18:10",
+      "data": "23/11/2026",
+      "hora": "13:18:10",
+      "dia_semana": "Monday",
+      "ip_local": "10.12.80.64",
+      "hostname": "localhost",
+      "sistema": "Linux 6.12.94+",
+      "origem": "web"
+    },
     {
       "usuario": "Rodrigo",
       "data_hora": "23/11/2026 10:04:45",
