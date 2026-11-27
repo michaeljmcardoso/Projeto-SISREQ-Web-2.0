@@ -1,8 +1,19 @@
 {
-  "exportado_em": "2026-11-26T19:39:56.441887",
-  "total_logs": 283,
+  "exportado_em": "2026-11-27T12:19:54.849942",
+  "total_logs": 284,
   "nota": "Últimos 5000 acessos registrados.",
   "logs": [
+    {
+      "usuario": "Stefany",
+      "data_hora": "27/11/2026 09:19:53",
+      "data": "27/11/2026",
+      "hora": "09:19:53",
+      "dia_semana": "Friday",
+      "ip_local": "10.12.139.11",
+      "hostname": "localhost",
+      "sistema": "Linux 6.12.94+",
+      "origem": "web"
+    },
     {
       "usuario": "jennifer",
       "data_hora": "26/11/2026 16:39:54",
